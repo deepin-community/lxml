@@ -1,0 +1,25 @@
+From ce24e7825f1da92b91704ef13ba337de917165b3 Mon Sep 17 00:00:00 2001
+From: Vagrant Cascadian <vagrant@reproducible-builds.org>
+Date: Sun, 11 Jul 2021 16:39:05 +0000
+Subject: [PATCH] doc/mkhtml.py: Do not embed timestamps in html documentation.
+
+---
+ doc/mkhtml.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/mkhtml.py b/doc/mkhtml.py
+index c652335..3542ba7 100644
+--- a/doc/mkhtml.py
++++ b/doc/mkhtml.py
+@@ -19,7 +19,7 @@ RST2HTML_OPTIONS = " ".join([
+     '--no-toc-backlinks',
+     '--strip-comments',
+     '--language en',
+-    '--date',
++    '--no-datestamp',
+     ])
+ 
+ XHTML_NS = 'http://www.w3.org/1999/xhtml'
+-- 
+2.20.1
+

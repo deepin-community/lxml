@@ -1,0 +1,600 @@
+lxml (4.6.3+dfsg-1) unstable; urgency=medium
+
+  * Stop building the python3-lxml-dbg package. Closes: #994308.
+  * Only build documentation for the default Python version; build documentation
+    for the currently built version of lxml (Sebastian Ramacher).
+    Closes: #990865.
+  * Do not embed timestamps in html documentation (Vagrant Cascadian).
+    Closes: #990952.
+  * Don't embed the build path in the documentation (Vagrant Cascadian).
+    Closes: #990969.
+  * Set LC_ALL and LANG to C.UTF-8 to avoid reproducibility issues when
+    generating html. (Vagrant Cascadian). Closes: #990969.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 15 Sep 2021 12:46:13 +0200
+
+lxml (4.6.3+dfsg-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Repack upstream to drop non-free and unused file (Closes: #988717)
+  * Build and ship documentation (Closes: #799334)
+
+ -- Paul Gevers <elbrus@debian.org>  Sat, 26 Jun 2021 19:40:37 +0200
+
+lxml (4.6.3-1) unstable; urgency=high
+
+  * New upstream version.
+    - A vulnerability (CVE-2021-28957) was discovered in the HTML Cleaner,
+      which allowed JavaScript to pass through. The cleaner now removes the
+      HTML5 formaction attribute.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 22 Mar 2021 14:31:55 +0100
+
+lxml (4.6.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 07 Dec 2020 18:22:48 +0100
+
+lxml (4.6.1-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 22 Oct 2020 18:02:16 +0200
+
+lxml (4.5.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Stop building python2 packages.
+  * Bump debhelper version.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 17 Jul 2020 11:05:52 +0200
+
+lxml (4.5.0-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 18 Feb 2020 16:57:26 +0100
+
+lxml (4.4.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * python-lxml-dbg: Depend on python2-dbg instead of python-dbg.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Jan 2020 13:55:11 +0100
+
+lxml (4.4.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 15 Aug 2019 19:27:20 +0200
+
+lxml (4.3.4-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 24 Jun 2019 13:18:04 +0200
+
+lxml (4.3.3-2) unstable; urgency=medium
+
+  * python-lxml-doc: Recommend python3-lxml instead of python-lxml.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 22 May 2019 14:42:58 +0200
+
+lxml (4.3.3-1) unstable; urgency=medium
+
+  * New upstream version.
+    - Fix leak of output buffer and unclosed files in
+      ``_XSLTResultTree.write_output()``.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 10 Apr 2019 10:49:36 +0200
+
+lxml (4.3.2-1) unstable; urgency=medium
+
+  * New upstream version.
+    - Fix crash in 4.3.1 when appending a child subtree with certain text nodes.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 05 Mar 2019 16:27:09 +0100
+
+lxml (4.3.1-1) unstable; urgency=medium
+
+  * New upstream version 4.3.1.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 20 Feb 2019 16:27:45 +0100
+
+lxml (4.3.0-1) unstable; urgency=medium
+
+  * New upstream version 4.3.0.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jan 2019 10:04:35 +0100
+
+lxml (4.2.5-1) unstable; urgency=medium
+
+  * New upstream version 4.2.5.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 17 Sep 2018 16:47:04 +0200
+
+lxml (4.2.4-1) unstable; urgency=medium
+
+  * New upstream version 4.2.4.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 20 Aug 2018 14:59:17 +0200
+
+lxml (4.2.3-1) unstable; urgency=medium
+
+  * New upstream version 4.2.3.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 11 Jul 2018 14:43:51 +0200
+
+lxml (4.2.1-1) unstable; urgency=medium
+
+  * New upstream version 4.2.1.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 02 Apr 2018 11:36:32 +0200
+
+lxml (4.2.0-1) unstable; urgency=medium
+
+  * New upstream version 4.2.0.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 16 Mar 2018 14:41:33 +0100
+
+lxml (4.1.0-1) unstable; urgency=medium
+
+  * New upstream version 4.1.0.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 01 Nov 2017 05:55:16 +0100
+
+lxml (4.0.0-1) unstable; urgency=medium
+
+  * New upstream version 4.0.0.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 23 Sep 2017 12:01:24 +0200
+
+lxml (3.8.0-2) unstable; urgency=medium
+
+  * Rebuild against pythonX.Y packages without the _fpectl extension.
+    Addresses: #873899.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 01 Sep 2017 07:53:12 +0200
+
+lxml (3.8.0-1) unstable; urgency=medium
+
+  * New upstream version 3.8.0.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 20 Jun 2017 15:25:39 +0200
+
+lxml (3.7.3-1) unstable; urgency=medium
+
+  * New upstream version 3.7.3.
+    - GH#218 was ineffective in Python 3.
+    - GH#222: ``lxml.html.submit_form()`` failed in Python 3.
+    - GH#220: ``xmlfile`` allows switching output methods at an element level.
+    - Work around installation problems in recent Python 2.7 versions
+      due to FTP download failures.
+    - GH#219: ``xmlfile.element()`` was not properly quoting attribute values.
+    - GH#218: ``xmlfile.element()`` was not properly escaping text content of
+      script/style tags.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 26 Feb 2017 18:51:56 +0100
+
+lxml (3.7.1-1) unstable; urgency=medium
+
+  * New upstream version 3.7.1.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 05 Jan 2017 19:55:57 +0100
+
+lxml (3.6.4-1) unstable; urgency=medium
+
+  * New upstream version 3.6.4.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 24 Aug 2016 10:14:49 +0200
+
+lxml (3.6.0-1) unstable; urgency=medium
+
+  * New upstream version 3.6.0.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 29 Mar 2016 13:19:30 +0100
+
+lxml (3.5.0-1) unstable; urgency=medium
+
+  * New upstream version 3.5.0.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 04 Dec 2015 13:03:31 +0100
+
+lxml (3.4.4-2) unstable; urgency=medium
+
+  * Update watch file.
+  * Build using cython. Closes: #792295.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 13 Sep 2015 14:21:16 +0200
+
+lxml (3.4.4-1) unstable; urgency=medium
+
+  * New upstream version 3.4.4.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 03 Aug 2015 14:13:30 +0200
+
+lxml (3.4.2-1) unstable; urgency=medium
+
+  * New upstream version 3.4.2.
+  * python-lxml, python3-lxml: Suggest python-lxml-doc. Closes: #741214.
+  * Build-depend on python-bs4 python3-bs4 python-html5lib python3-html5lib.
+  * python-lxml: Recommend python-bs4, python-html5lib.
+  * python3-lxml: Recommend python3-bs4, python3-html5lib.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 27 Feb 2015 05:11:23 +0100
+
+lxml (3.4.0-1) unstable; urgency=medium
+
+  * New upstream version 3.4.0.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 11 Sep 2014 21:17:44 +0200
+
+lxml (3.3.6-0ubuntu1) utopic; urgency=medium
+
+  * New upstrea version 3.3.6.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 11 Sep 2014 21:02:59 +0200
+
+lxml (3.3.5-1) unstable; urgency=medium
+
+  * New upstrea version 3.3.5.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 18 May 2014 20:03:12 +0200
+
+lxml (3.3.2-1) unstable; urgency=medium
+
+  * New upstrea version 3.3.2.
+    - Re-add lost properties of iterparse objects. Closes: #740226,
+      #740102.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 03 Mar 2014 23:22:35 +0100
+
+lxml (3.3.1-1) unstable; urgency=medium
+
+  * New upstream version 3.3.1.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 17 Feb 2014 11:20:43 +0100
+
+lxml (3.3.0~beta4-1) experimental; urgency=medium
+
+  * New upstream version 3.3.0 beta4.
+  * Update homepage. Closes: #698851.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 14 Jan 2014 09:27:36 +0100
+
+lxml (3.3.0~beta2-1) experimental; urgency=low
+
+  * New upstream version 3.3.0 beta2.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 26 Dec 2013 00:37:23 +0100
+
+lxml (3.2.0-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 11 May 2013 16:53:02 +0200
+
+lxml (3.1.0-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 19 Feb 2013 21:47:31 +0100
+
+lxml (3.1~beta1-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 27 Jan 2013 22:14:53 +0100
+
+lxml (3.0.1-1) experimental; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 21 Oct 2012 19:29:34 +0200
+
+lxml (2.3.5-1) unstable; urgency=low
+
+  * New upstream version.
+    - Features added:
+      * lxml.html.tostring() gained new serialisation options
+        ``with_tail`` and ``doctype``.
+    - Bugs fixed:
+      * Crash when merging text nodes in ``element.remove()``.
+      * Crash in sax/target parser when reporting empty doctype.
+      * Crash when building an nsmap (Element property) with empty
+        namespace URIs.
+      * Crash due to race condition when errors (or user messages) occur
+        during threaded XSLT processing.
+      * XSLT stylesheet compilation could ignore compilation errors.
+      * Fixed a crash when using ``iterparse()`` for HTML parsing and
+        requesting start events.
+      * Fixed parsing of more selectors in cssselect.  Whitespace before
+        pseudo-elements and pseudo-classes is significant as it is a
+        descendant combinator.
+      * lxml.html.diff no longer raises an exception when hitting
+        'img' tags without 'src' attribute.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 17 Sep 2012 13:29:26 +0200
+
+lxml (2.3.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 04 Jan 2012 13:29:53 +0100
+
+lxml (2.3-0.1) unstable; urgency=low
+
+  * Upload 2.3 final to unstable as NMU at maintainer request
+
+ -- Scott Kitterman <scott@kitterman.com>  Mon, 07 Mar 2011 13:17:25 -0500
+
+lxml (2.3~beta1-1) experimental; urgency=low
+
+  * lxml-2.3 beta1 release.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 05 Dec 2010 13:07:46 +0100
+
+lxml (2.3~alpha2-1) experimental; urgency=low
+
+  * lxml-2.3 alpha2 release.
+    - Fix build failure with python3.2.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 18 Oct 2010 18:05:26 +0200
+
+lxml (2.2.8-2) unstable; urgency=low
+
+  * Add copyright and license information for test.py. Closes: #597547.
+  * Build using distribute.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 23 Sep 2010 19:42:55 +0200
+
+lxml (2.2.8-1) experimental; urgency=low
+
+  * New upstream version (bug fix release):
+    - Crash in newer libxml2 versions when moving elements between
+      documents that had attributes on replaced XInclude nodes.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 12 Sep 2010 19:10:50 +0200
+
+lxml (2.2.7-1) experimental; urgency=low
+
+  * New upstream version (bug fix release):
+    - Crash in XSLT when generating text-only result documents with a
+      stylesheet created in a different thread.
+  * Build python3 packages. Closes: #589333.
+  * Update package description. Closes: #579246.
+  * Remove empty directory from package: Closes: #569687.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 12 Sep 2010 19:07:32 +0200
+
+lxml (2.2.6-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@ubuntu.com>  Wed, 10 Mar 2010 11:32:29 +0100
+
+lxml (2.2.4-1) unstable; urgency=low
+
+  * New upstream version.
+  * Build a python-lxml-doc package. Closes: #488258.
+  * Tighten build dependency. Closes: #551698.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 03 Jan 2010 14:14:10 +0100
+
+lxml (2.2.2-2) unstable; urgency=low
+
+  * Call setup.py install with --install-layout=deb. Closes: #547831.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 09 Oct 2009 00:46:15 +0200
+
+lxml (2.2.2-1) unstable; urgency=low
+
+  * New upstream version. Closes: #525961.
+    - Includes html5parser. Closes: #521714.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 27 Aug 2009 09:09:23 +0200
+
+lxml (2.1.5-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 06 Jan 2009 21:57:07 +0100
+
+lxml (2.1.4-1) unstable; urgency=low
+
+  * New upstream version.
+  * Remove the build dependency on cython, because cython doesn't have
+    support for python debug builds.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 04 Jan 2009 15:01:17 +0000
+
+lxml (2.1.3-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 30 Nov 2008 14:36:53 +0000
+
+lxml (2.1.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 28 Sep 2008 23:33:48 +0200
+
+lxml (2.1.1-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Generate src/lxml/lxml.*.[ch] from the .pyx files.
+    Closes: #497324.
+
+ -- Thomas Viehmann <tv@beamnet.de>  Wed, 10 Sep 2008 20:55:19 +0200
+
+lxml (2.1.1-2) unstable; urgency=low
+
+  * Fix import, when python-stats is installed (Andrew Deason).
+    Closes: #497324.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 06 Sep 2008 12:34:24 +0000
+
+lxml (2.1.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 27 Jul 2008 00:22:27 +0200
+
+lxml (2.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 16:04:45 +0000
+
+lxml (2.0.7-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 30 Jun 2008 23:41:38 +0200
+
+lxml (2.0.6-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 06 Jun 2008 01:46:44 +0200
+
+lxml (2.0.5-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 10 May 2008 11:31:36 +0200
+
+lxml (2.0.4-1) unstable; urgency=low
+
+  * New upstream version.
+    - Fixes crash with iterparse + root substitution. Closes: #473977.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 19 Apr 2008 00:59:06 +0200
+
+lxml (2.0.3-1) unstable; urgency=low
+
+  * New upstream version.
+  * src/lxml/lxml.etree.{c,h}: Regenerated.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 30 Mar 2008 15:12:58 +0200
+
+lxml (2.0.2-2) unstable; urgency=low
+
+  * Fix crash when using XML schema in iterparse (free-while-still-in-use bug).
+    Closes: #471840.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 24 Mar 2008 19:00:36 +0100
+
+lxml (2.0.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 12 Mar 2008 19:05:46 +0100
+
+lxml (1.3.6-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 26 Jan 2008 22:33:10 +0100
+
+lxml (1.3.4-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 20 Oct 2007 14:22:05 +0200
+
+lxml (1.3.3-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 01 Aug 2007 20:41:48 +0200
+
+lxml (1.3.2-2) unstable; urgency=low
+
+  * Build-depend on zlib1g-dev. Closes: #434591.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 25 Jul 2007 09:26:09 +0200
+
+lxml (1.3.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 25 Jul 2007 02:02:51 +0200
+
+lxml (1.2.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Merge changes from Ubuntu:
+    - Build a python-lxml-dbg package.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 02 Jun 2007 09:05:43 +0200
+
+lxml (1.1.2-1) unstable; urgency=medium
+
+  * New upstream version.
+    - fix import of lxml.objectify. Closes: #401644.
+
+ -- Matthias Klose <doko@debian.org>  Thu,  7 Dec 2006 19:24:53 +0100
+
+lxml (1.1.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 24 Oct 2006 00:39:24 +0200
+
+lxml (1.0.3-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 19 Aug 2006 22:37:14 +0200
+
+lxml (1.0.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Fri,  7 Jul 2006 22:19:48 +0000
+
+lxml (1.0.1-2) unstable; urgency=low
+
+  * Add python-setuptools as a build dependency.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 17 Jun 2006 11:41:10 +0000
+
+lxml (1.0.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Convert to new Python policy. Closes: #373460.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 16 Jun 2006 22:04:16 +0200
+
+lxml (0.9.1-1) unstable; urgency=low
+
+  * New upstream version (closes: #362415).
+
+ -- Matthias Klose <doko@debian.org>  Fri, 14 Apr 2006 22:10:18 +0000
+
+lxml (0.8-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 15 Dec 2005 22:36:10 +0100
+
+lxml (0.7-1) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Matthias Klose <doko@debian.org>  Sat,  8 Oct 2005 14:13:41 +0000
+
+lxml (0.7-0ubuntu1) breezy; urgency=low
+
+  * Initial release.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu,  6 Oct 2005 20:09:26 +0200
+
