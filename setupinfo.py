@@ -3,9 +3,10 @@ import io
 import os
 import os.path
 import subprocess
+
+from setuptools.command.build_ext import build_ext as _build_ext
 from distutils.core import Extension
 from distutils.errors import CompileError, DistutilsOptionError
-from distutils.command.build_ext import build_ext as _build_ext
 from versioninfo import get_base_dir
 
 try:
@@ -347,6 +348,9 @@ def define_macros():
         macros.append(('LXML_UNICODE_STRINGS', '1'))
     if OPTION_WITH_COVERAGE:
         macros.append(('CYTHON_TRACE_NOGIL', '1'))
+    if OPTION_BUILD_LIBXML2XSLT:
+        macros.append(('LIBXML_STATIC', None))
+        macros.append(('LIBXSLT_STATIC', None))
     # Disable showing C lines in tracebacks, unless explicitly requested.
     macros.append(('CYTHON_CLINE_IN_TRACEBACK', '1' if OPTION_WITH_CLINES else '0'))
     return macros
@@ -362,7 +366,7 @@ def run_command(cmd, *args):
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout_data, errors = p.communicate()
 
-    if errors:
+    if p.returncode != 0 and errors:
         return ''
     return decode_input(stdout_data).strip()
 
@@ -440,6 +444,14 @@ def check_build_dependencies():
 
     xml2_ok = check_min_version(xml2_version, '2.7.0', 'libxml2')
     xslt_ok = check_min_version(xslt_version, '1.1.23', 'libxslt')
+
+    if not OPTION_BUILD_LIBXML2XSLT and xml2_version in ('2.9.11', '2.9.12'):
+        print("\n"
+              "WARNING: The stock libxml2 versions 2.9.11 and 2.9.12 are incompatible"
+              " with this lxml version. "
+              "They produce excess content on serialisation. "
+              "Use a different library version or a static build."
+              "\n")
 
     if xml2_version and xslt_version:
         print("Building against libxml2 %s and libxslt %s" % (xml2_version, xslt_version))

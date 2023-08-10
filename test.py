@@ -72,11 +72,7 @@ import getopt
 import unittest
 import traceback
 
-try:
-    # Python >=2.7 and >=3.2
-    from unittest.runner import _TextTestResult
-except ImportError:
-    from unittest import _TextTestResult
+from unittest import TextTestResult
 
 __metaclass__ = type
 
@@ -307,14 +303,14 @@ def get_test_hooks(test_files, cfg, cov=None):
     return results
 
 
-class CustomTestResult(_TextTestResult):
+class CustomTestResult(TextTestResult):
     """Customised TestResult.
 
     It can show a progress bar, and displays tracebacks for errors and failures
     as soon as they happen, in addition to listing them all at the end.
     """
 
-    __super = _TextTestResult
+    __super = TextTestResult
     __super_init = __super.__init__
     __super_startTest = __super.startTest
     __super_stopTest = __super.stopTest
@@ -545,8 +541,8 @@ def main(argv):
     # Set up tracing before we start importing things
     cov = None
     if cfg.run_tests and cfg.coverage:
-        from coverage import coverage
-        cov = coverage(omit=['test.py'])
+        from coverage import Coverage
+        cov = Coverage(omit=['test.py'])
 
     # Finding and importing
     test_files = get_test_files(cfg)

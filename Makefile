@@ -3,7 +3,7 @@ PYTHON3?=python3
 TESTFLAGS=-p -v
 TESTOPTS=
 SETUPFLAGS=
-LXMLVERSION:=$(shell sed -ne '/__version__/s|.*__version__\s*=\s*"\([^"]*\)".*|\1|p' src/lxml/__init__.py)
+LXMLVERSION:=$(shell $(PYTHON3) -c 'import re; print(re.findall(r"__version__\s*=\s*\"([^\"]+)\"", open("src/lxml/__init__.py").read())[0])' )
 
 PARALLEL?=$(shell $(PYTHON) -c 'import sys; print("-j7" if sys.version_info >= (3, 5) else "")' )
 PARALLEL3?=$(shell $(PYTHON3) -c 'import sys; print("-j7" if sys.version_info >= (3, 5) else "")' )
@@ -12,17 +12,23 @@ PY3_WITH_CYTHON?=$(shell $(PYTHON3) -c 'import Cython.Build.Dependencies' >/dev/
 CYTHON_WITH_COVERAGE?=$(shell $(PYTHON) -c 'import Cython.Coverage; import sys; assert not hasattr(sys, "pypy_version_info")' >/dev/null 2>/dev/null && echo " --coverage" || true)
 CYTHON3_WITH_COVERAGE?=$(shell $(PYTHON3) -c 'import Cython.Coverage; import sys; assert not hasattr(sys, "pypy_version_info")' >/dev/null 2>/dev/null && echo " --coverage" || true)
 
-MANYLINUX_LIBXML2_VERSION=2.9.10
-MANYLINUX_LIBXSLT_VERSION=1.1.34
+PYTHON_BUILD_VERSION ?= *
+MANYLINUX_LIBXML2_VERSION=2.9.14
+MANYLINUX_LIBXSLT_VERSION=1.1.35
 MANYLINUX_CFLAGS=-O3 -g1 -pipe -fPIC -flto
 MANYLINUX_LDFLAGS=-flto
-MANYLINUX_IMAGE_X86_64=quay.io/pypa/manylinux1_x86_64
-MANYLINUX_IMAGE_686=quay.io/pypa/manylinux1_i686
-MANYLINUX_IMAGE_AARCH64=quay.io/pypa/manylinux2014_aarch64
 
-AARCH64_ENV=-e AR="/opt/rh/devtoolset-9/root/usr/bin/gcc-ar" \
-		-e NM="/opt/rh/devtoolset-9/root/usr/bin/gcc-nm" \
-		-e RANLIB="/opt/rh/devtoolset-9/root/usr/bin/gcc-ranlib"
+MANYLINUX_IMAGES= \
+	manylinux1_x86_64 \
+	manylinux1_i686 \
+	manylinux_2_24_x86_64 \
+	manylinux_2_24_i686 \
+	manylinux2014_aarch64 \
+	manylinux_2_24_aarch64 \
+	manylinux_2_24_ppc64le \
+	manylinux_2_24_s390x \
+	musllinux_1_1_x86_64 \
+    musllinux_1_1_aarch64
 
 .PHONY: all inplace inplace3 rebuild-sdist sdist build require-cython wheel_manylinux wheel
 
@@ -55,19 +61,22 @@ require-cython:
 qemu-user-static:
 	docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
-wheel_manylinux: wheel_manylinux64 wheel_manylinux32 wheel_manylinuxaarch64
-wheel_manylinuxaarch64: qemu-user-static
+wheel_manylinux: $(addprefix wheel_,$(MANYLINUX_IMAGES))
+$(addprefix wheel_,$(filter-out %_x86_64, $(filter-out %_i686, $(MANYLINUX_IMAGES)))): qemu-user-static
 
-wheel_manylinux32 wheel_manylinux64 wheel_manylinuxaarch64: dist/lxml-$(LXMLVERSION).tar.gz
+wheel_%: dist/lxml-$(LXMLVERSION).tar.gz
 	time docker run --rm -t \
 		-v $(shell pwd):/io \
-		$(if $(patsubst %aarch64,,$@),,$(AARCH64_ENV)) \
+		-e AR=gcc-ar \
+		-e NM=gcc-nm \
+		-e RANLIB=gcc-ranlib \
 		-e CFLAGS="$(MANYLINUX_CFLAGS) $(if $(patsubst %aarch64,,$@),-march=core2,-march=armv8-a -mtune=cortex-a72)" \
 		-e LDFLAGS="$(MANYLINUX_LDFLAGS)" \
 		-e LIBXML2_VERSION="$(MANYLINUX_LIBXML2_VERSION)" \
 		-e LIBXSLT_VERSION="$(MANYLINUX_LIBXSLT_VERSION)" \
-		-e WHEELHOUSE=wheelhouse_$(subst wheel_,,$@) \
-		$(if $(filter $@,wheel_manylinuxaarch64),$(MANYLINUX_IMAGE_AARCH64),$(if $(patsubst %32,,$@),$(MANYLINUX_IMAGE_X86_64),$(MANYLINUX_IMAGE_686))) \
+		-e PYTHON_BUILD_VERSION="$(PYTHON_BUILD_VERSION)" \
+		-e WHEELHOUSE=$(subst wheel_,wheelhouse/,$@) \
+		quay.io/pypa/$(subst wheel_,,$@) \
 		bash /io/tools/manylinux/build-wheels.sh /io/$<
 
 wheel:
@@ -89,6 +98,15 @@ valgrind_test_inplace: inplace
 	valgrind --tool=memcheck --leak-check=full --num-callers=30 --suppressions=valgrind-python.supp \
 		$(PYTHON) test.py
 
+fuzz: clean
+	$(MAKE) \
+		CC="/usr/bin/clang" \
+		CFLAGS="$$CFLAGS -fsanitize=fuzzer-no-link -g2" \
+		CXX="/usr/bin/clang++" \
+		CXXFLAGS="-fsanitize=fuzzer-no-link" \
+		inplace3
+	$(PYTHON3) src/lxml/tests/fuzz_xml_parse.py
+
 gdb_test_inplace: inplace
 	@echo "file $(PYTHON)\nrun test.py" > .gdb.command
 	gdb -x .gdb.command -d src -d src/lxml
@@ -105,7 +123,7 @@ ftest_build: build
 ftest_inplace: inplace
 	$(PYTHON) test.py -f $(TESTFLAGS) $(TESTOPTS)
 
-apidoc: apidocclean
+apidoc: apidocclean inplace3
 	@[ -x "`which sphinx-apidoc`" ] \
 		&& (echo "Generating API docs ..." && \
 			PYTHONPATH=src:$(PYTHONPATH) sphinx-apidoc -e -P -T -o doc/api src/lxml \

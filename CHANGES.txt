@@ -2,6 +2,145 @@
 lxml changelog
 ==============
 
+4.9.2 (2022-12-13)
+==================
+
+Bugs fixed
+----------
+
+* CVE-2022-2309: A Bug in libxml2 2.9.1[0-4] could let namespace declarations
+  from a failed parser run leak into later parser runs.  This bug was worked around
+  in lxml and resolved in libxml2 2.10.0.
+  https://gitlab.gnome.org/GNOME/libxml2/-/issues/378
+
+Other changes
+-------------
+
+* LP#1981760: ``Element.attrib`` now registers as ``collections.abc.MutableMapping``.
+
+* lxml now has a static build setup for macOS on ARM64 machines (not used for building wheels).
+  Patch by Quentin Leffray.
+
+
+4.9.1 (2022-07-01)
+==================
+
+Bugs fixed
+----------
+
+* A crash was resolved when using ``iterwalk()`` (or ``canonicalize()``)
+  after parsing certain incorrect input.  Note that ``iterwalk()`` can crash
+  on *valid* input parsed with the same parser *after* failing to parse the
+  incorrect input.
+
+
+4.9.0 (2022-06-01)
+==================
+
+Bugs fixed
+----------
+
+* GH#341: The mixin inheritance order in ``lxml.html`` was corrected.
+  Patch by xmo-odoo.
+
+Other changes
+-------------
+
+* Built with Cython 0.29.30 to adapt to changes in Python 3.11 and 3.12.
+
+* Wheels include zlib 1.2.12, libxml2 2.9.14 and libxslt 1.1.35
+  (libxml2 2.9.12+ and libxslt 1.1.34 on Windows).
+
+* GH#343: Windows-AArch64 build support in Visual Studio.
+  Patch by Steve Dower.
+
+
+4.8.0 (2022-02-17)
+==================
+
+Features added
+--------------
+
+* GH#337: Path-like objects are now supported throughout the API instead of just strings.
+  Patch by Henning Janssen.
+
+* The ``ElementMaker`` now supports ``QName`` values as tags, which always override
+  the default namespace of the factory.
+
+Bugs fixed
+----------
+
+* GH#338: In lxml.objectify, the XSI float annotation "nan" and "inf" were spelled in
+  lower case, whereas XML Schema datatypes define them as "NaN" and "INF" respectively.
+  Patch by Tobias Deiminger.
+
+Other changes
+-------------
+
+* Built with Cython 0.29.28.
+
+
+4.7.1 (2021-12-13)
+==================
+
+Features added
+--------------
+
+* Chunked Unicode string parsing via ``parser.feed()`` now encodes the input data
+  to the native UTF-8 encoding directly, instead of going through ``Py_UNICODE`` /
+  ``wchar_t`` encoding first, which previously required duplicate recoding in most cases.
+
+Bugs fixed
+----------
+
+* The standard namespace prefixes were mishandled during "C14N2" serialisation on Python 3.
+  See https://mail.python.org/archives/list/lxml@python.org/thread/6ZFBHFOVHOS5GFDOAMPCT6HM5HZPWQ4Q/
+
+* ``lxml.objectify`` previously accepted non-XML numbers with underscores (like "1_000")
+  as integers or float values in Python 3.6 and later. It now adheres to the number
+  format of the XML spec again.
+
+* LP#1939031: Static wheels of lxml now contain the header files of zlib and libiconv
+  (in addition to the already provided headers of libxml2/libxslt/libexslt).
+
+Other changes
+-------------
+
+* Wheels include libxml2 2.9.12+ and libxslt 1.1.34 (also on Windows).
+
+
+4.7.0 (2021-12-13)
+==================
+
+* Release retracted due to missing files in lxml/includes/.
+
+
+4.6.5 (2021-12-12)
+==================
+
+Bugs fixed
+----------
+
+* A vulnerability (GHSL-2021-1038) in the HTML cleaner allowed sneaking script
+  content through SVG images (CVE-2021-43818).
+
+* A vulnerability (GHSL-2021-1037) in the HTML cleaner allowed sneaking script
+  content through CSS imports and other crafted constructs (CVE-2021-43818).
+
+
+4.6.4 (2021-11-01)
+==================
+
+Features added
+--------------
+
+* GH#317: A new property ``system_url`` was added to DTD entities.
+  Patch by Thirdegree.
+
+* GH#314: The ``STATIC_*`` variables in ``setup.py`` can now be passed via env vars.
+  Patch by Isaac Jurado.
+
+
 4.6.3 (2021-03-21)
 ==================
 

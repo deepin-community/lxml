@@ -50,6 +50,11 @@ for other ways to support the lxml project,
 as well as commercial consulting, customisations and trainings on lxml and
 fast Python XML processing.
 
+Note that we are not accepting donations in crypto currencies.
+Much of the development and hosting for lxml is done in a carbon-neutral way
+or with compensated and very low emissions.
+Crypto currencies do not fit into that ambition.
+
 .. |Donate| image:: https://lxml.de/paypal_btn_donateCC_LG.png
             :width: 160
             :height: 47
@@ -58,7 +63,7 @@ fast Python XML processing.
 .. _`doc/main.txt`: https://github.com/lxml/lxml/blob/master/doc/main.txt
 .. _`INSTALL.txt`: http://lxml.de/installation.html
 
-`Travis-CI <https://travis-ci.org/>`_ and `AppVeyor <https://www.appveyor.com/>`_
+`AppVeyor <https://www.appveyor.com/>`_ and `GitHub Actions <https://docs.github.com/en/actions>`_
 support the lxml project with their build and CI servers.
 Jetbrains supports the lxml project by donating free licenses of their
 `PyCharm IDE <https://www.jetbrains.com/pycharm/>`_.
@@ -68,6 +73,21 @@ Another supporter of the lxml project is
 
 Project income report
 ---------------------
+
+lxml has `more than 50 million downloads <https://pypistats.org/packages/lxml>`_
+per month on PyPI.
+
+* Total project income in 2021: EUR 4890.37  (407.53 € / month)
+
+  - Tidelift: EUR 4066.66
+  - Paypal: EUR 223.71
+  - other: EUR 600.00
+
+* Total project income in 2020: EUR 6065,86  (506.49 € / month)
+
+  - Tidelift: EUR 4064.77
+  - Paypal: EUR 1401.09
+  - other: EUR 600.00
 
 * Total project income in 2019: EUR 717.52  (59.79 € / month)
 

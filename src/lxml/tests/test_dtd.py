@@ -9,7 +9,7 @@ import unittest, sys
 from .common_imports import (
     etree, html, BytesIO, _bytes, _str,
     HelperTestCase, make_doctest, skipIf,
-    fileInTestDir, fileUrlInTestDir
+    fileInTestDir, fileUrlInTestDir, SimpleFSPath
 )
 
 
@@ -23,6 +23,14 @@ class ETreeDtdTestCase(HelperTestCase):
         root = tree.getroot()
 
         dtd = etree.DTD(fileInTestDir("test.dtd"))
+        self.assertTrue(dtd.validate(root))
+    
+    def test_dtd_file_pathlike(self):
+        parse = etree.parse
+        tree = parse(fileInTestDir("test.xml"))
+        root = tree.getroot()
+
+        dtd = etree.DTD(SimpleFSPath(fileInTestDir("test.dtd")))
         self.assertTrue(dtd.validate(root))
 
     def test_dtd_stringio(self):
@@ -402,6 +410,14 @@ class ETreeDtdTestCase(HelperTestCase):
         doc = etree.fromstring(data).getroottree()
         self.assertEqual(etree.tostring(doc),
                          _bytes(data))
+
+    def test_entity_system_url(self):
+        xml = etree.parse(BytesIO('<!DOCTYPE test [ <!ENTITY TestReference SYSTEM "./foo.bar"> ]><a/>'))
+        self.assertEqual(xml.docinfo.internalDTD.entities()[0].system_url, "./foo.bar")
+
+    def test_entity_system_url_none(self):
+        xml = etree.parse(BytesIO('<!DOCTYPE test [ <!ENTITY TestReference "testvalue"> ]><a/>'))
+        self.assertEqual(xml.docinfo.internalDTD.entities()[0].system_url, None)
 
 
 def test_suite():
