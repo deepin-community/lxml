@@ -801,21 +801,22 @@ cdef __initErrorConstants():
             setattr(cls, name, value)
             reverse_dict[value] = name
 
-    # discard the global tuple references after use
+    # discard the global string references after use
     __ERROR_LEVELS = __ERROR_DOMAINS = __PARSER_ERROR_TYPES = __RELAXNG_ERROR_TYPES = None
 
 
 class ErrorLevels(object):
-    u"Libxml2 error levels"
+    """Libxml2 error levels"""
 
 class ErrorDomains(object):
-    u"Libxml2 error domains"
+    """Libxml2 error domains"""
 
 class ErrorTypes(object):
-    u"Libxml2 error types"
+    """Libxml2 error types"""
 
 class RelaxNGErrorTypes(object):
-    u"Libxml2 RelaxNG error types"
+    """Libxml2 RelaxNG error types"""
+
 
 # --- BEGIN: GENERATED CONSTANTS ---
 
@@ -975,6 +976,7 @@ ERR_UNKNOWN_VERSION=108
 ERR_VERSION_MISMATCH=109
 ERR_NAME_TOO_LONG=110
 ERR_USER_STOP=111
+ERR_COMMENT_ABRUPTLY_ENDED=112
 NS_ERR_XML_NAMESPACE=200
 NS_ERR_UNDEFINED_NAMESPACE=201
 NS_ERR_QNAME=202

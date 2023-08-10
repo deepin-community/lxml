@@ -258,6 +258,11 @@ cdef class _DTDEntityDecl:
         _assertValidDTDNode(self, self._c_node)
         return funicodeOrNone(self._c_node.content)
 
+    @property
+    def system_url(self):
+        _assertValidDTDNode(self, self._c_node)
+        return funicodeOrNone(self._c_node.SystemID)
+
 
 ################################################################################
 # DTD
@@ -274,6 +279,7 @@ cdef class DTD(_Validator):
     def __init__(self, file=None, *, external_id=None):
         _Validator.__init__(self)
         if file is not None:
+            file = _getFSPathOrObject(file)
             if _isString(file):
                 file = _encodeFilename(file)
                 with self._error_log:
@@ -285,7 +291,7 @@ cdef class DTD(_Validator):
                 self._c_dtd = _parseDtdFromFilelike(file)
                 _reset_document_loader(orig_loader)
             else:
-                raise DTDParseError, u"file must be a filename or file-like object"
+                raise DTDParseError, u"file must be a filename, file-like or path-like object"
         elif external_id is not None:
             with self._error_log:
                 orig_loader = _register_document_loader()

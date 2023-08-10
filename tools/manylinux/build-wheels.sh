@@ -9,6 +9,7 @@ REQUIREMENTS=/io/requirements.txt
 SDIST=$1
 PACKAGE=$(basename ${SDIST%-*})
 SDIST_PREFIX=$(basename ${SDIST%%.tar.gz})
+[ -z "$PYTHON_BUILD_VERSION" ] && PYTHON_BUILD_VERSION="*"
 
 build_wheel() {
     pybin="$1"
@@ -16,8 +17,10 @@ build_wheel() {
     [ -n "$source" ] || source=/io
 
     env STATIC_DEPS=true \
+        RUN_TESTS=true \
         LDFLAGS="$LDFLAGS -fPIC" \
         CFLAGS="$CFLAGS -fPIC" \
+        ACLOCAL_PATH=/usr/share/aclocal/ \
         ${pybin}/pip \
             wheel \
             "$source" \
@@ -26,7 +29,7 @@ build_wheel() {
 
 run_tests() {
     # Install packages and test
-    for PYBIN in /opt/python/*/bin/; do
+    for PYBIN in /opt/python/${PYTHON_BUILD_VERSION}/bin/; do
         ${PYBIN}/python -m pip install $PACKAGE --no-index -f /io/$WHEELHOUSE || exit 1
 
         # check import as a quick test
@@ -36,6 +39,7 @@ run_tests() {
 
 prepare_system() {
     #yum install -y zlib-devel
+    yum -y install xz  || true
     #rm -fr /opt/python/cp34-*
     echo "Python versions found: $(cd /opt/python && echo cp* | sed -e 's|[^ ]*-||g')"
     ${CC:-gcc} --version
@@ -47,7 +51,7 @@ build_wheels() {
     FIRST=
     SECOND=
     THIRD=
-    for PYBIN in /opt/python/*/bin; do
+    for PYBIN in /opt/python/${PYTHON_BUILD_VERSION}/bin; do
         # Install build requirements if we need them and file exists
         test -n "$source" -o ! -e "$REQUIREMENTS" \
             || ${PYBIN}/python -m pip install -r "$REQUIREMENTS"

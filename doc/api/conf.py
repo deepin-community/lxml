@@ -46,9 +46,14 @@ html_theme_options = {
 autodoc_default_options = {
     'ignore-module-all': True,
     'private-members': True,
+    'inherited-members': True,
 }
 
 autodoc_member_order = 'groupwise'
+
+intersphinx_mapping = {
+    "lxml": ("https://lxml.de/apidoc/", None),
+}
 
 # -- Options for todo extension ----------------------------------------------
 

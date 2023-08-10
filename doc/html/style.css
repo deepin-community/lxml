@@ -164,7 +164,7 @@ div.banner {
     border: 2px solid darkred;
     color: darkgreen;
     line-height: 1em;
-    margin: 1ex;
+    margin: 3ex 1ex 1ex;
     padding: 3pt;
 }
 
@@ -319,6 +319,18 @@ div.pagequote .reference {
 html > .pagequote {
     /* ignored by IE -> everyone else knows 'fixed', right?  */
     position: fixed;
+}
+
+div.admonition {
+    border: solid 1px;
+    border-radius: 1ex;
+    margin: 0.5ex;
+    padding: 0.5ex 1.5ex 0.5ex 1.5ex;
+    background: lightyellow;
+}
+
+div.admonition > .admonition-title {
+    background: yellow;
 }
 
 code {

@@ -49,8 +49,9 @@ answered in the FAQ_.
 Documentation
 -------------
 
-The complete lxml documentation is available for download as `PDF
-documentation`_.  The HTML documentation from this web site is part of
+.. The complete lxml documentation is available for download as `PDF documentation`_.
+
+The HTML documentation from this web site is part of
 the normal `source download <#download>`_.
 
 * Tutorials:
@@ -159,27 +160,24 @@ Index <http://pypi.python.org/pypi/lxml/>`_ (PyPI).  It has the source
 that compiles on various platforms.  The source distribution is signed
 with `this key <pubkey.asc>`_.
 
-The latest version is `lxml 4.6.3`_, released 2021-03-21
-(`changes for 4.6.3`_).  `Older versions <#old-versions>`_
+The latest version is `lxml 4.9.2`_, released 2022-12-13
+(`changes for 4.9.2`_).  `Older versions <#old-versions>`_
 are listed below.
 
 Please take a look at the
 `installation instructions <installation.html>`_ !
 
-This complete web site (including the generated API documentation) is
+This complete website (including the generated API documentation) is
 part of the source distribution, so if you want to download the
 documentation for offline use, take the source archive and copy the
-``doc/html`` directory out of the source tree, or use the
-`PDF documentation`_.
+``doc/html`` directory out of the source tree.
+
+.. , or use the `PDF documentation`_.
 
 The latest `installable developer sources <https://github.com/lxml/lxml/archive/master.zip>`_
 are available from Github.  It's also possible to check out
 the latest development version of lxml from Github directly, using a command
-like this (assuming you use hg and have hg-git installed)::
-
-  hg clone git+ssh://git@github.com/lxml/lxml.git lxml
-
-Alternatively, if you use git, this should work as well::
+like this::
 
   git clone https://github.com/lxml/lxml.git lxml
 
@@ -198,11 +196,10 @@ Mailing list
 
 Questions? Suggestions? Code to contribute? We have a `mailing list`_.
 
-You can search the archive with Gmane_ or Google_.
+You can also `search the archive`_ for past questions and discussions.
 
-.. _`mailing list`: http://lxml.de/mailinglist/
-.. _Gmane: http://blog.gmane.org/gmane.comp.python.lxml.devel
-.. _Google: http://www.google.com/webhp?q=site:comments.gmane.org%2Fgmane.comp.python.lxml.devel+
+.. _`search the archive`: https://mail.python.org/archives/list/lxml@python.org/
+.. _`mailing list`: https://lxml.de/mailinglist/
 
 
 Bug tracker
@@ -212,7 +209,7 @@ lxml uses the `launchpad bug tracker`_.  If you are sure you found a
 bug in lxml, please file a bug report there.  If you are not sure
 whether some unexpected behaviour of lxml is a bug or not, please
 check the documentation and ask on the `mailing list`_ first.  Do not
-forget to search the archive (e.g. with Gmane_)!
+forget to `search the archive`_!
 
 .. _`launchpad bug tracker`: https://launchpad.net/lxml/
 
@@ -225,38 +222,57 @@ itself are shipped under the `MIT license`_. There should therefore be no
 obstacle to using lxml in your codebase.
 
 .. _`BSD license`: https://github.com/lxml/lxml/blob/master/doc/licenses/BSD.txt
-.. _`MIT license`: http://www.opensource.org/licenses/mit-license.html
+.. _`MIT license`: https://opensource.org/licenses/mit-license.html
 
 
 Old Versions
 ------------
 
 See the websites of lxml
-`4.5 <http://lxml.de/4.5/>`_,
-`4.4 <http://lxml.de/4.4/>`_,
-`4.3 <http://lxml.de/4.3/>`_,
-`4.2 <http://lxml.de/4.2/>`_,
-`4.1 <http://lxml.de/4.1/>`_,
-`4.0 <http://lxml.de/4.0/>`_,
-`3.8 <http://lxml.de/3.8/>`_,
-`3.7 <http://lxml.de/3.7/>`_,
-`3.6 <http://lxml.de/3.6/>`_,
-`3.5 <http://lxml.de/3.5/>`_,
-`3.4 <http://lxml.de/3.4/>`_,
-`3.3 <http://lxml.de/3.3/>`_,
-`3.2 <http://lxml.de/3.2/>`_,
-`3.1 <http://lxml.de/3.1/>`_,
-`3.0 <http://lxml.de/3.0/>`_,
-`2.3 <http://lxml.de/2.3/>`_,
-`2.2 <http://lxml.de/2.2/>`_,
-`2.1 <http://lxml.de/2.1/>`_,
-`2.0 <http://lxml.de/2.0/>`_,
-`1.3 <http://lxml.de/1.3/>`_
+`4.8 <https://lxml.de/4.8/>`_,
+`4.7 <https://lxml.de/4.7/>`_,
+`4.6 <https://lxml.de/4.6/>`_,
+`4.5 <https://lxml.de/4.5/>`_,
+`4.4 <https://lxml.de/4.4/>`_,
+`4.3 <https://lxml.de/4.3/>`_,
+`4.2 <https://lxml.de/4.2/>`_,
+`4.1 <https://lxml.de/4.1/>`_,
+`4.0 <https://lxml.de/4.0/>`_,
+`3.8 <https://lxml.de/3.8/>`_,
+`3.7 <https://lxml.de/3.7/>`_,
+`3.6 <https://lxml.de/3.6/>`_,
+`3.5 <https://lxml.de/3.5/>`_,
+`3.4 <https://lxml.de/3.4/>`_,
+`3.3 <https://lxml.de/3.3/>`_,
+`3.2 <https://lxml.de/3.2/>`_,
+`3.1 <https://lxml.de/3.1/>`_,
+`3.0 <https://lxml.de/3.0/>`_,
+`2.3 <https://lxml.de/2.3/>`_,
+`2.2 <https://lxml.de/2.2/>`_,
+`2.1 <https://lxml.de/2.1/>`_,
+`2.0 <https://lxml.de/2.0/>`_,
+`1.3 <https://lxml.de/1.3/>`_
 
 ..
-   and the `latest in-development version <http://lxml.de/dev/>`_.
+   and the `latest in-development version <https://lxml.de/dev/>`_.
 
-.. _`PDF documentation`: lxmldoc-4.6.3.pdf
+.. _`PDF documentation`: lxmldoc-4.9.2.pdf
+
+* `lxml 4.9.2`_, released 2022-12-13 (`changes for 4.9.2`_)
+
+* `lxml 4.9.1`_, released 2022-07-01 (`changes for 4.9.1`_)
+
+* `lxml 4.9.0`_, released 2022-06-01 (`changes for 4.9.0`_)
+
+* `lxml 4.8.0`_, released 2022-02-17 (`changes for 4.8.0`_)
+
+* `lxml 4.7.1`_, released 2021-12-13 (`changes for 4.7.1`_)
+
+* `lxml 4.7.0`_, released 2021-12-13 (`changes for 4.7.0`_)
+
+* `lxml 4.6.5`_, released 2021-12-12 (`changes for 4.6.5`_)
+
+* `lxml 4.6.4`_, released 2021-11-01 (`changes for 4.6.4`_)
 
 * `lxml 4.6.3`_, released 2021-03-21 (`changes for 4.6.3`_)
 
@@ -266,42 +282,30 @@ See the websites of lxml
 
 * `lxml 4.6.0`_, released 2020-10-17 (`changes for 4.6.0`_)
 
-* `lxml 4.5.2`_, released 2020-07-09 (`changes for 4.5.2`_)
+* `older releases <https://lxml.de/4.6/#old-versions>`_
 
-* `lxml 4.5.1`_, released 2020-05-19 (`changes for 4.5.1`_)
-
-* `lxml 4.5.0`_, released 2020-01-29 (`changes for 4.5.0`_)
-
-* `lxml 4.4.3`_, released 2020-01-28 (`changes for 4.4.3`_)
-
-* `lxml 4.4.2`_, released 2019-11-25 (`changes for 4.4.2`_)
-
-* `lxml 4.4.1`_, released 2019-08-11 (`changes for 4.4.1`_)
-
-* `lxml 4.4.0`_, released 2019-07-27 (`changes for 4.4.0`_)
-
-* `older releases <http://lxml.de/4.3/#old-versions>`_
-
+.. _`lxml 4.9.2`: /files/lxml-4.9.2.tgz
+.. _`lxml 4.9.1`: /files/lxml-4.9.1.tgz
+.. _`lxml 4.9.0`: /files/lxml-4.9.0.tgz
+.. _`lxml 4.8.0`: /files/lxml-4.8.0.tgz
+.. _`lxml 4.7.1`: /files/lxml-4.7.1.tgz
+.. _`lxml 4.7.0`: /files/lxml-4.7.0.tgz
+.. _`lxml 4.6.5`: /files/lxml-4.6.5.tgz
+.. _`lxml 4.6.4`: /files/lxml-4.6.4.tgz
 .. _`lxml 4.6.3`: /files/lxml-4.6.3.tgz
 .. _`lxml 4.6.2`: /files/lxml-4.6.2.tgz
 .. _`lxml 4.6.1`: /files/lxml-4.6.1.tgz
 .. _`lxml 4.6.0`: /files/lxml-4.6.0.tgz
-.. _`lxml 4.5.2`: /files/lxml-4.5.2.tgz
-.. _`lxml 4.5.1`: /files/lxml-4.5.1.tgz
-.. _`lxml 4.5.0`: /files/lxml-4.5.0.tgz
-.. _`lxml 4.4.3`: /files/lxml-4.4.3.tgz
-.. _`lxml 4.4.2`: /files/lxml-4.4.2.tgz
-.. _`lxml 4.4.1`: /files/lxml-4.4.1.tgz
-.. _`lxml 4.4.0`: /files/lxml-4.4.0.tgz
 
+.. _`changes for 4.9.2`: /changes-4.9.2.html
+.. _`changes for 4.9.1`: /changes-4.9.1.html
+.. _`changes for 4.9.0`: /changes-4.9.0.html
+.. _`changes for 4.8.0`: /changes-4.8.0.html
+.. _`changes for 4.7.1`: /changes-4.7.1.html
+.. _`changes for 4.7.0`: /changes-4.7.0.html
+.. _`changes for 4.6.5`: /changes-4.6.5.html
+.. _`changes for 4.6.4`: /changes-4.6.4.html
 .. _`changes for 4.6.3`: /changes-4.6.3.html
 .. _`changes for 4.6.2`: /changes-4.6.2.html
 .. _`changes for 4.6.1`: /changes-4.6.1.html
 .. _`changes for 4.6.0`: /changes-4.6.0.html
-.. _`changes for 4.5.2`: /changes-4.5.2.html
-.. _`changes for 4.5.1`: /changes-4.5.1.html
-.. _`changes for 4.5.0`: /changes-4.5.0.html
-.. _`changes for 4.4.3`: /changes-4.4.3.html
-.. _`changes for 4.4.2`: /changes-4.4.2.html
-.. _`changes for 4.4.1`: /changes-4.4.1.html
-.. _`changes for 4.4.0`: /changes-4.4.0.html

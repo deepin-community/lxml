@@ -1,4 +1,4 @@
-import sys, re, string, time, copy, gc
+import sys, re, string, copy, gc
 from itertools import *
 import time
 
@@ -474,6 +474,8 @@ def main(benchmark_class):
     if import_lxml:
         from lxml import etree
         _etrees.append(etree)
+        print("Using lxml %s (with libxml2 %s)" % (
+            etree.__version__, '.'.join(map(str, etree.LIBXML_VERSION))))
 
         try:
             sys.argv.remove('-fel')
@@ -520,6 +522,8 @@ def main(benchmark_class):
     if not _etrees:
         print("No library to test. Exiting.")
         sys.exit(1)
+
+    print("Running benchmarks in Python %s" % (sys.version_info,))
 
     print("Preparing test suites and trees ...")
     selected = set( sys.argv[1:] )

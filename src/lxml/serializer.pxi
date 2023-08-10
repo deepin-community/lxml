@@ -68,8 +68,7 @@ cdef _textToString(xmlNode* c_node, encoding, bint with_tail):
                     needs_conversion = 1
 
         if needs_conversion:
-            text = python.PyUnicode_DecodeUTF8(
-                <const_char*>c_text, tree.xmlBufferLength(c_buffer), 'strict')
+            text = (<const_char*>c_text)[:tree.xmlBufferLength(c_buffer)].decode('utf8')
             if encoding is not unicode:
                 encoding = _utf8(encoding)
                 text = python.PyUnicode_AsEncodedString(
@@ -628,6 +627,7 @@ cdef object _open_utf8_file
 
 @contextmanager
 def _open_utf8_file(file, compression=0):
+    file = _getFSPathOrObject(file)
     if _isString(file):
         if compression:
             with gzip.GzipFile(file, mode='wb', compresslevel=compression) as zf:
@@ -724,6 +724,7 @@ cdef _tofilelike(f, _Element element, encoding, doctype, method,
             with GzipFile(fileobj=bytes_out, mode='wb', compresslevel=compression) as gzip_file:
                 gzip_file.write(data)
             data = bytes_out.getvalue()
+        f = _getFSPathOrObject(f)
         if _isString(f):
             filename8 = _encodeFilename(f)
             with open(filename8, 'wb') as f:
@@ -788,6 +789,7 @@ cdef _FilelikeWriter _create_output_buffer(
         raise LookupError(
             f"unknown encoding: '{c_enc.decode('UTF-8') if c_enc is not NULL else u''}'")
     try:
+        f = _getFSPathOrObject(f)
         if _isString(f):
             filename8 = _encodeFilename(f)
             if b'%' in filename8 and (
@@ -853,6 +855,7 @@ cdef _tofilelikeC14N(f, _Element element, bint exclusive, bint with_comments,
             _convert_ns_prefixes(c_doc.dict, inclusive_ns_prefixes)
             if inclusive_ns_prefixes else NULL)
 
+        f = _getFSPathOrObject(f)
         if _isString(f):
             filename8 = _encodeFilename(f)
             c_filename = _cstr(filename8)
@@ -863,15 +866,17 @@ cdef _tofilelikeC14N(f, _Element element, bint exclusive, bint with_comments,
         elif hasattr(f, 'write'):
             writer   = _FilelikeWriter(f, compression=compression)
             c_buffer = writer._createOutputBuffer(NULL)
-            with writer.error_log:
-                bytes_count = c14n.xmlC14NDocSaveTo(
-                    c_doc, NULL, exclusive, c_inclusive_ns_prefixes,
-                    with_comments, c_buffer)
+            try:
+                with writer.error_log:
+                    bytes_count = c14n.xmlC14NDocSaveTo(
+                        c_doc, NULL, exclusive, c_inclusive_ns_prefixes,
+                        with_comments, c_buffer)
+            finally:
                 error = tree.xmlOutputBufferClose(c_buffer)
-                if bytes_count < 0:
-                    error = bytes_count
-                elif error != -1:
-                    error = xmlerror.XML_ERR_OK
+            if bytes_count < 0:
+                error = bytes_count
+            elif error != -1:
+                error = xmlerror.XML_ERR_OK
         else:
             raise TypeError(f"File or filename expected, got '{python._fqtypename(f).decode('UTF-8')}'")
     finally:
@@ -1027,7 +1032,7 @@ cdef class C14NWriterTarget:
         # Stack with user declared namespace prefixes as (uri, prefix) pairs.
         self._ns_stack = []
         if not rewrite_prefixes:
-            self._ns_stack.append(_DEFAULT_NAMESPACE_PREFIXES.items())
+            self._ns_stack.append(_DEFAULT_NAMESPACE_PREFIXES_ITEMS)
         self._ns_stack.append([])
         self._prefix_map = {}
         self._preserve_space = [False]

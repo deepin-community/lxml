@@ -25,10 +25,13 @@ import setupinfo
 # override these and pass --static for a static build. See
 # doc/build.txt for more information. If you do not pass --static
 # changing this will have no effect.
-STATIC_INCLUDE_DIRS = []
-STATIC_LIBRARY_DIRS = []
-STATIC_CFLAGS = []
-STATIC_BINARIES = []
+def static_env_list(name, separator=None):
+    return [x.strip() for x in os.environ.get(name, "").split(separator) if x.strip()]
+
+STATIC_INCLUDE_DIRS = static_env_list("LXML_STATIC_INCLUDE_DIRS", separator=os.pathsep)
+STATIC_LIBRARY_DIRS = static_env_list("LXML_STATIC_LIBRARY_DIRS", separator=os.pathsep)
+STATIC_CFLAGS = static_env_list("LXML_STATIC_CFLAGS")
+STATIC_BINARIES = static_env_list("LXML_STATIC_BINARIES", separator=os.pathsep)
 
 # create lxml-version.h file
 versioninfo.create_version_h()
@@ -85,6 +88,9 @@ extra_options['package_data'] = {
         'etree_api.h',
         'lxml.etree.h',
         'lxml.etree_api.h',
+        # Include Cython source files for better traceback output.
+        '*.pyx',
+        '*.pxi',
     ],
     'lxml.includes': [
         '*.pxd', '*.h'
@@ -108,6 +114,8 @@ extra_options['packages'] = [
 
 def setup_extra_options():
     is_interesting_package = re.compile('^(libxml|libxslt|libexslt)$').match
+    is_interesting_header = re.compile('^(zconf|zlib|.*charset)\.h$').match
+
     def extract_files(directories, pattern='*'):
         def get_files(root, dir_path, files):
             return [ (root, dir_path, filename)
@@ -120,6 +128,12 @@ def setup_extra_options():
                 rel_dir = root[len(dir_path)+1:]
                 if is_interesting_package(rel_dir):
                     file_list.extend(get_files(root, rel_dir, files))
+                elif not rel_dir:
+                    # include also top-level header files (zlib/iconv)
+                    file_list.extend(
+                        item for item in get_files(root, rel_dir, files)
+                        if is_interesting_header(item[-1])
+                    )
         return file_list
 
     def build_packages(files):
@@ -134,7 +148,7 @@ def setup_extra_options():
             if package_path in packages:
                 root, package_files = packages[package_path]
                 if root != root_path:
-                    print("conflicting directories found for include package '%s': %s and %s"
+                    print("WARNING: conflicting directories found for include package '%s': %s and %s"
                           % (package_path, root_path, root))
                     continue
             else:
@@ -169,13 +183,23 @@ def setup_extra_options():
 
         header_packages = build_packages(extract_files(include_dirs))
 
+        package_filename = "__init__.py"
         for package_path, (root_path, filenames) in header_packages.items():
-            if package_path:
-                package = 'lxml.includes.' + package_path
-                packages.append(package)
-            else:
-                package = 'lxml.includes'
+            if not package_path:
+                # lxml.includes -> lxml.includes.extlibs
+                package_path = "extlibs"
+            package = 'lxml.includes.' + package_path
+            packages.append(package)
+
+            # create '__init__.py' to make sure it's considered a package
+            if package_filename not in filenames:
+                with open(os.path.join(root_path, package_filename), 'wb') as f:
+                    pass
+                filenames.append(package_filename)
+
+            assert package not in package_data
             package_data[package] = filenames
+            assert package not in package_dir
             package_dir[package] = root_path
 
     return extra_opts
@@ -187,13 +211,15 @@ setup(
     author_email="lxml-dev@lxml.de",
     maintainer="lxml dev team",
     maintainer_email="lxml-dev@lxml.de",
-    license="BSD",
+    license="BSD-3-Clause",
     url="https://lxml.de/",
     # Commented out because this causes distutils to emit warnings
     # `Unknown distribution option: 'bugtrack_url'`
     # which distract folks from real causes of problems when troubleshooting
     # bugtrack_url="https://bugs.launchpad.net/lxml",
-
+    project_urls={
+        "Source": "https://github.com/lxml/lxml",
+    },
     description=(
         "Powerful and Pythonic XML processing library"
         " combining libxml2/libxslt with the ElementTree API."
@@ -236,6 +262,7 @@ an appropriate version of Cython installed.
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: C',
         'Operating System :: OS Independent',
         'Topic :: Text Processing :: Markup :: HTML',
@@ -249,4 +276,7 @@ an appropriate version of Cython installed.
 if OPTION_RUN_TESTS:
     print("Running tests.")
     import test
-    sys.exit( test.main(sys.argv[:1]) )
+    try:
+        sys.exit( test.main(sys.argv[:1]) )
+    except ImportError:
+        pass  # we assume that the binaries were not built with this setup.py run

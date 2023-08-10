@@ -87,6 +87,7 @@ from itertools import islice
 
 cdef object ITER_EMPTY = iter(())
 
+cdef object MutableMapping
 try:
     from collections.abc import MutableMapping  # Py3.3+
 except ImportError:
@@ -113,7 +114,7 @@ class _ImmutableMapping(MutableMapping):
     iterkeys = itervalues = iteritems = __iter__
 
 cdef object IMMUTABLE_EMPTY_MAPPING = _ImmutableMapping()
-del MutableMapping, _ImmutableMapping
+del _ImmutableMapping
 
 
 # the rules
@@ -170,6 +171,20 @@ cdef dict _DEFAULT_NAMESPACE_PREFIXES = {
     b"http://codespeak.net/lxml/objectify/pytype" : b"py",
 }
 
+# To avoid runtime encoding overhead, we keep a Unicode copy
+# of the uri-prefix mapping as (str, str) items view (list in Py2).
+cdef object _DEFAULT_NAMESPACE_PREFIXES_ITEMS = []
+
+cdef _update_default_namespace_prefixes_items():
+    cdef bytes ns, prefix
+    global _DEFAULT_NAMESPACE_PREFIXES_ITEMS
+    _DEFAULT_NAMESPACE_PREFIXES_ITEMS = {
+        ns.decode('utf-8') : prefix.decode('utf-8')
+        for ns, prefix in _DEFAULT_NAMESPACE_PREFIXES.items()
+    }.items()
+
+_update_default_namespace_prefixes_items()
+
 cdef object _check_internal_prefix = re.compile(b"ns\d+$").match
 
 def register_namespace(prefix, uri):
@@ -190,6 +205,7 @@ def register_namespace(prefix, uri):
         if k == uri_utf or v == prefix_utf:
             del _DEFAULT_NAMESPACE_PREFIXES[k]
     _DEFAULT_NAMESPACE_PREFIXES[uri_utf] = prefix_utf
+    _update_default_namespace_prefixes_items()
 
 
 # Error superclass for ElementTree compatibility
@@ -811,6 +827,8 @@ cdef public class _Element [ type LxmlElementType, object LxmlElement ]:
         u"""set(self, key, value)
 
         Sets an element attribute.
+        In HTML documents (not XML or XHTML), the value None is allowed and creates
+        an attribute without value (just the attribute name).
         """
         _assertValidNode(self)
         _setAttributeValue(self, key, value)
@@ -2550,6 +2568,8 @@ cdef class _Attrib:
         except (TypeError, ValueError):
             return NotImplemented
         return python.PyObject_RichCompare(one, other, op)
+
+MutableMapping.register(_Attrib)
 
 
 @cython.final

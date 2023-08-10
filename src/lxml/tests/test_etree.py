@@ -25,6 +25,7 @@ from .common_imports import etree, StringIO, BytesIO, HelperTestCase
 from .common_imports import fileInTestDir, fileUrlInTestDir, read_file, path2url, tmpfile
 from .common_imports import SillyFileLike, LargeFileLikeUnicode, doctest, make_doctest
 from .common_imports import canonicalize, _str, _bytes
+from .common_imports import SimpleFSPath
 
 print("""
 TESTED VERSION: %s""" % etree.__version__ + """
@@ -239,6 +240,18 @@ class ETreeOnlyTestCase(HelperTestCase):
         a = XML('<a aa="A"><b ba="B">B1</b>B2<c ca="C">C1</c>C2</a>')
         a[0].clear(keep_tail=True)
         self.assertEqual(_bytes('<a aa="A"><b/>B2<c ca="C">C1</c>C2</a>'), tostring(a))
+
+    def test_attrib_is_Mapping(self):
+        try:
+            from collections.abc import Mapping, MutableMapping
+        except ImportError:
+            from collections import Mapping, MutableMapping  # Py2
+
+        Element = self.etree.Element
+        root = Element("root")
+
+        self.assertTrue(isinstance(root.attrib, Mapping))
+        self.assertTrue(isinstance(root.attrib, MutableMapping))
 
     def test_attribute_has_key(self):
         # ET in Py 3.x has no "attrib.has_key()" method
@@ -1458,6 +1471,27 @@ class ETreeOnlyTestCase(HelperTestCase):
         self.assertEqual(
             [1,2,1,4],
             counts)
+
+    def test_walk_after_parse_failure(self):
+        # This used to be an issue because libxml2 can leak empty namespaces
+        # between failed parser runs.  iterwalk() failed to handle such a tree.
+        parser = etree.XMLParser()
+
+        try:
+            etree.XML('''<anot xmlns="1">''', parser=parser)
+        except etree.XMLSyntaxError:
+            pass
+        else:
+            assert False, "invalid input did not fail to parse"
+
+        et = etree.XML('''<root>  </root>''', parser=parser)
+        try:
+            ns = next(etree.iterwalk(et, events=('start-ns',)))
+        except StopIteration:
+            # This would be the expected result, because there was no namespace
+            pass
+        else:
+            assert False, "Found unexpected namespace '%s'" % ns
 
     def test_itertext_comment_pi(self):
         # https://bugs.launchpad.net/lxml/+bug/1844674
@@ -3036,7 +3070,10 @@ class ETreeOnlyTestCase(HelperTestCase):
     def test_html_prefix_nsmap(self):
         etree = self.etree
         el = etree.HTML('<hha:page-description>aa</hha:page-description>').find('.//page-description')
-        self.assertEqual({'hha': None}, el.nsmap)
+        if etree.LIBXML_VERSION < (2, 9, 11):
+            self.assertEqual({'hha': None}, el.nsmap)
+        else:
+            self.assertEqual({}, el.nsmap)
 
     def test_getchildren(self):
         Element = self.etree.Element
@@ -4596,6 +4633,20 @@ class ETreeOnlyTestCase(HelperTestCase):
         self.assertEqual('child1', c2.getprevious().tag)
         self.assertEqual('abc', c2.getprevious().tail)
 
+    def test_parse_source_pathlike(self):
+        etree = self.etree
+        tounicode = self.etree.tounicode
+
+        tree = etree.parse(SimpleFSPath(fileInTestDir('test.xml')))
+        self.assertEqual(_bytes('<a><b></b></a>'),
+                         canonicalize(tounicode(tree)))
+    
+    def test_iterparse_source_pathlike(self):
+        iterparse = self.etree.iterparse
+
+        events = list(iterparse(SimpleFSPath(fileInTestDir('test.xml'))))
+        self.assertEqual(2, len(events))
+
     # helper methods
 
     def _writeElement(self, element, encoding='us-ascii', compression=0):
@@ -4880,6 +4931,14 @@ class ETreeC14NTestCase(HelperTestCase):
             data = read_file(filename, 'rb')
         self.assertEqual(_bytes('<a><b></b></a>'),
                           data)
+    
+    def test_c14n_file_pathlike(self):
+        tree = self.parse(_bytes('<a><b/></a>'))
+        with tmpfile() as filename:
+            tree.write_c14n(SimpleFSPath(filename))
+            data = read_file(filename, 'rb')
+        self.assertEqual(_bytes('<a><b></b></a>'),
+                        data)
 
     def test_c14n_file_gzip(self):
         tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))
@@ -4889,6 +4948,15 @@ class ETreeC14NTestCase(HelperTestCase):
                 data = f.read()
         self.assertEqual(_bytes('<a>'+'<b></b>'*200+'</a>'),
                           data)
+    
+    def test_c14n_file_gzip_pathlike(self):
+        tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))
+        with tmpfile() as filename:
+            tree.write_c14n(SimpleFSPath(filename), compression=9)
+            with gzip.open(filename, 'rb') as f:
+                data = f.read()
+        self.assertEqual(_bytes('<a>'+'<b></b>'*200+'</a>'),
+                        data)
 
     def test_c14n2_file_gzip(self):
         tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))
@@ -5065,6 +5133,45 @@ class ETreeC14NTestCase(HelperTestCase):
         s = etree.tostring(tree, method='c14n', exclusive=True, inclusive_ns_prefixes=['x', 'y', 'z'])
         self.assertEqual(_bytes('<a xmlns:x="http://abc" xmlns:y="http://bcd" xmlns:z="http://cde"><z:b></z:b></a>'),
                           s)
+    
+    def test_python3_problem_bytesio_iterparse(self):
+        content = BytesIO('''<?xml version="1.0" encoding="utf-8"?> <some_ns_id:some_head_elem xmlns:some_ns_id="http://www.example.com" xmlns:xhtml="http://www.w3.org/1999/xhtml"><xhtml:div></xhtml:div></some_ns_id:some_head_elem>'''.encode('utf-8'))
+        def handle_div_end(event, element):
+            if event == 'end' and element.tag.lower().startswith("{http://www.w3.org/1999/xhtml}div"):
+                # for ns_id, ns_uri in element.nsmap.items():
+                #     print(type(ns_id), type(ns_uri), ns_id, '=', ns_uri)
+                etree.tostring(element, method="c14n2")
+        for event, element in etree.iterparse(
+            source=content,
+            events=('start', 'end')
+        ):
+            handle_div_end(event, element)
+    
+    def test_python3_problem_filebased_iterparse(self):
+        with open('test.xml', 'w+b') as f:
+            f.write('''<?xml version="1.0" encoding="utf-8"?> <some_ns_id:some_head_elem xmlns:some_ns_id="http://www.example.com" xmlns:xhtml="http://www.w3.org/1999/xhtml"><xhtml:div></xhtml:div></some_ns_id:some_head_elem>'''.encode('utf-8'))
+        def handle_div_end(event, element):
+            if event == 'end' and element.tag.lower() == "{http://www.w3.org/1999/xhtml}div":
+                # for ns_id, ns_uri in element.nsmap.items():
+                #     print(type(ns_id), type(ns_uri), ns_id, '=', ns_uri)
+                etree.tostring(element, method="c14n2")
+        for event, element in etree.iterparse(
+            source='test.xml',
+            events=('start', 'end')
+        ):
+            handle_div_end(event, element)
+    
+    def test_python3_problem_filebased_parse(self):
+        with open('test.xml', 'w+b') as f:
+            f.write('''<?xml version="1.0" encoding="utf-8"?> <some_ns_id:some_head_elem xmlns:some_ns_id="http://www.example.com" xmlns:xhtml="http://www.w3.org/1999/xhtml"><xhtml:div></xhtml:div></some_ns_id:some_head_elem>'''.encode('utf-8'))
+        def serialize_div_element(element):        
+            # for ns_id, ns_uri in element.nsmap.items():
+            #     print(type(ns_id), type(ns_uri), ns_id, '=', ns_uri)
+            etree.tostring(element, method="c14n2")
+        tree = etree.parse(source='test.xml')
+        root = tree.getroot()
+        div = root.xpath('//xhtml:div', namespaces={'xhtml':'http://www.w3.org/1999/xhtml'})[0]
+        serialize_div_element(div)
 
 
 class ETreeWriteTestCase(HelperTestCase):
@@ -5140,6 +5247,14 @@ class ETreeWriteTestCase(HelperTestCase):
             data = read_file(filename, 'rb')
         self.assertEqual(_bytes('<a><b/></a>'),
                           data)
+    
+    def test_write_file_pathlike(self):
+        tree = self.parse(_bytes('<a><b/></a>'))
+        with tmpfile() as filename:
+            tree.write(SimpleFSPath(filename))
+            data = read_file(filename, 'rb')
+        self.assertEqual(_bytes('<a><b/></a>'),
+                        data)
 
     def test_write_file_gzip(self):
         tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))
@@ -5149,6 +5264,15 @@ class ETreeWriteTestCase(HelperTestCase):
                 data = f.read()
         self.assertEqual(_bytes('<a>'+'<b/>'*200+'</a>'),
                           data)
+
+    def test_write_file_gzip_pathlike(self):
+        tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))
+        with tmpfile() as filename:
+            tree.write(SimpleFSPath(filename), compression=9)
+            with gzip.open(filename, 'rb') as f:
+                data = f.read()
+        self.assertEqual(_bytes('<a>'+'<b/>'*200+'</a>'),
+                        data)
 
     def test_write_file_gzip_parse(self):
         tree = self.parse(_bytes('<a>'+'<b/>'*200+'</a>'))

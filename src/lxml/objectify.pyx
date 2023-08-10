@@ -38,6 +38,9 @@ import_lxml__etree()
 
 __version__ = etree.__version__
 
+cdef object _float_is_inf, _float_is_nan
+from math import isinf as _float_is_inf, isnan as _float_is_nan
+
 cdef object re
 import re
 
@@ -609,8 +612,10 @@ cdef class ObjectifiedDataElement(ObjectifiedElement):
         """
         cetree.setNodeText(self._c_node, s)
 
+
 cdef class NumberElement(ObjectifiedDataElement):
     cdef object _parse_value
+
     def _setValueParser(self, function):
         u"""Set the function that parses the Python value from a string.
 
@@ -655,26 +660,62 @@ cdef class NumberElement(ObjectifiedDataElement):
     def __add__(self, other):
         return _numericValueOf(self) + _numericValueOf(other)
 
+    def __radd__(self, other):
+        return _numericValueOf(other) + _numericValueOf(self)
+
     def __sub__(self, other):
         return _numericValueOf(self) - _numericValueOf(other)
+
+    def __rsub__(self, other):
+        return _numericValueOf(other) - _numericValueOf(self)
 
     def __mul__(self, other):
         return _numericValueOf(self) * _numericValueOf(other)
 
+    def __rmul__(self, other):
+        return _numericValueOf(other) * _numericValueOf(self)
+
     def __div__(self, other):
         return _numericValueOf(self) / _numericValueOf(other)
+
+    def __rdiv__(self, other):
+        return _numericValueOf(other) / _numericValueOf(self)
 
     def __truediv__(self, other):
         return _numericValueOf(self) / _numericValueOf(other)
 
+    def __rtruediv__(self, other):
+        return _numericValueOf(other) / _numericValueOf(self)
+
+    def __floordiv__(self, other):
+        return _numericValueOf(self) // _numericValueOf(other)
+
+    def __rfloordiv__(self, other):
+        return _numericValueOf(other) // _numericValueOf(self)
+
     def __mod__(self, other):
         return _numericValueOf(self) % _numericValueOf(other)
+
+    def __rmod__(self, other):
+        return _numericValueOf(other) % _numericValueOf(self)
+
+    def __divmod__(self, other):
+        return divmod(_numericValueOf(self), _numericValueOf(other))
+
+    def __rdivmod__(self, other):
+        return divmod(_numericValueOf(other), _numericValueOf(self))
 
     def __pow__(self, other, modulo):
         if modulo is None:
             return _numericValueOf(self) ** _numericValueOf(other)
         else:
             return pow(_numericValueOf(self), _numericValueOf(other), modulo)
+
+    def __rpow__(self, other, modulo):
+        if modulo is None:
+            return _numericValueOf(other) ** _numericValueOf(self)
+        else:
+            return pow(_numericValueOf(other), _numericValueOf(self), modulo)
 
     def __neg__(self):
         return - _numericValueOf(self)
@@ -685,7 +726,7 @@ cdef class NumberElement(ObjectifiedDataElement):
     def __abs__(self):
         return abs( _numericValueOf(self) )
 
-    def __nonzero__(self):
+    def __bool__(self):
         return bool(_numericValueOf(self))
 
     def __invert__(self):
@@ -694,17 +735,33 @@ cdef class NumberElement(ObjectifiedDataElement):
     def __lshift__(self, other):
         return _numericValueOf(self) << _numericValueOf(other)
 
+    def __rlshift__(self, other):
+        return _numericValueOf(other) << _numericValueOf(self)
+
     def __rshift__(self, other):
         return _numericValueOf(self) >> _numericValueOf(other)
+
+    def __rrshift__(self, other):
+        return _numericValueOf(other) >> _numericValueOf(self)
 
     def __and__(self, other):
         return _numericValueOf(self) & _numericValueOf(other)
 
+    def __rand__(self, other):
+        return _numericValueOf(other) & _numericValueOf(self)
+
     def __or__(self, other):
         return _numericValueOf(self) | _numericValueOf(other)
 
+    def __ror__(self, other):
+        return _numericValueOf(other) | _numericValueOf(self)
+
     def __xor__(self, other):
         return _numericValueOf(self) ^ _numericValueOf(other)
+
+    def __rxor__(self, other):
+        return _numericValueOf(other) ^ _numericValueOf(self)
+
 
 cdef class IntElement(NumberElement):
     def _init(self):
@@ -713,6 +770,7 @@ cdef class IntElement(NumberElement):
     def __index__(self):
         return int(_parseNumber(self))
 
+
 cdef class LongElement(NumberElement):
     def _init(self):
         self._parse_value = long
@@ -720,9 +778,11 @@ cdef class LongElement(NumberElement):
     def __index__(self):
         return int(_parseNumber(self))
 
+
 cdef class FloatElement(NumberElement):
     def _init(self):
         self._parse_value = float
+
 
 cdef class StringElement(ObjectifiedDataElement):
     u"""String data class.
@@ -745,7 +805,7 @@ cdef class StringElement(ObjectifiedDataElement):
         else:
             return len(text)
 
-    def __nonzero__(self):
+    def __bool__(self):
         return bool(textOf(self._c_node))
 
     def __richcmp__(self, other, int op):
@@ -757,22 +817,26 @@ cdef class StringElement(ObjectifiedDataElement):
     def __add__(self, other):
         text  = _strValueOf(self)
         other = _strValueOf(other)
-        if text is None:
-            return other
-        if other is None:
-            return text
         return text + other
+
+    def __radd__(self, other):
+        text  = _strValueOf(self)
+        other = _strValueOf(other)
+        return other + text
 
     def __mul__(self, other):
         if isinstance(self, StringElement):
-            return textOf((<StringElement>self)._c_node) * _numericValueOf(other)
+            return (textOf((<StringElement>self)._c_node) or '') * _numericValueOf(other)
         elif isinstance(other, StringElement):
-            return _numericValueOf(self) * textOf((<StringElement>other)._c_node)
+            return _numericValueOf(self) * (textOf((<StringElement>other)._c_node) or '')
         else:
-            raise TypeError, u"invalid types for * operator"
+            return NotImplemented
+
+    def __rmul__(self, other):
+        return _numericValueOf(other) * (textOf((<StringElement>self)._c_node) or '')
 
     def __mod__(self, other):
-        return _strValueOf(self) % other
+        return (_strValueOf(self) or '') % other
 
     def __int__(self):
         return int(textOf(self._c_node))
@@ -786,6 +850,7 @@ cdef class StringElement(ObjectifiedDataElement):
     def __complex__(self):
         return complex(textOf(self._c_node))
 
+
 cdef class NoneElement(ObjectifiedDataElement):
     def __str__(self):
         return u"None"
@@ -793,7 +858,7 @@ cdef class NoneElement(ObjectifiedDataElement):
     def __repr__(self):
         return "None"
 
-    def __nonzero__(self):
+    def __bool__(self):
         return False
 
     def __richcmp__(self, other, int op):
@@ -819,35 +884,43 @@ cdef class BoolElement(IntElement):
     Python's bool type.
     """
     def _init(self):
-        self._parse_value = __parseBool
+        self._parse_value = _parseBool  # wraps as Python callable
 
-    def __nonzero__(self):
-        return __parseBool(textOf(self._c_node))
+    def __bool__(self):
+        return _parseBool(textOf(self._c_node))
+
+    def __int__(self):
+        return 0 + _parseBool(textOf(self._c_node))
+
+    def __float__(self):
+        return 0.0 + _parseBool(textOf(self._c_node))
 
     def __richcmp__(self, other, int op):
         return _richcmpPyvals(self, other, op)
 
     def __hash__(self):
-        return hash(__parseBool(textOf(self._c_node)))
+        return hash(_parseBool(textOf(self._c_node)))
 
     def __str__(self):
-        return unicode(__parseBool(textOf(self._c_node)))
+        return unicode(_parseBool(textOf(self._c_node)))
 
     def __repr__(self):
-        return repr(__parseBool(textOf(self._c_node)))
+        return repr(_parseBool(textOf(self._c_node)))
 
     @property
     def pyval(self):
-        return __parseBool(textOf(self._c_node))
+        return _parseBool(textOf(self._c_node))
 
-def __checkBool(s):
+
+cdef _checkBool(s):
     cdef int value = -1
     if s is not None:
         value = __parseBoolAsInt(s)
     if value == -1:
         raise ValueError
 
-cpdef bint __parseBool(s) except -1:
+
+cdef bint _parseBool(s) except -1:
     cdef int value
     if s is None:
         return False
@@ -855,6 +928,7 @@ cpdef bint __parseBool(s) except -1:
     if value == -1:
         raise ValueError, f"Invalid boolean value: '{s}'"
     return value
+
 
 cdef inline int __parseBoolAsInt(text) except -2:
     if text == 'false':
@@ -867,8 +941,125 @@ cdef inline int __parseBoolAsInt(text) except -2:
         return 1
     return -1
 
+
 cdef object _parseNumber(NumberElement element):
     return element._parse_value(textOf(element._c_node))
+
+
+cdef enum NumberParserState:
+    NPS_SPACE_PRE = 0
+    NPS_SIGN = 1
+    NPS_DIGITS = 2
+    NPS_POINT_LEAD = 3
+    NPS_POINT = 4
+    NPS_FRACTION = 5
+    NPS_EXP = 6
+    NPS_EXP_SIGN = 7
+    NPS_DIGITS_EXP = 8
+    NPS_SPACE_TAIL = 9
+    NPS_INF1 = 20
+    NPS_INF2 = 21
+    NPS_INF3 = 22
+    NPS_NAN1 = 23
+    NPS_NAN2 = 24
+    NPS_NAN3 = 25
+    NPS_ERROR = 99
+
+
+ctypedef fused bytes_unicode:
+    bytes
+    unicode
+
+
+cdef _checkNumber(bytes_unicode s, bint allow_float):
+    cdef Py_UCS4 c
+    cdef NumberParserState state = NPS_SPACE_PRE
+
+    for c in s:
+        if c.isdigit() if (bytes_unicode is unicode) else c in b'0123456789':
+            if state in (NPS_DIGITS, NPS_FRACTION, NPS_DIGITS_EXP):
+                pass
+            elif state in (NPS_SPACE_PRE, NPS_SIGN):
+                state = NPS_DIGITS
+            elif state in (NPS_POINT_LEAD, NPS_POINT):
+                state = NPS_FRACTION
+            elif state in (NPS_EXP, NPS_EXP_SIGN):
+                state = NPS_DIGITS_EXP
+            else:
+                state = NPS_ERROR
+        else:
+            if c == u'.':
+                if state in (NPS_SPACE_PRE, NPS_SIGN):
+                    state = NPS_POINT_LEAD
+                elif state == NPS_DIGITS:
+                    state = NPS_POINT
+                else:
+                    state = NPS_ERROR
+                if not allow_float:
+                    state = NPS_ERROR
+            elif c in u'-+':
+                if state == NPS_SPACE_PRE:
+                    state = NPS_SIGN
+                elif state == NPS_EXP:
+                    state = NPS_EXP_SIGN
+                else:
+                    state = NPS_ERROR
+            elif c == u'E':
+                if state in (NPS_DIGITS, NPS_POINT, NPS_FRACTION):
+                    state = NPS_EXP
+                else:
+                    state = NPS_ERROR
+                if not allow_float:
+                    state = NPS_ERROR
+            # Allow INF and NaN. XMLSchema requires case, we don't, like Python.
+            elif c in u'iI':
+                state = NPS_INF1 if allow_float and state in (NPS_SPACE_PRE, NPS_SIGN) else NPS_ERROR
+            elif c in u'fF':
+                state = NPS_INF3 if state == NPS_INF2 else NPS_ERROR
+            elif c in u'aA':
+                state = NPS_NAN2 if state == NPS_NAN1 else NPS_ERROR
+            elif c in u'nN':
+                # Python also allows [+-]NaN, so let's accept that.
+                if state in (NPS_SPACE_PRE, NPS_SIGN):
+                    state = NPS_NAN1 if allow_float else NPS_ERROR
+                elif state == NPS_NAN2:
+                    state = NPS_NAN3
+                elif state == NPS_INF1:
+                    state = NPS_INF2
+                else:
+                    state = NPS_ERROR
+            # Allow spaces around text values.
+            else:
+                if c.isspace() if (bytes_unicode is unicode) else c in b'\x09\x0a\x0b\x0c\x0d\x20':
+                    if state in (NPS_SPACE_PRE, NPS_SPACE_TAIL):
+                        pass
+                    elif state in (NPS_DIGITS, NPS_POINT, NPS_FRACTION, NPS_DIGITS_EXP, NPS_INF3, NPS_NAN3):
+                        state = NPS_SPACE_TAIL
+                    else:
+                        state = NPS_ERROR
+                else:
+                    state = NPS_ERROR
+
+            if state == NPS_ERROR:
+                break
+
+    if state not in (NPS_DIGITS, NPS_FRACTION, NPS_POINT, NPS_DIGITS_EXP, NPS_INF3, NPS_NAN3, NPS_SPACE_TAIL):
+        raise ValueError
+
+
+cdef _checkInt(s):
+    if python.IS_PYTHON2 and type(s) is bytes:
+        return _checkNumber(<bytes>s, allow_float=False)
+    else:
+        return _checkNumber(<unicode>s, allow_float=False)
+
+
+cdef _checkFloat(s):
+    if python.IS_PYTHON2 and type(s) is bytes:
+        return _checkNumber(<bytes>s, allow_float=True)
+    else:
+        return _checkNumber(<unicode>s, allow_float=True)
+
 
 cdef object _strValueOf(obj):
     if python._isString(obj):
@@ -879,6 +1070,7 @@ cdef object _strValueOf(obj):
         return u''
     return unicode(obj)
 
+
 cdef object _numericValueOf(obj):
     if isinstance(obj, NumberElement):
         return _parseNumber(<NumberElement>obj)
@@ -888,6 +1080,7 @@ cdef object _numericValueOf(obj):
     except AttributeError:
         pass
     return obj
+
 
 cdef _richcmpPyvals(left, right, int op):
     left  = getattr(left,  'pyval', left)
@@ -1015,8 +1208,17 @@ cdef dict _PYTYPE_DICT = {}
 cdef dict _SCHEMA_TYPE_DICT = {}
 cdef list _TYPE_CHECKS = []
 
-def __lower_bool(b):
-    return u"true" if b else u"false"
+cdef unicode _xml_bool(value):
+    return u"true" if value else u"false"
+
+cdef unicode _xml_float(value):
+    if _float_is_inf(value):
+        if value > 0:
+            return u"INF"
+        return u"-INF"
+    if _float_is_nan(value):
+        return u"NaN"
+    return unicode(repr(value))
 
 cdef _pytypename(obj):
     return u"str" if python._isString(obj) else _typename(obj)
@@ -1029,7 +1231,7 @@ def pytypename(obj):
     return _pytypename(obj)
 
 cdef _registerPyTypes():
-    pytype = PyType(u'int', int, IntElement)
+    pytype = PyType(u'int', _checkInt, IntElement)  # wraps functions for Python
     pytype.xmlSchemaTypes = (u"integer", u"int", u"short", u"byte", u"unsignedShort",
                              u"unsignedByte", u"nonPositiveInteger",
                              u"negativeInteger", u"long", u"nonNegativeInteger",
@@ -1040,11 +1242,11 @@ cdef _registerPyTypes():
     pytype = PyType(u'long', None, IntElement)
     pytype.register()
 
-    pytype = PyType(u'float', float, FloatElement, repr)
+    pytype = PyType(u'float', _checkFloat, FloatElement, _xml_float)  # wraps functions for Python
     pytype.xmlSchemaTypes = (u"double", u"float")
     pytype.register()
 
-    pytype = PyType(u'bool', __checkBool, BoolElement, __lower_bool)
+    pytype = PyType(u'bool', _checkBool, BoolElement, _xml_bool)  # wraps functions for Python
     pytype.xmlSchemaTypes = (u"boolean",)
     pytype.register()
 

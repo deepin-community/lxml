@@ -1,15 +1,17 @@
-import os, re, sys, subprocess
+import json
+import os, re, sys, subprocess, platform
 import tarfile
-from distutils import log, version
-from contextlib import closing
+from distutils import log
+from contextlib import closing, contextmanager
 from ftplib import FTP
 
 try:
-    from urlparse import urljoin, unquote, urlparse
-    from urllib import urlretrieve, urlopen, urlcleanup
-except ImportError:
     from urllib.parse import urljoin, unquote, urlparse
-    from urllib.request import urlretrieve, urlopen, urlcleanup
+    from urllib.request import urlretrieve, urlopen, urlcleanup, Request
+except ImportError:  # Py2
+    from urlparse import urljoin, unquote, urlparse
+    from urllib import urlretrieve, urlcleanup
+    from urllib2 import urlopen, Request
 
 multi_make_options = []
 try:
@@ -23,22 +25,33 @@ except:
     pass
 
 
+# overridable to control script usage
+sys_platform = sys.platform
+
+
 # use pre-built libraries on Windows
 
 def download_and_extract_windows_binaries(destdir):
-    url = "https://github.com/mhils/libxml2-win-binaries/releases"
-    filenames = list(_list_dir_urllib(url))
+    url = "https://api.github.com/repos/lxml/libxml2-win-binaries/releases"
+    releases, _ = read_url(url, accept="application/vnd.github+json", as_json=True)
 
-    release_path = "/download/%s/" % find_max_version(
-        "library release", filenames, re.compile(r"/releases/tag/([0-9.]+[0-9])$"))
-    url += release_path
-    filenames = [
-        filename.rsplit('/', 1)[1]
-        for filename in filenames
-        if release_path in filename
-    ]
+    max_release = {'tag_name': ''}
+    for release in releases:
+        if max_release['tag_name'] < release.get('tag_name', ''):
+            max_release = release
 
-    arch = "win64" if sys.maxsize > 2**32 else "win32"
+    url = "https://github.com/lxml/libxml2-win-binaries/releases/download/%s/" % max_release['tag_name']
+    filenames = [asset['name'] for asset in max_release.get('assets', ())]
+
+    # Check for native ARM64 build or the environment variable that is set by
+    # Visual Studio for cross-compilation (same variable as setuptools uses)
+    if platform.machine() == 'ARM64' or os.getenv('VSCMD_ARG_TGT_ARCH') == 'arm64':
+        arch = "win-arm64"
+    elif sys.maxsize > 2**32:
+        arch = "win64"
+    else:
+        arch = "win32"
+
     if sys.version_info < (3, 5):
         arch = 'vs2008.' + arch
 
@@ -101,7 +114,7 @@ def unpack_zipfile(zipfn, destdir):
 
 
 def get_prebuilt_libxml2xslt(download_dir, static_include_dirs, static_library_dirs):
-    assert sys.platform.startswith('win')
+    assert sys_platform.startswith('win')
     libs = download_and_extract_windows_binaries(download_dir)
     for libname, path in libs.items():
         i = os.path.join(path, 'include')
@@ -114,7 +127,8 @@ def get_prebuilt_libxml2xslt(download_dir, static_include_dirs, static_library_d
 
 ## Routines to download and build libxml2/xslt from sources:
 
-LIBXML2_LOCATION = 'http://xmlsoft.org/sources/'
+LIBXML2_LOCATION = 'https://download.gnome.org/sources/libxml2/'
+LIBXSLT_LOCATION = 'https://download.gnome.org/sources/libxslt/'
 LIBICONV_LOCATION = 'https://ftp.gnu.org/pub/gnu/libiconv/'
 ZLIB_LOCATION = 'https://zlib.net/'
 match_libfile_version = re.compile('^[^-]*-([.0-9-]+)[.].*').match
@@ -155,13 +169,26 @@ def _list_dir_ftplib(url):
     return parse_text_ftplist("\n".join(data))
 
 
-def _list_dir_urllib(url):
-    with closing(urlopen(url)) as res:
+def read_url(url, decode=True, accept=None, as_json=False):
+    headers = {'User-Agent': 'https://github.com/lxml/lxml'}
+    if accept:
+        headers['Accept'] = accept
+    request = Request(url, headers=headers)
+
+    with closing(urlopen(request)) as res:
         charset = _find_content_encoding(res)
         content_type = res.headers.get('Content-Type')
         data = res.read()
 
-    data = data.decode(charset)
+    if decode:
+        data = data.decode(charset)
+    if as_json:
+        data = json.loads(data)
+    return data, content_type
+
+
+def _list_dir_urllib(url):
+    data, content_type = read_url(url)
     if content_type and content_type.startswith('text/html'):
         files = parse_html_filelist(data)
     else:
@@ -169,11 +196,28 @@ def _list_dir_urllib(url):
     return files
 
 
+def http_find_latest_version_directory(url, version=None):
+    data, _ = read_url(url)
+    # e.g. <a href="1.0/">
+    directories = [
+        (int(v[0]), int(v[1]))
+        for v in re.findall(r' href=["\']([0-9]+)\.([0-9]+)/?["\']', data)
+    ]
+    if not directories:
+        return url
+    best_version = max(directories)
+    if version:
+        major, minor, _ = version.split(".", 2)
+        major, minor = int(major), int(minor)
+        if (major, minor) in directories:
+            best_version = (major, minor)
+    latest_dir = "%s.%s" % best_version
+    return urljoin(url, latest_dir) + "/"
+
+
 def http_listfiles(url, re_pattern):
-    with closing(urlopen(url)) as res:
-        charset = _find_content_encoding(res)
-        data = res.read()
-    files = re.findall(re_pattern, data.decode(charset))
+    data, _ = read_url(url)
+    files = re.findall(re_pattern, data)
     return files
 
 
@@ -188,7 +232,7 @@ def parse_text_ftplist(s):
 
 def parse_html_filelist(s):
     re_href = re.compile(
-        r'<a\s+(?:[^>]*\s+)?href=["\']([^;?"\']+?)[;?"\']',
+        r'''<a[^>]*\shref=["']([^;?"']+?)[;?"']''',
         re.I|re.M)
     links = set(re_href.findall(s))
     for link in links:
@@ -203,21 +247,40 @@ def tryint(s):
         return s
 
 
+@contextmanager
+def py2_tarxz(filename):
+    import tempfile
+    with tempfile.TemporaryFile() as tmp:
+        subprocess.check_call(["xz", "-dc", filename], stdout=tmp.fileno())
+        tmp.seek(0)
+        with closing(tarfile.TarFile(fileobj=tmp)) as tf:
+            yield tf
+
+
 def download_libxml2(dest_dir, version=None):
     """Downloads libxml2, returning the filename where the library was downloaded"""
     #version_re = re.compile(r'LATEST_LIBXML2_IS_([0-9.]+[0-9](?:-[abrc0-9]+)?)')
-    version_re = re.compile(r'libxml2-([0-9.]+[0-9]).tar.gz')
-    filename = 'libxml2-%s.tar.gz'
-    return download_library(dest_dir, LIBXML2_LOCATION, 'libxml2',
+    version_re = re.compile(r'libxml2-([0-9.]+[0-9]).tar.xz')
+    filename = 'libxml2-%s.tar.xz'
+
+    if version == "2.9.12":
+        # Temporarily using the latest master (2.9.12+) until there is a release that supports lxml again.
+        from_location = "https://gitlab.gnome.org/GNOME/libxml2/-/archive/dea91c97debeac7c1aaf9c19f79029809e23a353/"
+        version = "dea91c97debeac7c1aaf9c19f79029809e23a353"
+    else:
+        from_location = http_find_latest_version_directory(LIBXML2_LOCATION, version=version)
+
+    return download_library(dest_dir, from_location, 'libxml2',
                             version_re, filename, version=version)
 
 
 def download_libxslt(dest_dir, version=None):
     """Downloads libxslt, returning the filename where the library was downloaded"""
     #version_re = re.compile(r'LATEST_LIBXSLT_IS_([0-9.]+[0-9](?:-[abrc0-9]+)?)')
-    version_re = re.compile(r'libxslt-([0-9.]+[0-9]).tar.gz')
-    filename = 'libxslt-%s.tar.gz'
-    return download_library(dest_dir, LIBXML2_LOCATION, 'libxslt',
+    version_re = re.compile(r'libxslt-([0-9.]+[0-9]).tar.xz')
+    filename = 'libxslt-%s.tar.xz'
+    from_location = http_find_latest_version_directory(LIBXSLT_LOCATION, version=version)
+    return download_library(dest_dir, from_location, 'libxslt',
                             version_re, filename, version=version)
 
 
@@ -263,6 +326,7 @@ def download_library(dest_dir, location, name, version_re, filename, version=Non
             if location.startswith('ftp://'):
                 fns = remote_listdir(location)
             else:
+                print(location)
                 fns = http_listfiles(location, '(%s)' % filename.replace('%s', '(?:[0-9.]+[0-9])'))
             version = find_max_version(name, fns, version_re)
         except IOError:
@@ -297,16 +361,21 @@ def download_library(dest_dir, location, name, version_re, filename, version=Non
 
 def unpack_tarball(tar_filename, dest):
     print('Unpacking %s into %s' % (os.path.basename(tar_filename), dest))
-    tar = tarfile.open(tar_filename)
+    if sys.version_info[0] < 3 and tar_filename.endswith('.xz'):
+        # Py 2.7 lacks lzma support
+        tar_cm = py2_tarxz(tar_filename)
+    else:
+        tar_cm = closing(tarfile.open(tar_filename))
+
     base_dir = None
-    for member in tar:
-        base_name = member.name.split('/')[0]
-        if base_dir is None:
-            base_dir = base_name
-        elif base_dir != base_name:
-            print('Unexpected path in %s: %s' % (tar_filename, base_name))
-    tar.extractall(dest)
-    tar.close()
+    with tar_cm as tar:
+        for member in tar:
+            base_name = member.name.split('/')[0]
+            if base_dir is None:
+                base_dir = base_name
+            elif base_dir != base_name:
+                print('Unexpected path in %s: %s' % (tar_filename, base_name))
+        tar.extractall(dest)
     return os.path.join(dest, base_dir)
 
 
@@ -347,11 +416,18 @@ def configure_darwin_env(env_setup):
     # configure target architectures on MacOS-X (x86_64 only, by default)
     major_version, minor_version = tuple(map(int, platform.mac_ver()[0].split('.')[:2]))
     if major_version > 7:
-        env_default = {
-            'CFLAGS': "-arch x86_64 -O2",
-            'LDFLAGS': "-arch x86_64",
-            'MACOSX_DEPLOYMENT_TARGET': "10.6"
-        }
+        if platform.mac_ver()[2] == "arm64":
+            env_default = {
+                'CFLAGS': "-arch arm64 -O2",
+                'LDFLAGS': "-arch arm64",
+                'MACOSX_DEPLOYMENT_TARGET': "10.6"
+            }
+        else:
+            env_default = {
+                'CFLAGS': "-arch x86_64 -O2",
+                'LDFLAGS': "-arch x86_64",
+                'MACOSX_DEPLOYMENT_TARGET': "10.6"
+            }
         env_default.update(os.environ)
         env_setup['env'] = env_default
 
@@ -395,7 +471,7 @@ def build_libxml2xslt(download_dir, build_dir,
         return found
 
     call_setup = {}
-    if sys.platform == 'darwin':
+    if sys_platform == 'darwin':
         configure_darwin_env(call_setup)
 
     configure_cmd = ['./configure',
@@ -435,7 +511,19 @@ def build_libxml2xslt(download_dir, build_dir,
     except Exception:
         pass # this isn't required, so ignore any errors
     if not has_current_lib("libxml2", libxml2_dir):
+        if not os.path.exists(os.path.join(libxml2_dir, "configure")):
+            # Allow building from git sources by running autoconf etc.
+            libxml2_configure_cmd[0] = "./autogen.sh"
         cmmi(libxml2_configure_cmd, libxml2_dir, multicore, **call_setup)
+
+    # Fix up libxslt configure script (needed up to and including 1.1.34)
+    # https://gitlab.gnome.org/GNOME/libxslt/-/commit/90c34c8bb90e095a8a8fe8b2ce368bd9ff1837cc
+    with open(os.path.join(libxslt_dir, "configure"), 'rb') as f:
+        config_script = f.read()
+    if b' --libs print ' in config_script:
+        config_script = config_script.replace(b' --libs print ', b' --libs ')
+        with open(os.path.join(libxslt_dir, "configure"), 'wb') as f:
+            f.write(config_script)
 
     # build libxslt
     libxslt_configure_cmd = configure_cmd + [
@@ -464,3 +552,27 @@ def build_libxml2xslt(download_dir, build_dir,
         if lib in filename and filename.endswith('.a')]
 
     return xml2_config, xslt_config
+
+
+def main():
+    static_include_dirs = []
+    static_library_dirs = []
+    download_dir = "libs"
+
+    if sys_platform.startswith('win'):
+        return get_prebuilt_libxml2xslt(
+            download_dir, static_include_dirs, static_library_dirs)
+    else:
+        return build_libxml2xslt(
+            download_dir, 'build/tmp',
+            static_include_dirs, static_library_dirs,
+            static_cflags=[],
+            static_binaries=[]
+        )
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        # change global sys_platform setting
+        sys_platform = sys.argv[1]
+    main()
