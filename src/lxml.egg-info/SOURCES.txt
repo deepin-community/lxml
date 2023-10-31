@@ -59,7 +59,7 @@ doc/html/FAQ.html
 doc/html/api.html
 doc/html/build.html
 doc/html/capi.html
-doc/html/changes-4.9.2.html
+doc/html/changes-4.9.3.html
 doc/html/compatibility.html
 doc/html/credits.html
 doc/html/cssselect.html
@@ -153,7 +153,6 @@ doc/html/apidoc/_static/basic.css
 doc/html/apidoc/_static/doctools.js
 doc/html/apidoc/_static/documentation_options.js
 doc/html/apidoc/_static/file.png
-doc/html/apidoc/_static/jquery-3.6.0.js
 doc/html/apidoc/_static/jquery.js
 doc/html/apidoc/_static/language_data.js
 doc/html/apidoc/_static/minus.png
@@ -162,8 +161,6 @@ doc/html/apidoc/_static/pygments.css
 doc/html/apidoc/_static/python-xml.png
 doc/html/apidoc/_static/searchtools.js
 doc/html/apidoc/_static/sphinx_highlight.js
-doc/html/apidoc/_static/underscore-1.13.1.js
-doc/html/apidoc/_static/underscore.js
 doc/html/apidoc/_static/css/badge_only.css
 doc/html/apidoc/_static/css/theme.css
 doc/html/apidoc/_static/js/badge_only.js

@@ -1,3 +1,9 @@
+lxml (4.9.3-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 07 Jul 2023 09:05:01 +0200
+
 lxml (4.9.2-1) unstable; urgency=medium
 
   * New upstream version.

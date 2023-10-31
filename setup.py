@@ -114,7 +114,7 @@ extra_options['packages'] = [
 
 def setup_extra_options():
     is_interesting_package = re.compile('^(libxml|libxslt|libexslt)$').match
-    is_interesting_header = re.compile('^(zconf|zlib|.*charset)\.h$').match
+    is_interesting_header = re.compile(r'^(zconf|zlib|.*charset)\.h$').match
 
     def extract_files(directories, pattern='*'):
         def get_files(root, dir_path, files):
@@ -257,12 +257,13 @@ an appropriate version of Cython installed.
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Programming Language :: C',
         'Operating System :: OS Independent',
         'Topic :: Text Processing :: Markup :: HTML',
