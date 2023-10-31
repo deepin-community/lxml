@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <meta name="version" content="S5 1.1" />
 <title>Implementing XML languages with lxml</title>
 <style type="text/css">
@@ -439,7 +439,7 @@ ul.auto-toc {
 <h1>Popular mistakes to avoid (2)</h1>
 <p>&quot;This is tree data, I'll take the DOM!&quot;</p>
 </div>
-<div class="slide" id="id1">
+<div class="slide" id="popular-mistakes-to-avoid-2-1">
 <h1>Popular mistakes to avoid (2)</h1>
 <p>&quot;This is tree data, I'll take the DOM!&quot;</p>
 <ul class="simple">
@@ -457,7 +457,7 @@ ul.auto-toc {
 <h1>Popular mistakes to avoid (3)</h1>
 <p>&quot;SAX is <em>so</em> fast and consumes <em>no</em> memory!&quot;</p>
 </div>
-<div class="slide" id="id2">
+<div class="slide" id="popular-mistakes-to-avoid-3-1">
 <h1>Popular mistakes to avoid (3)</h1>
 <p>&quot;SAX is <em>so</em> fast and consumes <em>no</em> memory!&quot;</p>
 <ul class="simple">
@@ -527,7 +527,7 @@ ul.auto-toc {
 </li>
 </ul>
 </div>
-<div class="slide" id="id3">
+<div class="slide" id="what-if-you-could-simplify-this-1">
 <h1>What if you could simplify this ...</h1>
 <ul class="simple">
 <li>... without sacrificing usability or flexibility?</li>
@@ -760,8 +760,8 @@ HTML task«</li>
 <div class="slide" id="path-languages-in-lxml">
 <h1>Path languages in lxml</h1>
 <div class="highlight"><pre><span></span><span class="nt">&lt;root&gt;</span>
-  <span class="nt">&lt;speech</span> <span class="na">class=</span><span class="s">&#39;dialog&#39;</span><span class="nt">&gt;&lt;p&gt;</span>So be it!<span class="nt">&lt;/p&gt;&lt;/speech&gt;</span>
-  <span class="nt">&lt;p&gt;</span>stuff<span class="nt">&lt;/p&gt;</span>
+<span class="w">  </span><span class="nt">&lt;speech</span><span class="w"> </span><span class="na">class=</span><span class="s">&#39;dialog&#39;</span><span class="nt">&gt;&lt;p&gt;</span>So<span class="w"> </span>be<span class="w"> </span>it!<span class="nt">&lt;/p&gt;&lt;/speech&gt;</span>
+<span class="w">  </span><span class="nt">&lt;p&gt;</span>stuff<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/root&gt;</span>
 </pre></div>
 <ul>
@@ -937,16 +937,16 @@ HTML task«</li>
 <span class="gp">... </span>  <span class="p">)</span>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
-<div class="highlight"><pre><span></span><span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;author&gt;</span>
-    <span class="nt">&lt;name&gt;</span>Stefan Behnel<span class="nt">&lt;/name&gt;</span>
-  <span class="nt">&lt;/author&gt;</span>
-  <span class="nt">&lt;entry&gt;</span>
-    <span class="nt">&lt;title&gt;</span>News from lxml<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://codespeak.net/lxml/&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;summary</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>See what&#39;s <span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>fun<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
-                         about lxml...<span class="nt">&lt;/summary&gt;</span>
-  <span class="nt">&lt;/entry&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;feed</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;author&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Stefan<span class="w"> </span>Behnel<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/author&gt;</span>
+<span class="w">  </span><span class="nt">&lt;entry&gt;</span>
+<span class="w">    </span><span class="nt">&lt;title&gt;</span>News<span class="w"> </span>from<span class="w"> </span>lxml<span class="nt">&lt;/title&gt;</span>
+<span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;http://codespeak.net/lxml/&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;summary</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>See<span class="w"> </span>what&#39;s<span class="w"> </span><span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>fun<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
+<span class="w">                         </span>about<span class="w"> </span>lxml...<span class="nt">&lt;/summary&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/entry&gt;</span>
 <span class="nt">&lt;/feed&gt;</span>
 </pre></div>
 </div>
@@ -962,16 +962,16 @@ HTML task«</li>
 <span class="gp">... </span>  <span class="p">)</span>
 <span class="gp">... </span><span class="p">)</span>
 </pre></div>
-<div class="highlight"><pre><span></span><span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;author&gt;</span>
-    <span class="nt">&lt;name&gt;</span>Stefan Behnel<span class="nt">&lt;/name&gt;</span>
-  <span class="nt">&lt;/author&gt;</span>
-  <span class="nt">&lt;entry&gt;</span>
-    <span class="nt">&lt;titel&gt;</span>News from lxml<span class="nt">&lt;/titel&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://codespeak.net/lxml/&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;summary</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>See what&#39;s <span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>fun<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
-                         about lxml...<span class="nt">&lt;/summary&gt;</span>
-  <span class="nt">&lt;/entry&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;feed</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;author&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Stefan<span class="w"> </span>Behnel<span class="nt">&lt;/name&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/author&gt;</span>
+<span class="w">  </span><span class="nt">&lt;entry&gt;</span>
+<span class="w">    </span><span class="nt">&lt;titel&gt;</span>News<span class="w"> </span>from<span class="w"> </span>lxml<span class="nt">&lt;/titel&gt;</span>
+<span class="w">    </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;http://codespeak.net/lxml/&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;summary</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>See<span class="w"> </span>what&#39;s<span class="w"> </span><span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>fun<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
+<span class="w">                         </span>about<span class="w"> </span>lxml...<span class="nt">&lt;/summary&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/entry&gt;</span>
 <span class="nt">&lt;/feed&gt;</span>
 </pre></div>
 </div>
@@ -1019,7 +1019,7 @@ HTML task«</li>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">title</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">titel</span><span class="p">(</span><span class="s2">&quot;News from lxml&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
-  <span class="c">...</span>
+<span class="w">  </span><span class="c">...</span>
 <span class="gr">AttributeError</span>: <span class="n">&#39;module&#39; object has no attribute &#39;titel&#39;</span>
 </pre></div>
 </div>
@@ -1153,7 +1153,7 @@ HTML task«</li>
 </li>
 </ul>
 </div>
-<div class="slide" id="id4">
+<div class="slide" id="mapping-python-classes-to-nodes-1">
 <h1>Mapping Python classes to nodes</h1>
 <ul class="simple">
 <li>The Element class lookup<ul>

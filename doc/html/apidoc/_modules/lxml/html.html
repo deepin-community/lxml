@@ -10,10 +10,9 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -26,15 +25,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> lxml
-            <img src="../../_static/python-xml.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            lxml
+              <img src="../../_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.9.2
+                4.9.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,7 +84,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
           <li class="breadcrumb-item"><a href="../lxml.html">lxml</a></li>
       <li class="breadcrumb-item active">lxml.html</li>
@@ -207,7 +210,7 @@
 
 
 <div class="viewcode-block" id="_transform_result"><a class="viewcode-back" href="../../lxml.html.html#lxml.html._transform_result">[docs]</a><span class="k">def</span> <span class="nf">_transform_result</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert the result back into the input type.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the result back into the input type.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">tostring</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
@@ -225,7 +228,7 @@
 
 
 <div class="viewcode-block" id="Classes"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes">[docs]</a><span class="k">class</span> <span class="nc">Classes</span><span class="p">(</span><span class="n">MutableSet</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Provides access to an element&#39;s class attribute as a set-like collection.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provides access to an element&#39;s class attribute as a set-like collection.</span>
 <span class="sd">    Usage::</span>
 
 <span class="sd">        &gt;&gt;&gt; el = fromstring(&#39;&lt;p class=&quot;hidden large&quot;&gt;Text&lt;/p&gt;&#39;)</span>
@@ -246,7 +249,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_get_class_value</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">attributes</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Classes.add"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a class.</span>
 
 <span class="sd">        This has no effect if the class is already present.</span>
@@ -260,7 +263,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Classes.discard"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes.discard">[docs]</a>    <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a class if it is currently present.</span>
 
 <span class="sd">        If the class is not present, do nothing.</span>
@@ -275,7 +278,7 @@
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="Classes.remove"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove a class; it must currently be present.</span>
 
 <span class="sd">        If the class is not present, raise a KeyError.</span>
@@ -297,7 +300,7 @@
     <span class="c1"># non-standard methods</span>
 
 <div class="viewcode-block" id="Classes.update"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add all names from &#39;values&#39;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_class_value</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -310,7 +313,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_attributes</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Classes.toggle"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Classes.toggle">[docs]</a>    <span class="k">def</span> <span class="nf">toggle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a class name if it isn&#39;t there yet, or remove it if it exists.</span>
 
 <span class="sd">        Returns true if the class was added (and is now enabled) and</span>
@@ -335,7 +338,7 @@
 <div class="viewcode-block" id="HtmlMixin"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin">[docs]</a><span class="k">class</span> <span class="nc">HtmlMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
 <div class="viewcode-block" id="HtmlMixin.set"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;set(self, key, value=None)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;set(self, key, value=None)</span>
 
 <span class="sd">        Sets an element attribute.  If no value is provided, or if the value is None,</span>
 <span class="sd">        creates a &#39;boolean&#39; attribute without value, e.g. &quot;&lt;form novalidate&gt;&lt;/form&gt;&quot;</span>
@@ -345,7 +348,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">classes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A set-like wrapper around the &#39;class&#39; attribute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Classes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attrib</span><span class="p">)</span>
@@ -361,7 +364,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">base_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the base URL, given when the page was parsed.</span>
 
 <span class="sd">        Use with ``urlparse.urljoin(el.base_url, href)`` to get</span>
@@ -371,14 +374,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">forms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of all the forms</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_forms_xpath</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">body</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the &lt;body&gt; element.  Can be called from a child element</span>
 <span class="sd">        to get the document&#39;s head.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -386,7 +389,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the &lt;head&gt; element.  Can be called from a child</span>
 <span class="sd">        element to get the document&#39;s head.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -394,7 +397,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get or set any &lt;label&gt; element associated with this element.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
@@ -426,7 +429,7 @@
             <span class="k">del</span> <span class="n">label</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;for&#39;</span><span class="p">]</span>
 
 <div class="viewcode-block" id="HtmlMixin.drop_tree"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.drop_tree">[docs]</a>    <span class="k">def</span> <span class="nf">drop_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Removes this element from the tree, including its children and</span>
 <span class="sd">        text.  The tail text is joined to the previous element or</span>
 <span class="sd">        parent.</span>
@@ -442,7 +445,7 @@
         <span class="n">parent</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.drop_tag"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.drop_tag">[docs]</a>    <span class="k">def</span> <span class="nf">drop_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Remove the tag, but not its children or text.  The children and text</span>
 <span class="sd">        are merged into the parent.</span>
 
@@ -474,7 +477,7 @@
         <span class="n">parent</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[:]</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.find_rel_links"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.find_rel_links">[docs]</a>    <span class="k">def</span> <span class="nf">find_rel_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rel</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find any links like ``&lt;a rel=&quot;{rel}&quot;&gt;...&lt;/a&gt;``; returns a list of elements.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">rel</span> <span class="o">=</span> <span class="n">rel</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -482,13 +485,13 @@
                 <span class="k">if</span> <span class="n">el</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;rel&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">rel</span><span class="p">]</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.find_class"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.find_class">[docs]</a>    <span class="k">def</span> <span class="nf">find_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find any elements with the given class name.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_class_xpath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_name</span><span class="o">=</span><span class="n">class_name</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.get_element_by_id"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.get_element_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_element_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="o">*</span><span class="n">default</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the first element in a document with the given id.  If none is</span>
 <span class="sd">        found, return the default argument if provided or raise KeyError</span>
 <span class="sd">        otherwise.</span>
@@ -509,13 +512,13 @@
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.text_content"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.text_content">[docs]</a>    <span class="k">def</span> <span class="nf">text_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the text content of the tag (and the text in any children).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_collect_string_content</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.cssselect"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.cssselect">[docs]</a>    <span class="k">def</span> <span class="nf">cssselect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">translator</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Run the CSS expression on this element and its children,</span>
 <span class="sd">        returning a list of the results.</span>
 
@@ -533,7 +536,7 @@
 
 <div class="viewcode-block" id="HtmlMixin.make_links_absolute"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.make_links_absolute">[docs]</a>    <span class="k">def</span> <span class="nf">make_links_absolute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolve_base_href</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                             <span class="n">handle_failures</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make all links in the document absolute, given the</span>
 <span class="sd">        ``base_url`` for the document (the full URL where the document</span>
 <span class="sd">        came from), or if no ``base_url`` is given, then the ``.base_url``</span>
@@ -577,7 +580,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rewrite_links</span><span class="p">(</span><span class="n">link_repl</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.resolve_base_href"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.resolve_base_href">[docs]</a>    <span class="k">def</span> <span class="nf">resolve_base_href</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle_failures</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find any ``&lt;base href&gt;`` tag in the document, and apply its</span>
 <span class="sd">        values to all links found in the document.  Also remove the</span>
 <span class="sd">        tag once it has been applied.</span>
@@ -598,7 +601,7 @@
                                  <span class="n">handle_failures</span><span class="o">=</span><span class="n">handle_failures</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="HtmlMixin.iterlinks"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.iterlinks">[docs]</a>    <span class="k">def</span> <span class="nf">iterlinks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Yield (element, attribute, link, pos), where attribute may be None</span>
 <span class="sd">        (indicating the link is in the text).  ``pos`` is the position</span>
 <span class="sd">        where the link occurs; often 0, but sometimes something else in</span>
@@ -689,7 +692,7 @@
 
 <div class="viewcode-block" id="HtmlMixin.rewrite_links"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlMixin.rewrite_links">[docs]</a>    <span class="k">def</span> <span class="nf">rewrite_links</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">link_repl_func</span><span class="p">,</span> <span class="n">resolve_base_href</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                       <span class="n">base_href</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Rewrite all the links in the document.  For each link</span>
 <span class="sd">        ``link_repl_func(link)`` will be called, and the return value</span>
 <span class="sd">        will replace the old link.</span>
@@ -738,7 +741,7 @@
 
 
 <div class="viewcode-block" id="_MethodFunc"><a class="viewcode-back" href="../../lxml.html.html#lxml.html._MethodFunc">[docs]</a><span class="k">class</span> <span class="nc">_MethodFunc</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An object that represents a method on an element as a function;</span>
 <span class="sd">    the function takes either an element or an HTML string.  It</span>
 <span class="sd">    returns whatever the function normally returns, or if the function</span>
@@ -798,7 +801,7 @@
 
 
 <div class="viewcode-block" id="HtmlElementClassLookup"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HtmlElementClassLookup">[docs]</a><span class="k">class</span> <span class="nc">HtmlElementClassLookup</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">CustomElementClassLookup</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A lookup scheme for HTML Element classes.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A lookup scheme for HTML Element classes.</span>
 
 <span class="sd">    To create a lookup instance with different Element classes, pass a tag</span>
 <span class="sd">    name mapping of Element classes in the ``classes`` keyword argument and/or</span>
@@ -865,7 +868,7 @@
 
 <div class="viewcode-block" id="fragments_fromstring"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.fragments_fromstring">[docs]</a><span class="k">def</span> <span class="nf">fragments_fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">no_leading_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                          <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Parses several HTML elements, returning a list of elements.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses several HTML elements, returning a list of elements.</span>
 
 <span class="sd">    The first item in the list may be a string.</span>
 <span class="sd">    If no_leading_text is true, then it will be an error if there is</span>
@@ -904,7 +907,7 @@
 
 <div class="viewcode-block" id="fragment_fromstring"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.fragment_fromstring">[docs]</a><span class="k">def</span> <span class="nf">fragment_fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">create_parent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parses a single HTML element; it is an error if there is more than</span>
 <span class="sd">    one element, or if anything but whitespace precedes or follows the</span>
 <span class="sd">    element.</span>
@@ -952,7 +955,7 @@
 
 
 <div class="viewcode-block" id="fromstring"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.fromstring">[docs]</a><span class="k">def</span> <span class="nf">fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parse the html, returning a single element/document.</span>
 
 <span class="sd">    This tries to minimally parse the chunk of text, without knowing if it</span>
@@ -1020,7 +1023,7 @@
 
 
 <div class="viewcode-block" id="parse"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.parse">[docs]</a><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parse a filename, URL, or file-like object into an HTML document</span>
 <span class="sd">    tree.  Note: this returns a tree, not an element.  Use</span>
 <span class="sd">    ``parse(...).getroot()`` to get the document root.</span>
@@ -1056,13 +1059,13 @@
 <span class="c1">################################################################################</span>
 
 <div class="viewcode-block" id="FormElement"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.FormElement">[docs]</a><span class="k">class</span> <span class="nc">FormElement</span><span class="p">(</span><span class="n">HtmlElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a &lt;form&gt; element.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an accessor for all the input elements in the form.</span>
 
 <span class="sd">        See `InputGetter` for more information about the object.</span>
@@ -1071,7 +1074,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Dictionary-like object that represents all the fields in this</span>
 <span class="sd">        form.  You can set values in this dictionary to effect the</span>
 <span class="sd">        form.</span>
@@ -1105,7 +1108,7 @@
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="FormElement.form_values"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.FormElement.form_values">[docs]</a>    <span class="k">def</span> <span class="nf">form_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of tuples of the field values for the form.</span>
 <span class="sd">        This is suitable to be passed to ``urllib.urlencode()``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1138,7 +1141,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the form&#39;s ``action`` attribute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">base_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span>
@@ -1160,7 +1163,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the form&#39;s method.  Always returns a capitalized</span>
 <span class="sd">        string, and defaults to ``&#39;GET&#39;``</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1175,7 +1178,7 @@
 
 
 <div class="viewcode-block" id="submit_form"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.submit_form">[docs]</a><span class="k">def</span> <span class="nf">submit_form</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">extra_values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">open_http</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper function to submit a form.  Returns a file-like object, as from</span>
 <span class="sd">    ``urllib.urlopen()``.  This object also has a ``.geturl()`` function,</span>
 <span class="sd">    which shows the URL if there were any redirects.</span>
@@ -1263,7 +1266,7 @@
 
 <div class="viewcode-block" id="InputGetter"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.InputGetter">[docs]</a><span class="k">class</span> <span class="nc">InputGetter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An accessor that represents all the input fields in a form.</span>
 
 <span class="sd">    You can get fields by name from this, with</span>
@@ -1314,7 +1317,7 @@
         <span class="k">return</span> <span class="kc">False</span>
 
 <div class="viewcode-block" id="InputGetter.keys"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.InputGetter.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns all unique field names, in document order.</span>
 
 <span class="sd">        :return: A list of all unique field names.</span>
@@ -1329,7 +1332,7 @@
         <span class="k">return</span> <span class="n">names</span></div>
 
 <div class="viewcode-block" id="InputGetter.items"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.InputGetter.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns all fields with their names, similar to dict.items().</span>
 
 <span class="sd">        :return: A list of (name, field) tuples.</span>
@@ -1351,12 +1354,12 @@
 
 
 <div class="viewcode-block" id="InputMixin"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.InputMixin">[docs]</a><span class="k">class</span> <span class="nc">InputMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Mix-in for all input elements (input, select, and textarea)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the name of the element</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
@@ -1382,13 +1385,13 @@
 
 
 <div class="viewcode-block" id="TextareaElement"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.TextareaElement">[docs]</a><span class="k">class</span> <span class="nc">TextareaElement</span><span class="p">(</span><span class="n">InputMixin</span><span class="p">,</span> <span class="n">HtmlElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ``&lt;textarea&gt;`` element.  You can get the name with ``.name`` and</span>
 <span class="sd">    get/set the value with ``.value``</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the value (which is the contents of this element)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
@@ -1417,7 +1420,7 @@
 
 
 <div class="viewcode-block" id="SelectElement"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.SelectElement">[docs]</a><span class="k">class</span> <span class="nc">SelectElement</span><span class="p">(</span><span class="n">InputMixin</span><span class="p">,</span> <span class="n">HtmlElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ``&lt;select&gt;`` element.  You can get the name with ``.name``.</span>
 
 <span class="sd">    ``.value`` will be the value of the selected option, unless this</span>
@@ -1430,7 +1433,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the value of this select (the selected option).</span>
 
 <span class="sd">        If this is a multi-select, this is a set-like object that</span>
@@ -1489,7 +1492,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        All the possible values this select can have (the ``value``</span>
 <span class="sd">        attribute of all the ``&lt;option&gt;`` elements.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1503,7 +1506,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">multiple</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Boolean attribute: is there a ``multiple`` attribute on this element.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s1">&#39;multiple&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">attrib</span>
@@ -1520,7 +1523,7 @@
 
 
 <div class="viewcode-block" id="MultipleSelectOptions"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.MultipleSelectOptions">[docs]</a><span class="k">class</span> <span class="nc">MultipleSelectOptions</span><span class="p">(</span><span class="n">SetMixin</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents all the selected options in a ``&lt;select multiple&gt;`` element.</span>
 
 <span class="sd">    You can add to this set-like option to select an option, or remove</span>
@@ -1532,7 +1535,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iterator of all the ``&lt;option&gt;`` elements.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">_options_xpath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">select</span><span class="p">))</span>
@@ -1581,7 +1584,7 @@
 
 
 <div class="viewcode-block" id="RadioGroup"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.RadioGroup">[docs]</a><span class="k">class</span> <span class="nc">RadioGroup</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This object represents several ``&lt;input type=radio&gt;`` elements</span>
 <span class="sd">    that have the same name.</span>
 
@@ -1591,7 +1594,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the value, which checks the radio with that value (and</span>
 <span class="sd">        unchecks any other value).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1622,7 +1625,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a list of all the possible values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
@@ -1634,7 +1637,7 @@
 
 
 <div class="viewcode-block" id="CheckboxGroup"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.CheckboxGroup">[docs]</a><span class="k">class</span> <span class="nc">CheckboxGroup</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a group of checkboxes (``&lt;input type=checkbox&gt;``) that</span>
 <span class="sd">    have the same name.</span>
 
@@ -1645,7 +1648,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a set-like object that can be modified to check or</span>
 <span class="sd">        uncheck individual checkboxes according to their value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1667,7 +1670,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a list of all the possible values.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
@@ -1678,7 +1681,7 @@
 
 
 <div class="viewcode-block" id="CheckboxValues"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.CheckboxValues">[docs]</a><span class="k">class</span> <span class="nc">CheckboxValues</span><span class="p">(</span><span class="n">SetMixin</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents the values of the checked checkboxes in a group of</span>
 <span class="sd">    checkboxes with the same name.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1721,7 +1724,7 @@
 
 
 <div class="viewcode-block" id="InputElement"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.InputElement">[docs]</a><span class="k">class</span> <span class="nc">InputElement</span><span class="p">(</span><span class="n">InputMixin</span><span class="p">,</span> <span class="n">HtmlElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents an ``&lt;input&gt;`` element.</span>
 
 <span class="sd">    You can get the type with ``.type`` (which is lower-cased and</span>
@@ -1738,7 +1741,7 @@
     <span class="c1">## FIXME: I&#39;m a little uncomfortable with the use of .checked</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the value of this element, using the ``value`` attribute.</span>
 
 <span class="sd">        Also, if this is a checkbox and it has no value, this defaults</span>
@@ -1774,7 +1777,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the type of this element (using the type attribute).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -1785,14 +1788,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">checkable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Boolean: can this element be checked?</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;checkbox&#39;</span><span class="p">,</span> <span class="s1">&#39;radio&#39;</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">checked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Boolean attribute to get/set the presence of the ``checked``</span>
 <span class="sd">        attribute.</span>
 
@@ -1818,7 +1821,7 @@
 
 
 <div class="viewcode-block" id="LabelElement"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.LabelElement">[docs]</a><span class="k">class</span> <span class="nc">LabelElement</span><span class="p">(</span><span class="n">HtmlElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a ``&lt;label&gt;`` element.</span>
 
 <span class="sd">    Label elements are linked to other elements with their ``for``</span>
@@ -1826,7 +1829,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">for_element</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get/set the element this label points to.  Return None if it</span>
 <span class="sd">        can&#39;t be found.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1858,7 +1861,7 @@
 <span class="c1">############################################################</span>
 
 <div class="viewcode-block" id="html_to_xhtml"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.html_to_xhtml">[docs]</a><span class="k">def</span> <span class="nf">html_to_xhtml</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert all tags in an HTML tree to XHTML by moving them to the</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert all tags in an HTML tree to XHTML by moving them to the</span>
 <span class="sd">    XHTML namespace.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -1873,7 +1876,7 @@
 
 
 <div class="viewcode-block" id="xhtml_to_html"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.xhtml_to_html">[docs]</a><span class="k">def</span> <span class="nf">xhtml_to_html</span><span class="p">(</span><span class="n">xhtml</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert all tags in an XHTML tree to HTML by removing their</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert all tags in an XHTML tree to HTML by removing their</span>
 <span class="sd">    XHTML namespace.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -1896,7 +1899,7 @@
 
 <div class="viewcode-block" id="tostring"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.tostring">[docs]</a><span class="k">def</span> <span class="nf">tostring</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_meta_content_type</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
              <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="n">with_tail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">doctype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return an HTML string representation of the document.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return an HTML string representation of the document.</span>
 
 <span class="sd">    Note: if include_meta_content_type is true this will create a</span>
 <span class="sd">    ``&lt;meta http-equiv=&quot;Content-Type&quot; ...&gt;`` tag in the head;</span>
@@ -1972,7 +1975,7 @@
 
 
 <div class="viewcode-block" id="open_in_browser"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.open_in_browser">[docs]</a><span class="k">def</span> <span class="nf">open_in_browser</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Open the HTML document in a web browser, saving it to a temporary</span>
 <span class="sd">    file to open it.  Note that this does not delete the file after</span>
 <span class="sd">    use.  This is mainly meant for debugging.</span>
@@ -1999,7 +2002,7 @@
 <span class="c1">################################################################################</span>
 
 <div class="viewcode-block" id="HTMLParser"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.HTMLParser">[docs]</a><span class="k">class</span> <span class="nc">HTMLParser</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;An HTML parser that is configured to return lxml.html Element</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An HTML parser that is configured to return lxml.html Element</span>
 <span class="sd">    objects.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -2008,7 +2011,7 @@
 
 
 <div class="viewcode-block" id="XHTMLParser"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.XHTMLParser">[docs]</a><span class="k">class</span> <span class="nc">XHTMLParser</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">XMLParser</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;An XML parser that is configured to return lxml.html Element</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An XML parser that is configured to return lxml.html Element</span>
 <span class="sd">    objects.</span>
 
 <span class="sd">    Note that this parser is not really XHTML aware unless you let it</span>
@@ -2030,7 +2033,7 @@
 
 
 <div class="viewcode-block" id="Element"><a class="viewcode-back" href="../../lxml.html.html#lxml.html.Element">[docs]</a><span class="k">def</span> <span class="nf">Element</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a new HTML Element.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a new HTML Element.</span>
 
 <span class="sd">    This can also be used for XHTML documents.</span>
 <span class="sd">    &quot;&quot;&quot;</span>

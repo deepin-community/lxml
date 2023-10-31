@@ -32,8 +32,13 @@ sys_platform = sys.platform
 # use pre-built libraries on Windows
 
 def download_and_extract_windows_binaries(destdir):
-    url = "https://api.github.com/repos/lxml/libxml2-win-binaries/releases"
-    releases, _ = read_url(url, accept="application/vnd.github+json", as_json=True)
+    url = "https://api.github.com/repos/lxml/libxml2-win-binaries/releases?per_page=5"
+    releases, _ = read_url(
+        url,
+        accept="application/vnd.github+json",
+        as_json=True,
+        github_api_token=os.environ.get("GITHUB_API_TOKEN"),
+    )
 
     max_release = {'tag_name': ''}
     for release in releases:
@@ -169,10 +174,12 @@ def _list_dir_ftplib(url):
     return parse_text_ftplist("\n".join(data))
 
 
-def read_url(url, decode=True, accept=None, as_json=False):
+def read_url(url, decode=True, accept=None, as_json=False, github_api_token=None):
     headers = {'User-Agent': 'https://github.com/lxml/lxml'}
     if accept:
         headers['Accept'] = accept
+    if github_api_token:
+        headers['authorization'] = "Bearer " + github_api_token
     request = Request(url, headers=headers)
 
     with closing(urlopen(request)) as res:
@@ -308,7 +315,7 @@ def find_max_version(libname, filenames, version_re=None):
         match = version_re.search(fn)
         if match:
             version_string = match.group(1)
-            versions.append((tuple(map(tryint, version_string.split('.'))),
+            versions.append((tuple(map(tryint, version_string.replace("-", ".-").split('.'))),
                              version_string))
     if not versions:
         raise Exception(
@@ -413,21 +420,14 @@ def cmmi(configure_cmd, build_dir, multicore=None, **call_setup):
 
 def configure_darwin_env(env_setup):
     import platform
-    # configure target architectures on MacOS-X (x86_64 only, by default)
+    # configure target architectures on MacOS-X (x86_64 + Arm64, by default)
     major_version, minor_version = tuple(map(int, platform.mac_ver()[0].split('.')[:2]))
-    if major_version > 7:
-        if platform.mac_ver()[2] == "arm64":
-            env_default = {
-                'CFLAGS': "-arch arm64 -O2",
-                'LDFLAGS': "-arch arm64",
-                'MACOSX_DEPLOYMENT_TARGET': "10.6"
-            }
-        else:
-            env_default = {
-                'CFLAGS': "-arch x86_64 -O2",
-                'LDFLAGS': "-arch x86_64",
-                'MACOSX_DEPLOYMENT_TARGET': "10.6"
-            }
+    if major_version >= 11:
+        env_default = {
+            'CFLAGS': "-arch x86_64 -arch arm64 -O3",
+            'LDFLAGS': "-arch x86_64 -arch arm64",
+            'MACOSX_DEPLOYMENT_TARGET': "11.0"
+        }
         env_default.update(os.environ)
         env_setup['env'] = env_default
 
