@@ -5,13 +5,8 @@ from distutils import log
 from contextlib import closing, contextmanager
 from ftplib import FTP
 
-try:
-    from urllib.parse import urljoin, unquote, urlparse
-    from urllib.request import urlretrieve, urlopen, urlcleanup, Request
-except ImportError:  # Py2
-    from urlparse import urljoin, unquote, urlparse
-    from urllib import urlretrieve, urlcleanup
-    from urllib2 import urlopen, Request
+from urllib.parse import urljoin, unquote, urlparse
+from urllib.request import urlretrieve, urlopen, Request
 
 multi_make_options = []
 try:
@@ -60,6 +55,9 @@ def download_and_extract_windows_binaries(destdir):
     if sys.version_info < (3, 5):
         arch = 'vs2008.' + arch
 
+    arch_part = '.' + arch + '.'
+    filenames = [filename for filename in filenames if arch_part in filename]
+
     libs = {}
     for libname in ['libxml2', 'libxslt', 'zlib', 'iconv']:
         libs[libname] = "%s-%s.%s.zip" % (
@@ -78,7 +76,6 @@ def download_and_extract_windows_binaries(destdir):
             print('Using local copy of  "{}"'.format(srcfile))
         else:
             print('Retrieving "%s" to "%s"' % (srcfile, destfile))
-            urlcleanup()  # work around FTP bug 27973 in Py2.7.12+
             urlretrieve(srcfile, destfile)
         d = unpack_zipfile(destfile, destdir)
         libs[libname] = d
@@ -353,16 +350,17 @@ def download_library(dest_dir, location, name, version_re, filename, version=Non
                 raise
     if version:
         filename = filename % version
+
     full_url = urljoin(location, filename)
     dest_filename = os.path.join(dest_dir, filename)
     if os.path.exists(dest_filename):
         print(('Using existing %s downloaded into %s '
                '(delete this file if you want to re-download the package)') % (
             name, dest_filename))
-    else:
-        print('Downloading %s into %s from %s' % (name, dest_filename, full_url))
-        urlcleanup()  # work around FTP bug 27973 in Py2.7.12
-        urlretrieve(full_url, dest_filename)
+        return dest_filename
+
+    print('Downloading %s into %s from %s' % (name, dest_filename, full_url))
+    urlretrieve(full_url, dest_filename)
     return dest_filename
 
 

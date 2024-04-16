@@ -8,6 +8,7 @@ Makefile
 README.rst
 TODO.txt
 buildlibxml.py
+pyproject.toml
 requirements.txt
 setup.py
 setupinfo.py
@@ -59,7 +60,7 @@ doc/html/FAQ.html
 doc/html/api.html
 doc/html/build.html
 doc/html/capi.html
-doc/html/changes-4.9.3.html
+doc/html/changes-5.2.1.html
 doc/html/compatibility.html
 doc/html/credits.html
 doc/html/cssselect.html
@@ -258,7 +259,6 @@ src/lxml/html/_diffcommand.py
 src/lxml/html/_html5builder.py
 src/lxml/html/_setmixin.py
 src/lxml/html/builder.py
-src/lxml/html/clean.c
 src/lxml/html/clean.py
 src/lxml/html/defs.py
 src/lxml/html/diff.c
@@ -268,13 +268,8 @@ src/lxml/html/html5parser.py
 src/lxml/html/soupparser.py
 src/lxml/html/usedoctest.py
 src/lxml/html/tests/__init__.py
-src/lxml/html/tests/test_autolink.py
-src/lxml/html/tests/test_autolink.txt
 src/lxml/html/tests/test_basic.py
 src/lxml/html/tests/test_basic.txt
-src/lxml/html/tests/test_clean.py
-src/lxml/html/tests/test_clean.txt
-src/lxml/html/tests/test_clean_embed.txt
 src/lxml/html/tests/test_diff.py
 src/lxml/html/tests/test_diff.txt
 src/lxml/html/tests/test_elementsoup.py

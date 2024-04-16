@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.doctestcompare &mdash; lxml  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -33,7 +35,7 @@
               <img src="../../_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.9.3
+                5.2.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -146,47 +148,56 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PARSE_HTML&#39;</span><span class="p">,</span> <span class="s1">&#39;PARSE_XML&#39;</span><span class="p">,</span> <span class="s1">&#39;NOPARSE_MARKUP&#39;</span><span class="p">,</span> <span class="s1">&#39;LXMLOutputChecker&#39;</span><span class="p">,</span>
            <span class="s1">&#39;LHTMLOutputChecker&#39;</span><span class="p">,</span> <span class="s1">&#39;install&#39;</span><span class="p">,</span> <span class="s1">&#39;temp_install&#39;</span><span class="p">]</span>
 
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">_basestring</span> <span class="o">=</span> <span class="n">basestring</span>
-<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
-    <span class="n">_basestring</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
-
-<span class="n">_IS_PYTHON_3</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span>
-
 <span class="n">PARSE_HTML</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">register_optionflag</span><span class="p">(</span><span class="s1">&#39;PARSE_HTML&#39;</span><span class="p">)</span>
 <span class="n">PARSE_XML</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">register_optionflag</span><span class="p">(</span><span class="s1">&#39;PARSE_XML&#39;</span><span class="p">)</span>
 <span class="n">NOPARSE_MARKUP</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">register_optionflag</span><span class="p">(</span><span class="s1">&#39;NOPARSE_MARKUP&#39;</span><span class="p">)</span>
 
 <span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span>
 
-<div class="viewcode-block" id="strip"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.strip">[docs]</a><span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+<div class="viewcode-block" id="strip">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.strip">[docs]</a>
+<span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="norm_whitespace"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.norm_whitespace">[docs]</a><span class="k">def</span> <span class="nf">norm_whitespace</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+
+<div class="viewcode-block" id="norm_whitespace">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.norm_whitespace">[docs]</a>
+<span class="k">def</span> <span class="nf">norm_whitespace</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">_norm_whitespace_re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+
 
 <span class="n">_html_parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">(</span><span class="n">recover</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">remove_blank_text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="html_fromstring"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.html_fromstring">[docs]</a><span class="k">def</span> <span class="nf">html_fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+<div class="viewcode-block" id="html_fromstring">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.html_fromstring">[docs]</a>
+<span class="k">def</span> <span class="nf">html_fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">etree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">_html_parser</span><span class="p">)</span></div>
+
 
 <span class="c1"># We use this to distinguish repr()s from elements:</span>
 <span class="n">_repr_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^&lt;[^&gt;]+ (at|object) &#39;</span><span class="p">)</span>
 <span class="n">_norm_whitespace_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t\n][ \t\n]+&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="LXMLOutputChecker"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker">[docs]</a><span class="k">class</span> <span class="nc">LXMLOutputChecker</span><span class="p">(</span><span class="n">OutputChecker</span><span class="p">):</span>
+<div class="viewcode-block" id="LXMLOutputChecker">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker">[docs]</a>
+<span class="k">class</span> <span class="nc">LXMLOutputChecker</span><span class="p">(</span><span class="n">OutputChecker</span><span class="p">):</span>
 
     <span class="n">empty_tags</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s1">&#39;param&#39;</span><span class="p">,</span> <span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="s1">&#39;br&#39;</span><span class="p">,</span> <span class="s1">&#39;basefont&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span>
         <span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;meta&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;col&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="LXMLOutputChecker.get_default_parser"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.get_default_parser">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LXMLOutputChecker.get_default_parser">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.get_default_parser">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_default_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.check_output"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.check_output">[docs]</a>    <span class="k">def</span> <span class="nf">check_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.check_output">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.check_output">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
         <span class="n">alt_self</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_temp_override_self&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">alt_self</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">super_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_temp_call_super_check_output</span>
@@ -207,7 +218,10 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_docs</span><span class="p">(</span><span class="n">want_doc</span><span class="p">,</span> <span class="n">got_doc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.get_parser"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.get_parser">[docs]</a>    <span class="k">def</span> <span class="nf">get_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.get_parser">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.get_parser">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
         <span class="n">parser</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">NOPARSE_MARKUP</span> <span class="o">&amp;</span> <span class="n">optionflags</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -223,12 +237,18 @@
             <span class="n">parser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_default_parser</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">parser</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker._looks_like_markup"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker._looks_like_markup">[docs]</a>    <span class="k">def</span> <span class="nf">_looks_like_markup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker._looks_like_markup">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker._looks_like_markup">[docs]</a>
+    <span class="k">def</span> <span class="nf">_looks_like_markup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span>
                 <span class="ow">and</span> <span class="ow">not</span> <span class="n">_repr_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">s</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.compare_docs"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.compare_docs">[docs]</a>    <span class="k">def</span> <span class="nf">compare_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.compare_docs">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.compare_docs">[docs]</a>
+    <span class="k">def</span> <span class="nf">compare_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag_compare</span><span class="p">(</span><span class="n">want</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_compare</span><span class="p">(</span><span class="n">want</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">got</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
@@ -257,7 +277,10 @@
                     <span class="k">break</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.text_compare"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.text_compare">[docs]</a>    <span class="k">def</span> <span class="nf">text_compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.text_compare">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.text_compare">[docs]</a>
+    <span class="k">def</span> <span class="nf">text_compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="p">):</span>
         <span class="n">want</span> <span class="o">=</span> <span class="n">want</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
         <span class="n">got</span> <span class="o">=</span> <span class="n">got</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
         <span class="k">if</span> <span class="n">strip</span><span class="p">:</span>
@@ -270,11 +293,14 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.tag_compare"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.tag_compare">[docs]</a>    <span class="k">def</span> <span class="nf">tag_compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.tag_compare">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.tag_compare">[docs]</a>
+    <span class="k">def</span> <span class="nf">tag_compare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">want</span> <span class="o">==</span> <span class="s1">&#39;any&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">want</span><span class="p">,</span> <span class="n">_basestring</span><span class="p">)</span>
-            <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">_basestring</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">want</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))</span>
+                <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))):</span>
             <span class="k">return</span> <span class="n">want</span> <span class="o">==</span> <span class="n">got</span>
         <span class="n">want</span> <span class="o">=</span> <span class="n">want</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
         <span class="n">got</span> <span class="o">=</span> <span class="n">got</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span>
@@ -284,7 +310,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">want</span> <span class="o">==</span> <span class="n">got</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.output_difference"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.output_difference">[docs]</a>    <span class="k">def</span> <span class="nf">output_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.output_difference">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.output_difference">[docs]</a>
+    <span class="k">def</span> <span class="nf">output_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">):</span>
         <span class="n">want</span> <span class="o">=</span> <span class="n">example</span><span class="o">.</span><span class="n">want</span>
         <span class="n">parser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_parser</span><span class="p">(</span><span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">optionflags</span><span class="p">)</span>
         <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
@@ -316,7 +345,10 @@
                       <span class="bp">self</span><span class="o">.</span><span class="n">collect_diff</span><span class="p">(</span><span class="n">want_doc</span><span class="p">,</span> <span class="n">got_doc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">diff_parts</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.html_empty_tag"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.html_empty_tag">[docs]</a>    <span class="k">def</span> <span class="nf">html_empty_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.html_empty_tag">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.html_empty_tag">[docs]</a>
+    <span class="k">def</span> <span class="nf">html_empty_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="n">el</span><span class="o">.</span><span class="n">tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty_tags</span><span class="p">:</span>
@@ -326,7 +358,10 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.format_doc"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_doc">[docs]</a>    <span class="k">def</span> <span class="nf">format_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.format_doc">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_doc">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_doc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">indent</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
             <span class="c1"># No children...</span>
@@ -361,14 +396,20 @@
             <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.format_text"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_text">[docs]</a>    <span class="k">def</span> <span class="nf">format_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.format_text">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_text">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">text</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;&#39;</span>
         <span class="k">if</span> <span class="n">strip</span><span class="p">:</span>
             <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">html_escape</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.format_tag"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_tag">[docs]</a>    <span class="k">def</span> <span class="nf">format_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.format_tag">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_tag">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">):</span>
         <span class="n">attrs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">etree</span><span class="o">.</span><span class="n">CommentBase</span><span class="p">):</span>
             <span class="c1"># FIXME: probably PIs should be handled specially too?</span>
@@ -378,14 +419,20 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">attrs</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">el</span><span class="o">.</span><span class="n">tag</span>
         <span class="k">return</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span></div>
+
     
-<div class="viewcode-block" id="LXMLOutputChecker.format_end_tag"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_end_tag">[docs]</a>    <span class="k">def</span> <span class="nf">format_end_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">):</span>
+<div class="viewcode-block" id="LXMLOutputChecker.format_end_tag">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.format_end_tag">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_end_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">el</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">etree</span><span class="o">.</span><span class="n">CommentBase</span><span class="p">):</span>
             <span class="c1"># FIXME: probably PIs should be handled specially too?</span>
             <span class="k">return</span> <span class="s1">&#39;--&gt;&#39;</span>
         <span class="k">return</span> <span class="s1">&#39;&lt;/</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">el</span><span class="o">.</span><span class="n">tag</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.collect_diff"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff">[docs]</a>    <span class="k">def</span> <span class="nf">collect_diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.collect_diff">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff">[docs]</a>
+    <span class="k">def</span> <span class="nf">collect_diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
         <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">want</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">got</span><span class="p">):</span>
             <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="n">indent</span><span class="p">)</span>
@@ -423,7 +470,10 @@
             <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_tag"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_tag">[docs]</a>    <span class="k">def</span> <span class="nf">collect_diff_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_tag">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_tag">[docs]</a>
+    <span class="k">def</span> <span class="nf">collect_diff_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag_compare</span><span class="p">(</span><span class="n">want</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span><span class="p">):</span>
             <span class="n">tag</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> (got: </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">want</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -450,26 +500,42 @@
             <span class="n">tag</span> <span class="o">=</span> <span class="s1">&#39;&lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">tag</span>
         <span class="k">return</span> <span class="n">tag</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_end_tag"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_end_tag">[docs]</a>    <span class="k">def</span> <span class="nf">collect_diff_end_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_end_tag">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_end_tag">[docs]</a>
+    <span class="k">def</span> <span class="nf">collect_diff_end_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">want</span><span class="o">.</span><span class="n">tag</span> <span class="o">!=</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
             <span class="n">tag</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> (got: </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">want</span><span class="o">.</span><span class="n">tag</span><span class="p">,</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">tag</span> <span class="o">=</span> <span class="n">got</span><span class="o">.</span><span class="n">tag</span>
         <span class="k">return</span> <span class="s1">&#39;&lt;/</span><span class="si">%s</span><span class="s1">&gt;&#39;</span> <span class="o">%</span> <span class="n">tag</span></div>
 
-<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_text"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_text">[docs]</a>    <span class="k">def</span> <span class="nf">collect_diff_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="LXMLOutputChecker.collect_diff_text">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LXMLOutputChecker.collect_diff_text">[docs]</a>
+    <span class="k">def</span> <span class="nf">collect_diff_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_compare</span><span class="p">(</span><span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="p">):</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">got</span><span class="p">:</span>
                 <span class="k">return</span> <span class="s1">&#39;&#39;</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_text</span><span class="p">(</span><span class="n">got</span><span class="p">,</span> <span class="n">strip</span><span class="p">)</span>
         <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> (got: </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">want</span><span class="p">,</span> <span class="n">got</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">strip</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">strip</span><span class="p">)</span></div>
+</div>
 
-<div class="viewcode-block" id="LHTMLOutputChecker"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LHTMLOutputChecker">[docs]</a><span class="k">class</span> <span class="nc">LHTMLOutputChecker</span><span class="p">(</span><span class="n">LXMLOutputChecker</span><span class="p">):</span>
-<div class="viewcode-block" id="LHTMLOutputChecker.get_default_parser"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LHTMLOutputChecker.get_default_parser">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">html_fromstring</span></div></div>
+
+<div class="viewcode-block" id="LHTMLOutputChecker">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LHTMLOutputChecker">[docs]</a>
+<span class="k">class</span> <span class="nc">LHTMLOutputChecker</span><span class="p">(</span><span class="n">LXMLOutputChecker</span><span class="p">):</span>
+<div class="viewcode-block" id="LHTMLOutputChecker.get_default_parser">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.LHTMLOutputChecker.get_default_parser">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_default_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">html_fromstring</span></div>
+</div>
+
     
-<div class="viewcode-block" id="install"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.install">[docs]</a><span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="install">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.install">[docs]</a>
+<span class="k">def</span> <span class="nf">install</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Install doctestcompare for all future doctests.</span>
 
@@ -481,7 +547,10 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">doctest</span><span class="o">.</span><span class="n">OutputChecker</span> <span class="o">=</span> <span class="n">LXMLOutputChecker</span></div>
 
-<div class="viewcode-block" id="temp_install"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.temp_install">[docs]</a><span class="k">def</span> <span class="nf">temp_install</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">del_module</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="temp_install">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare.temp_install">[docs]</a>
+<span class="k">def</span> <span class="nf">temp_install</span><span class="p">(</span><span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">del_module</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Use this *inside* a doctest to enable this checker for this</span>
 <span class="sd">    doctest only.</span>
@@ -507,12 +576,8 @@
     <span class="c1"># __record_outcome to be run, which signals the end of the __run</span>
     <span class="c1"># method, at which point we restore the previous check_output</span>
     <span class="c1"># implementation.</span>
-    <span class="k">if</span> <span class="n">_IS_PYTHON_3</span><span class="p">:</span>
-        <span class="n">check_func</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="s1">&#39;check&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__func__</span>
-        <span class="n">checker_check_func</span> <span class="o">=</span> <span class="n">checker</span><span class="o">.</span><span class="n">check_output</span><span class="o">.</span><span class="vm">__func__</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">check_func</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="s1">&#39;check&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">im_func</span>
-        <span class="n">checker_check_func</span> <span class="o">=</span> <span class="n">checker</span><span class="o">.</span><span class="n">check_output</span><span class="o">.</span><span class="n">im_func</span>
+    <span class="n">check_func</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_locals</span><span class="p">[</span><span class="s1">&#39;check&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__func__</span>
+    <span class="n">checker_check_func</span> <span class="o">=</span> <span class="n">checker</span><span class="o">.</span><span class="n">check_output</span><span class="o">.</span><span class="vm">__func__</span>
     <span class="c1"># Because we can&#39;t patch up func_globals, this is the only global</span>
     <span class="c1"># in check_output that we care about:</span>
     <span class="n">doctest</span><span class="o">.</span><span class="n">etree</span> <span class="o">=</span> <span class="n">etree</span>
@@ -520,7 +585,10 @@
                     <span class="n">check_func</span><span class="p">,</span> <span class="n">checker_check_func</span><span class="p">,</span>
                     <span class="n">del_module</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="_RestoreChecker"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker">[docs]</a><span class="k">class</span> <span class="nc">_RestoreChecker</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="_RestoreChecker">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker">[docs]</a>
+<span class="k">class</span> <span class="nc">_RestoreChecker</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt_self</span><span class="p">,</span> <span class="n">old_checker</span><span class="p">,</span> <span class="n">new_checker</span><span class="p">,</span> <span class="n">check_func</span><span class="p">,</span> <span class="n">clone_func</span><span class="p">,</span>
                  <span class="n">del_module</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dt_self</span> <span class="o">=</span> <span class="n">dt_self</span>
@@ -532,26 +600,32 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">del_module</span> <span class="o">=</span> <span class="n">del_module</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">install_clone</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">install_dt_self</span><span class="p">()</span>
-<div class="viewcode-block" id="_RestoreChecker.install_clone"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.install_clone">[docs]</a>    <span class="k">def</span> <span class="nf">install_clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">_IS_PYTHON_3</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">func_globals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__globals__</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone_func</span><span class="o">.</span><span class="vm">__code__</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="n">func_code</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">func_globals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="n">func_globals</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone_func</span><span class="o">.</span><span class="n">func_code</span></div>
-<div class="viewcode-block" id="_RestoreChecker.uninstall_clone"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_clone">[docs]</a>    <span class="k">def</span> <span class="nf">uninstall_clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">_IS_PYTHON_3</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span></div>
-<div class="viewcode-block" id="_RestoreChecker.install_dt_self"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.install_dt_self">[docs]</a>    <span class="k">def</span> <span class="nf">install_dt_self</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="_RestoreChecker.install_clone">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.install_clone">[docs]</a>
+    <span class="k">def</span> <span class="nf">install_clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func_globals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__globals__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone_func</span><span class="o">.</span><span class="vm">__code__</span></div>
+
+<div class="viewcode-block" id="_RestoreChecker.uninstall_clone">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_clone">[docs]</a>
+    <span class="k">def</span> <span class="nf">uninstall_clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="o">.</span><span class="vm">__code__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func_code</span></div>
+
+<div class="viewcode-block" id="_RestoreChecker.install_dt_self">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.install_dt_self">[docs]</a>
+    <span class="k">def</span> <span class="nf">install_dt_self</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prev_func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt_self</span><span class="o">.</span><span class="n">_DocTestRunner__record_outcome</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dt_self</span><span class="o">.</span><span class="n">_DocTestRunner__record_outcome</span> <span class="o">=</span> <span class="bp">self</span></div>
-<div class="viewcode-block" id="_RestoreChecker.uninstall_dt_self"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_dt_self">[docs]</a>    <span class="k">def</span> <span class="nf">uninstall_dt_self</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="_RestoreChecker.uninstall_dt_self">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_dt_self">[docs]</a>
+    <span class="k">def</span> <span class="nf">uninstall_dt_self</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dt_self</span><span class="o">.</span><span class="n">_DocTestRunner__record_outcome</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_func</span></div>
-<div class="viewcode-block" id="_RestoreChecker.uninstall_module"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_module">[docs]</a>    <span class="k">def</span> <span class="nf">uninstall_module</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="_RestoreChecker.uninstall_module">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.uninstall_module">[docs]</a>
+    <span class="k">def</span> <span class="nf">uninstall_module</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">del_module</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">sys</span>
             <span class="k">del</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">del_module</span><span class="p">]</span>
@@ -559,6 +633,7 @@
                 <span class="n">package</span><span class="p">,</span> <span class="n">module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">del_module</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                 <span class="n">package_mod</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">package</span><span class="p">]</span>
                 <span class="nb">delattr</span><span class="p">(</span><span class="n">package_mod</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span></div>
+
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uninstall_clone</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uninstall_dt_self</span><span class="p">()</span>
@@ -567,14 +642,20 @@
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uninstall_module</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">result</span>
-<div class="viewcode-block" id="_RestoreChecker.call_super"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.call_super">[docs]</a>    <span class="k">def</span> <span class="nf">call_super</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<div class="viewcode-block" id="_RestoreChecker.call_super">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._RestoreChecker.call_super">[docs]</a>
+    <span class="k">def</span> <span class="nf">call_super</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uninstall_clone</span><span class="p">()</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
         <span class="k">finally</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">install_clone</span><span class="p">()</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">install_clone</span><span class="p">()</span></div>
+</div>
+
             
-<div class="viewcode-block" id="_find_doctest_frame"><a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._find_doctest_frame">[docs]</a><span class="k">def</span> <span class="nf">_find_doctest_frame</span><span class="p">():</span>
+<div class="viewcode-block" id="_find_doctest_frame">
+<a class="viewcode-back" href="../../lxml.doctestcompare.html#lxml.doctestcompare._find_doctest_frame">[docs]</a>
+<span class="k">def</span> <span class="nf">_find_doctest_frame</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="n">frame</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">frame</span><span class="p">:</span>
@@ -585,6 +666,7 @@
         <span class="n">frame</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_back</span>
     <span class="k">raise</span> <span class="ne">LookupError</span><span class="p">(</span>
         <span class="s2">&quot;Could not find doctest (only use this function *inside* a doctest)&quot;</span><span class="p">)</span></div>
+
     
 <span class="n">__test__</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;basic&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;&#39;</span>

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.sax module &mdash; lxml  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,7 +37,7 @@
               <img src="_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                4.9.3
+                5.2.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -99,7 +101,7 @@
            <div itemprop="articleBody">
              
   <section id="module-lxml.sax">
-<span id="lxml-sax-module"></span><h1>lxml.sax module<a class="headerlink" href="#module-lxml.sax" title="Permalink to this heading"></a></h1>
+<span id="lxml-sax-module"></span><h1>lxml.sax module<a class="headerlink" href="#module-lxml.sax" title="Link to this heading"></a></h1>
 <p>SAX-based adapter to copy trees from/to the Python standard library.</p>
 <p>Use the <cite>ElementTreeContentHandler</cite> class to build an ElementTree from
 SAX events.</p>
@@ -108,49 +110,49 @@ the SAX events of an ElementTree against a SAX ContentHandler.</p>
 <p>See <a class="reference external" href="https://lxml.de/sax.html">https://lxml.de/sax.html</a></p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lxml.sax.SaxError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">SaxError</span></span><a class="headerlink" href="#lxml.sax.SaxError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">SaxError</span></span><a class="headerlink" href="#lxml.sax.SaxError" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="lxml.etree.html#lxml.etree.LxmlError" title="lxml.etree.LxmlError"><code class="xref py py-class docutils literal notranslate"><span class="pre">LxmlError</span></code></a></p>
 <p>General SAX error.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.SaxError.add_note">
-<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.SaxError.add_note" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.SaxError.add_note" title="Link to this definition"></a></dt>
 <dd><p>Exception.add_note(note) –
 add a note to the exception</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.SaxError.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.SaxError.with_traceback" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.SaxError.with_traceback" title="Link to this definition"></a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="lxml.sax.SaxError.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#lxml.sax.SaxError.args" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#lxml.sax.SaxError.args" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">ElementTreeContentHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">makeelement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">ElementTreeContentHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">makeelement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ContentHandler</span></code></p>
 <p>Build an lxml ElementTree from SAX events.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler._buildTag">
-<span class="sig-name descname"><span class="pre">_buildTag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name_tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler._buildTag" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_buildTag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name_tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler._buildTag" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler._get_etree">
-<span class="sig-name descname"><span class="pre">_get_etree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler._get_etree" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_get_etree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler._get_etree" title="Link to this definition"></a></dt>
 <dd><p>Contains the generated ElementTree after parsing is finished.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.characters">
-<span class="sig-name descname"><span class="pre">characters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.characters" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">characters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.characters" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of character data.</p>
 <p>The Parser will call this method to report each chunk of
 character data. SAX parsers may return all contiguous
@@ -162,7 +164,7 @@ Locator provides useful information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.endDocument">
-<span class="sig-name descname"><span class="pre">endDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endDocument" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">endDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endDocument" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of the end of a document.</p>
 <p>The SAX parser will invoke this method only once, and it will
 be the last method invoked during the parse. The parser shall
@@ -173,7 +175,7 @@ input.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.endElement">
-<span class="sig-name descname"><span class="pre">endElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endElement" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">endElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endElement" title="Link to this definition"></a></dt>
 <dd><p>Signals the end of an element in non-namespace mode.</p>
 <p>The name parameter contains the name of the element type, just
 as with the startElement event.</p>
@@ -181,7 +183,7 @@ as with the startElement event.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.endElementNS">
-<span class="sig-name descname"><span class="pre">endElementNS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endElementNS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">endElementNS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endElementNS" title="Link to this definition"></a></dt>
 <dd><p>Signals the end of an element in namespace mode.</p>
 <p>The name parameter contains the name of the element type, just
 as with the startElementNS event.</p>
@@ -189,7 +191,7 @@ as with the startElementNS event.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.endPrefixMapping">
-<span class="sig-name descname"><span class="pre">endPrefixMapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endPrefixMapping" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">endPrefixMapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.endPrefixMapping" title="Link to this definition"></a></dt>
 <dd><p>End the scope of a prefix-URI mapping.</p>
 <p>See startPrefixMapping for details. This event will always
 occur after the corresponding endElement event, but the order
@@ -198,7 +200,7 @@ of endPrefixMapping events is not otherwise guaranteed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.ignorableWhitespace">
-<span class="sig-name descname"><span class="pre">ignorableWhitespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.ignorableWhitespace" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ignorableWhitespace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.ignorableWhitespace" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of ignorable whitespace in element content.</p>
 <p>Validating Parsers must use this method to report each chunk
 of ignorable whitespace (see the W3C XML 1.0 recommendation,
@@ -213,7 +215,7 @@ information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.processingInstruction">
-<span class="sig-name descname"><span class="pre">processingInstruction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.processingInstruction" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">processingInstruction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.processingInstruction" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of a processing instruction.</p>
 <p>The Parser will invoke this method once for each processing
 instruction found: note that processing instructions may occur
@@ -225,7 +227,7 @@ using this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.setDocumentLocator">
-<span class="sig-name descname"><span class="pre">setDocumentLocator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.setDocumentLocator" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setDocumentLocator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.setDocumentLocator" title="Link to this definition"></a></dt>
 <dd><p>Called by the parser to give the application a locator for
 locating the origin of document events.</p>
 <p>SAX parsers are strongly encouraged (though not absolutely
@@ -247,7 +249,7 @@ application should not attempt to use it at any other time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.skippedEntity">
-<span class="sig-name descname"><span class="pre">skippedEntity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.skippedEntity" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">skippedEntity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.skippedEntity" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of a skipped entity.</p>
 <p>The Parser will invoke this method once for each entity
 skipped. Non-validating processors may skip entities if they
@@ -261,7 +263,7 @@ properties.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.startDocument">
-<span class="sig-name descname"><span class="pre">startDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startDocument" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">startDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startDocument" title="Link to this definition"></a></dt>
 <dd><p>Receive notification of the beginning of a document.</p>
 <p>The SAX parser will invoke this method only once, before any
 other methods in this interface or in DTDHandler (except for
@@ -270,7 +272,7 @@ setDocumentLocator).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.startElement">
-<span class="sig-name descname"><span class="pre">startElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startElement" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">startElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startElement" title="Link to this definition"></a></dt>
 <dd><p>Signals the start of an element in non-namespace mode.</p>
 <p>The name parameter contains the raw XML 1.0 name of the
 element type as a string and the attrs parameter holds an
@@ -280,7 +282,7 @@ the element.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.startElementNS">
-<span class="sig-name descname"><span class="pre">startElementNS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startElementNS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">startElementNS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startElementNS" title="Link to this definition"></a></dt>
 <dd><p>Signals the start of an element in namespace mode.</p>
 <p>The name parameter contains the name of the element type as a
 (uri, localname) tuple, the qname parameter the raw XML 1.0
@@ -293,7 +295,7 @@ no namespace.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.startPrefixMapping">
-<span class="sig-name descname"><span class="pre">startPrefixMapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startPrefixMapping" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">startPrefixMapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.startPrefixMapping" title="Link to this definition"></a></dt>
 <dd><p>Begin the scope of a prefix-URI Namespace mapping.</p>
 <p>The information from this event is not necessary for normal
 Namespace processing: the SAX XML reader will automatically
@@ -316,7 +318,7 @@ not guaranteed.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeContentHandler.etree">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">etree</span></span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.etree" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">etree</span></span><a class="headerlink" href="#lxml.sax.ElementTreeContentHandler.etree" title="Link to this definition"></a></dt>
 <dd><p>Contains the generated ElementTree after parsing is finished.</p>
 </dd></dl>
 
@@ -324,24 +326,24 @@ not guaranteed.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeProducer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">ElementTreeProducer</span></span><a class="headerlink" href="#lxml.sax.ElementTreeProducer" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">ElementTreeProducer</span></span><a class="headerlink" href="#lxml.sax.ElementTreeProducer" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Produces SAX events for an element and children.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.sax.ElementTreeProducer.saxify">
-<span class="sig-name descname"><span class="pre">saxify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeProducer.saxify" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">saxify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.ElementTreeProducer.saxify" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="lxml.sax.__pyx_unpickle_ElementTreeProducer">
-<span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">__pyx_unpickle_ElementTreeProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">__pyx_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__pyx_checksum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__pyx_state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.__pyx_unpickle_ElementTreeProducer" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">__pyx_unpickle_ElementTreeProducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">__pyx_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__pyx_checksum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">__pyx_state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.__pyx_unpickle_ElementTreeProducer" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="lxml.sax.saxify">
-<span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">saxify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_or_tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.saxify" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">lxml.sax.</span></span><span class="sig-name descname"><span class="pre">saxify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_or_tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.sax.saxify" title="Link to this definition"></a></dt>
 <dd><p>One-shot helper to generate SAX events from an XML tree and fire
 them against a SAX ContentHandler.</p>
 </dd></dl>

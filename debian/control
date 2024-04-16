@@ -8,18 +8,19 @@ Build-Depends: debhelper (>= 10),
   libxml2-dev, libxslt1-dev, zlib1g-dev,
   python3-setuptools (>= 0.6.29),
   python3-bs4,
+  python3-cssselect,
   python3-html5lib,
   cython3,
   python3-sphinx-autoapi,
 X-Python-Version: all
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Homepage: http://lxml.de/
 
 Package: python3-lxml
 Architecture: any
 Multi-Arch: same
 Depends: ${python3:Depends}, ${shlibs:Depends}, ${misc:Depends}
-Recommends: python3-bs4, python3-html5lib
+Recommends: python3-bs4, python3-cssselect, python3-html5lib
 Suggests: python-lxml-doc
 Provides: ${python3:Provides}
 Description: pythonic binding for the libxml2 and libxslt libraries
