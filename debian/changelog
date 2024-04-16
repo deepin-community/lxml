@@ -1,3 +1,31 @@
+lxml (5.2.1-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 03 Apr 2024 22:07:13 +0200
+
+lxml (5.2.0-1) unstable; urgency=medium
+
+  * New upstream version.
+    - The ``lxml.html.clean`` implementation suffered from several (only
+      if used) security issues in the past. Removed. LP: #1958539.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 02 Apr 2024 17:29:25 +0200
+
+lxml (5.1.0-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 16 Jan 2024 01:03:02 +0100
+
+lxml (4.9.4-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+  * Build-depend on python3-cssselect, and recommend it. Closes: #1017067.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 27 Dec 2023 10:16:59 +0100
+
 lxml (4.9.3-1) unstable; urgency=medium
 
   * New upstream version.
