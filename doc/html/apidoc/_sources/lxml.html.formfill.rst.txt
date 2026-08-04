@@ -3,6 +3,6 @@ lxml.html.formfill module
 
 .. automodule:: lxml.html.formfill
    :members:
-   :undoc-members:
-   :show-inheritance:
    :private-members:
+   :show-inheritance:
+   :undoc-members:

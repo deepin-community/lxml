@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.objectify module &mdash; lxml  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,9 +35,6 @@
             lxml
               <img src="_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.2.1
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -107,7 +102,7 @@
 It is based on <cite>lxml.etree</cite>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.BoolElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">BoolElement</span></span><a class="headerlink" href="#lxml.objectify.BoolElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">BoolElement</span></span><a class="headerlink" href="#lxml.objectify.BoolElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.IntElement" title="lxml.objectify.IntElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntElement</span></code></a></p>
 <p>Boolean type base on string values: ‘true’ or ‘false’.</p>
 <p>Note that this inherits from IntElement to mimic the behaviour of
@@ -183,7 +178,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.BoolElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.BoolElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.BoolElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -504,7 +499,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.ElementMaker">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ElementMaker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">makeelement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ElementMaker" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ElementMaker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">makeelement</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ElementMaker" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An ElementMaker that can be used for constructing trees.</p>
 <p>Example:</p>
@@ -512,7 +507,7 @@ there was no text.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;par&#39;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">html</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">html</span><span class="p">(</span> <span class="n">M</span><span class="o">.</span><span class="n">body</span><span class="p">(</span> <span class="n">M</span><span class="o">.</span><span class="n">p</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">br</span><span class="p">,</span> <span class="s1">&#39;objectify&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;font-weight: bold&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">tostring</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">lxml.etree</span><span class="w"> </span><span class="kn">import</span> <span class="n">tostring</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">tostring</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span>
 <span class="go">&lt;html&gt;&lt;body&gt;&lt;p style=&quot;font-weight: bold&quot; class=&quot;par&quot;&gt;hello&lt;br&gt;objectify&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</span>
 </pre></div>
@@ -531,7 +526,7 @@ directly and pass the tag name as first argument:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.FloatElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">FloatElement</span></span><a class="headerlink" href="#lxml.objectify.FloatElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">FloatElement</span></span><a class="headerlink" href="#lxml.objectify.FloatElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.NumberElement" title="lxml.objectify.NumberElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberElement</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.FloatElement._init">
@@ -604,7 +599,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.FloatElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.FloatElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.FloatElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -925,7 +920,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.IntElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">IntElement</span></span><a class="headerlink" href="#lxml.objectify.IntElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">IntElement</span></span><a class="headerlink" href="#lxml.objectify.IntElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.NumberElement" title="lxml.objectify.NumberElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumberElement</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.IntElement._init">
@@ -998,7 +993,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.IntElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.IntElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.IntElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -1319,7 +1314,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.NoneElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">NoneElement</span></span><a class="headerlink" href="#lxml.objectify.NoneElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">NoneElement</span></span><a class="headerlink" href="#lxml.objectify.NoneElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.ObjectifiedDataElement" title="lxml.objectify.ObjectifiedDataElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectifiedDataElement</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.NoneElement._init">
@@ -1385,7 +1380,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.NoneElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.NoneElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.NoneElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -1706,7 +1701,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.NumberElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">NumberElement</span></span><a class="headerlink" href="#lxml.objectify.NumberElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">NumberElement</span></span><a class="headerlink" href="#lxml.objectify.NumberElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.ObjectifiedDataElement" title="lxml.objectify.ObjectifiedDataElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectifiedDataElement</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.NumberElement._init">
@@ -1779,7 +1774,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.NumberElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.NumberElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.NumberElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -2100,7 +2095,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectPath">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectPath" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectPath" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Immutable object that represents a compiled object path.</p>
 <p>Example for a path: ‘root.child[1].{other}child[25]’</p>
@@ -2132,7 +2127,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectifiedDataElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifiedDataElement</span></span><a class="headerlink" href="#lxml.objectify.ObjectifiedDataElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifiedDataElement</span></span><a class="headerlink" href="#lxml.objectify.ObjectifiedDataElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.ObjectifiedElement" title="lxml.objectify.ObjectifiedElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectifiedElement</span></code></a></p>
 <p>This is the base class for all data type Elements.  Subclasses should
 override the ‘pyval’ property and possibly the __str__ method.</p>
@@ -2200,7 +2195,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectifiedDataElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifiedDataElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifiedDataElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -2521,7 +2516,7 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectifiedElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifiedElement</span></span><a class="headerlink" href="#lxml.objectify.ObjectifiedElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifiedElement</span></span><a class="headerlink" href="#lxml.objectify.ObjectifiedElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="lxml.etree.html#lxml.etree.ElementBase" title="lxml.etree.ElementBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElementBase</span></code></a></p>
 <p>Main XML Element class.</p>
 <p>Element children are accessed as object attributes.  Multiple children
@@ -2591,7 +2586,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectifiedElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifiedElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifiedElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note
@@ -2907,14 +2902,14 @@ there was no text.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.ObjectifyElementClassLookup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifyElementClassLookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_data_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifyElementClassLookup" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">ObjectifyElementClassLookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tree_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_data_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.ObjectifyElementClassLookup" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="lxml.etree.html#lxml.etree.ElementClassLookup" title="lxml.etree.ElementClassLookup"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElementClassLookup</span></code></a></p>
 <p>Element class lookup method that uses the objectify classes.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.PyType">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">PyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_check</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stringify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.PyType" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">PyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_check</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stringify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.PyType" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>User defined type.</p>
 <p>Named type that contains a type check function, a type class that
@@ -2972,7 +2967,7 @@ ignored.  Raises ValueError if the dependencies cannot be fulfilled.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.objectify.StringElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">StringElement</span></span><a class="headerlink" href="#lxml.objectify.StringElement" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.objectify.</span></span><span class="sig-name descname"><span class="pre">StringElement</span></span><a class="headerlink" href="#lxml.objectify.StringElement" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.objectify.ObjectifiedDataElement" title="lxml.objectify.ObjectifiedDataElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectifiedDataElement</span></code></a></p>
 <p>String data class.</p>
 <p>Note that this class does <em>not</em> support the sequence protocol of strings:
@@ -3042,7 +3037,7 @@ name.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.objectify.StringElement.cssselect">
-<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.StringElement.cssselect" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cssselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">translator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.objectify.StringElement.cssselect" title="Link to this definition"></a></dt>
 <dd><p>Run the CSS expression on this element and its children,
 returning a list of the results.</p>
 <p>Equivalent to lxml.cssselect.CSSSelect(expr)(self) – note

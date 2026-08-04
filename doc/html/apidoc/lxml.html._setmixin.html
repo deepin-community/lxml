@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.html._setmixin module &mdash; lxml  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,9 +35,6 @@
             lxml
               <img src="_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.2.1
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -106,12 +101,12 @@
 <span id="lxml-html-setmixin-module"></span><h1>lxml.html._setmixin module<a class="headerlink" href="#module-lxml.html._setmixin" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html._setmixin.SetMixin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html._setmixin.</span></span><span class="sig-name descname"><span class="pre">SetMixin</span></span><a class="reference internal" href="_modules/lxml/html/_setmixin.html#SetMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lxml.html._setmixin.SetMixin" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html._setmixin.</span></span><span class="sig-name descname"><span class="pre">SetMixin</span></span><a class="reference internal" href="_modules/lxml/html/_setmixin.html#SetMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lxml.html._setmixin.SetMixin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MutableSet</span></code></p>
 <p>Mix-in for sets.  You must define __iter__, add, remove</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html._setmixin.SetMixin._from_iterable">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_from_iterable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lxml/html/_setmixin.html#SetMixin._from_iterable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lxml.html._setmixin.SetMixin._from_iterable" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_from_iterable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lxml/html/_setmixin.html#SetMixin._from_iterable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lxml.html._setmixin.SetMixin._from_iterable" title="Link to this definition"></a></dt>
 <dd><p>Construct an instance of the class from any iterable input.</p>
 <p>Must override this method if the class constructor signature
 does not accept an iterable for an input.</p>
@@ -134,7 +129,7 @@ by the built-in frozenset type.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html._setmixin.SetMixin.add">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html._setmixin.SetMixin.add" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html._setmixin.SetMixin.add" title="Link to this definition"></a></dt>
 <dd><p>Add an element.</p>
 </dd></dl>
 

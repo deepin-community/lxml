@@ -60,7 +60,7 @@ doc/html/FAQ.html
 doc/html/api.html
 doc/html/build.html
 doc/html/capi.html
-doc/html/changes-5.2.1.html
+doc/html/changes-5.4.0.html
 doc/html/compatibility.html
 doc/html/credits.html
 doc/html/cssselect.html
@@ -165,9 +165,8 @@ doc/html/apidoc/_static/sphinx_highlight.js
 doc/html/apidoc/_static/css/badge_only.css
 doc/html/apidoc/_static/css/theme.css
 doc/html/apidoc/_static/js/badge_only.js
-doc/html/apidoc/_static/js/html5shiv-printshiv.min.js
-doc/html/apidoc/_static/js/html5shiv.min.js
 doc/html/apidoc/_static/js/theme.js
+doc/html/apidoc/_static/js/versions.js
 doc/licenses/BSD.txt
 doc/licenses/GPL.txt
 doc/licenses/elementtree.txt
@@ -318,7 +317,6 @@ src/lxml/html/tests/feedparser-data/entry_content_script.data
 src/lxml/html/tests/feedparser-data/entry_content_script_cdata.data
 src/lxml/html/tests/feedparser-data/entry_content_script_inline.data
 src/lxml/html/tests/feedparser-data/entry_content_style.data
-src/lxml/html/tests/hackers-org-data/background-image-plus.data
 src/lxml/html/tests/hackers-org-data/background-image-with-unicoded.data
 src/lxml/html/tests/hackers-org-data/downlevel-hidden.data
 src/lxml/html/tests/hackers-org-data/html-plus-time.data

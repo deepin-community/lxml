@@ -3,12 +3,13 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
+DPKG_EXPORT_BUILDFLAGS = 1
 
 PY3VERS	:= $(shell py3versions -vs)
 PY3VER	:= $(shell py3versions -vd)
 
 include /usr/share/dpkg/pkg-info.mk
-
+include /usr/share/dpkg/buildflags.mk
 include /usr/share/python3/python.mk
 
 # Some locales trigger reproducibility issues in html documentation

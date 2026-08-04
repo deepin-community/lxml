@@ -1,3 +1,43 @@
+lxml (5.4.0-1) unstable; urgency=medium
+
+  * New upstream version (no source changes).
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 03 May 2025 17:06:29 +0200
+
+lxml (5.3.2-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 09 Apr 2025 11:01:12 +0200
+
+lxml (5.3.1-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 12 Feb 2025 14:14:16 +0100
+
+lxml (5.3.0-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 20 Aug 2024 13:00:33 +0200
+
+lxml (5.2.2-2) unstable; urgency=medium
+
+  * debian/rules: Set DPKG_EXPORT_BUILDFLAGS = 1 and include
+    /usr/share/dpkg/buildflags.mk to pick up the correct compiler flags
+    (Julian Andres Klode) Closes: ##1078271.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 10 Aug 2024 06:31:54 +0200
+
+lxml (5.2.2-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 10 Jul 2024 09:48:42 +0200
+
 lxml (5.2.1-1) unstable; urgency=medium
 
   * New upstream version.

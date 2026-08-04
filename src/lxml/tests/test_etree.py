@@ -28,18 +28,19 @@ from .common_imports import SillyFileLike, LargeFileLikeUnicode, doctest, make_d
 from .common_imports import canonicalize, _str, _bytes
 from .common_imports import SimpleFSPath
 
-print("""
-TESTED VERSION: %s""" % etree.__version__ + """
-    Python:           %r""" % (sys.version_info,) + """
-    lxml.etree:       %r""" % (etree.LXML_VERSION,) + """
-    libxml used:      %r""" % (etree.LIBXML_VERSION,) + """
-    libxml compiled:  %r""" % (etree.LIBXML_COMPILED_VERSION,) + """
-    libxslt used:     %r""" % (etree.LIBXSLT_VERSION,) + """
-    libxslt compiled: %r""" % (etree.LIBXSLT_COMPILED_VERSION,) + """
-    FS encoding:      %s""" % (sys.getfilesystemencoding(),) + """
-    Default encoding: %s""" % (sys.getdefaultencoding(),) + """
-    Max Unicode:      %s""" % (sys.maxunicode,) + """
-    PyUCS4 encoding:  %s""" % (getattr(etree, '_pyucs4_encoding_name', ''),) + """
+print(f"""
+TESTED VERSION: {etree.__version__}
+    Python:           {tuple(sys.version_info)!r}
+    lxml.etree:       {etree.LXML_VERSION!r}
+    libxml used:      {etree.LIBXML_VERSION!r}
+    libxml compiled:  {etree.LIBXML_COMPILED_VERSION!r}
+    libxslt used:     {etree.LIBXSLT_VERSION!r}
+    libxslt compiled: {etree.LIBXSLT_COMPILED_VERSION!r}
+    iconv compiled:   {etree.ICONV_COMPILED_VERSION!r}
+    FS encoding:      {sys.getfilesystemencoding()}
+    Default encoding: {sys.getdefaultencoding()}
+    Max Unicode:      {sys.maxunicode}
+    PyUCS4 encoding:  {getattr(etree, '_pyucs4_encoding_name', '')}
 """)
 
 
@@ -1961,6 +1962,20 @@ class ETreeOnlyTestCase(HelperTestCase):
                           tostring(root))
 
         self.assertEqual(['test'], root.xpath('//text()'))
+
+    def test_cdata_split_cdend(self):
+        # Tests that existing ']]>' in CDATA is split to 'escape' it
+        CDATA = self.etree.CDATA
+        Element = self.etree.Element
+        tostring = self.etree.tostring
+
+        root = Element("root")
+        root.text = CDATA('test]]>')
+
+        self.assertEqual('test]]>',
+                          root.text)
+        self.assertEqual(b'<root><![CDATA[test]]]]><![CDATA[>]]></root>',
+                          tostring(root))
 
     # TypeError in etree, AssertionError in ElementTree;
     def test_setitem_assert(self):
@@ -4561,24 +4576,24 @@ class ETreeOnlyTestCase(HelperTestCase):
         tostring = self.etree.tostring
         html = self.etree.fromstring(
             '<html><body>'
-            '<div><p>Some text<i>\r\n</i></p></div>\r\n'
+            '<div><p>Some text<i>\n</i></p></div>\n'
             '</body></html>',
             parser=self.etree.HTMLParser())
         self.assertEqual(html.tag, 'html')
         div = html.find('.//div')
-        self.assertEqual(div.tail, '\r\n')
+        self.assertEqual(div.tail, '\n')
         result = tostring(div, method='html')
         self.assertEqual(
             result,
-            b"<div><p>Some text<i>\r\n</i></p></div>\r\n")
+            b"<div><p>Some text<i>\n</i></p></div>\n")
         result = tostring(div, method='html', with_tail=True)
         self.assertEqual(
             result,
-            b"<div><p>Some text<i>\r\n</i></p></div>\r\n")
+            b"<div><p>Some text<i>\n</i></p></div>\n")
         result = tostring(div, method='html', with_tail=False)
         self.assertEqual(
             result,
-            b"<div><p>Some text<i>\r\n</i></p></div>")
+            b"<div><p>Some text<i>\n</i></p></div>")
 
     def test_standalone(self):
         tostring = self.etree.tostring
@@ -5739,15 +5754,15 @@ def test_suite():
     # add doctests
     suite.addTests(doctest.DocTestSuite(etree))
     suite.addTests(
-        [make_doctest('../../../doc/tutorial.txt')])
+        [make_doctest('tutorial.txt')])
     suite.addTests(
-        [make_doctest('../../../doc/api.txt')])
+        [make_doctest('api.txt')])
     suite.addTests(
-        [make_doctest('../../../doc/FAQ.txt')])
+        [make_doctest('FAQ.txt')])
     suite.addTests(
-        [make_doctest('../../../doc/parsing.txt')])
+        [make_doctest('parsing.txt')])
     suite.addTests(
-        [make_doctest('../../../doc/resolvers.txt')])
+        [make_doctest('resolvers.txt')])
     return suite
 
 

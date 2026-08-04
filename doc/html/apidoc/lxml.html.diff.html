@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.html.diff module &mdash; lxml  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -37,9 +35,6 @@
             lxml
               <img src="_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.2.1
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -106,20 +101,20 @@
 <span id="lxml-html-diff-module"></span><h1>lxml.html.diff module<a class="headerlink" href="#module-lxml.html.diff" title="Link to this heading"></a></h1>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lxml.html.diff.NoDeletes">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">NoDeletes</span></span><a class="headerlink" href="#lxml.html.diff.NoDeletes" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">NoDeletes</span></span><a class="headerlink" href="#lxml.html.diff.NoDeletes" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Raised when the document no longer contains any pending deletes
 (DEL_START/DEL_END)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.NoDeletes.add_note">
-<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.NoDeletes.add_note" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.NoDeletes.add_note" title="Link to this definition"></a></dt>
 <dd><p>Exception.add_note(note) –
 add a note to the exception</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.NoDeletes.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.NoDeletes.with_traceback" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.NoDeletes.with_traceback" title="Link to this definition"></a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
@@ -133,19 +128,19 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.DEL_END">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">DEL_END</span></span><a class="headerlink" href="#lxml.html.diff.DEL_END" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">DEL_END</span></span><a class="headerlink" href="#lxml.html.diff.DEL_END" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.DEL_START">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">DEL_START</span></span><a class="headerlink" href="#lxml.html.diff.DEL_START" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">DEL_START</span></span><a class="headerlink" href="#lxml.html.diff.DEL_START" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.InsensitiveSequenceMatcher">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">InsensitiveSequenceMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isjunk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autojunk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.InsensitiveSequenceMatcher" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">InsensitiveSequenceMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isjunk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autojunk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.InsensitiveSequenceMatcher" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SequenceMatcher</span></code></p>
 <p>Acts like SequenceMatcher, but tries not to find very small equal
 blocks amidst large spans of changes</p>
@@ -201,7 +196,7 @@ match, and matches the leftmost “abcd” in the second sequence:</p>
 <dd><p>Isolate change clusters by eliminating ranges with no changes.</p>
 <p>Return a generator of groups with up to n lines of context.
 Each group is in the same format as returned by get_opcodes().</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">40</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span>     <span class="c1"># Make an insertion</span>
@@ -377,10 +372,23 @@ repeatedly for each of the other sequences.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">href_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">href_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.html.diff.token" title="lxml.html.diff.token"><code class="xref py py-class docutils literal notranslate"><span class="pre">token</span></code></a></p>
 <p>Represents the href in an anchor tag.  Unlike other words, we only
 show the href when it changes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lxml.html.diff.href_token.maketrans">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.maketrans" title="Link to this definition"></a></dt>
+<dd><p>Return a translation table usable for str.translate().</p>
+<p>If there is only one argument, it must be a dictionary mapping Unicode
+ordinals (integers) or characters to Unicode ordinals, strings or None.
+Character keys will be then converted to ordinals.
+If there are two arguments, they must be strings of equal length, and
+in the resulting dictionary, each character in x will be mapped to the
+character at the same position in y. If there is a third argument, it
+must be a string, whose characters will be mapped to None in the result.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.capitalize">
 <span class="sig-name descname"><span class="pre">capitalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.capitalize" title="Link to this definition"></a></dt>
@@ -397,17 +405,16 @@ case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.center">
-<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.center" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.center" title="Link to this definition"></a></dt>
 <dd><p>Return a centered string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.count" title="Link to this definition"></a></dt>
-<dd><p>Return the number of non-overlapping occurrences of substring sub in
-string S[start:end].  Optional arguments start and end are
-interpreted as in slice notation.</p>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.count" title="Link to this definition"></a></dt>
+<dd><p>Return the number of non-overlapping occurrences of substring sub in string S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -428,11 +435,16 @@ codecs.register_error that can handle UnicodeEncodeErrors.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.endswith">
-<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.endswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S ends with the specified suffix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-suffix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.endswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string ends with the specified suffix, False otherwise.</p>
+<dl class="simple">
+<dt>suffix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -444,24 +456,23 @@ suffix can also be a tuple of strings to try.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.find">
-<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.find" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.find" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.format">
-<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.format" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from args and kwargs.
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.format" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from args and kwargs.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.format_map">
-<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.format_map" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from mapping.
+<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.format_map" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from mapping.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
@@ -472,11 +483,10 @@ The substitutions are identified by braces (‘{’ and ‘}’).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.index" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.index" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -546,9 +556,8 @@ least one character in the string.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.isprintable">
 <span class="sig-name descname"><span class="pre">isprintable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.isprintable" title="Link to this definition"></a></dt>
-<dd><p>Return True if the string is printable, False otherwise.</p>
-<p>A string is printable if all of its characters are considered printable in
-repr() or if it is empty.</p>
+<dd><p>Return True if all characters in the string are printable, False otherwise.</p>
+<p>A character is printable if repr() may use it in its output.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -577,7 +586,7 @@ there is at least one cased character in the string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.join" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.join" title="Link to this definition"></a></dt>
 <dd><p>Concatenate any number of strings.</p>
 <p>The string whose method is called is inserted in between each given string.
 The result is returned as a new string.</p>
@@ -586,7 +595,7 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.ljust">
-<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.ljust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.ljust" title="Link to this definition"></a></dt>
 <dd><p>Return a left-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
@@ -599,27 +608,14 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.lstrip">
-<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.lstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.lstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="lxml.html.diff.href_token.maketrans">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.maketrans" title="Link to this definition"></a></dt>
-<dd><p>Return a translation table usable for str.translate().</p>
-<p>If there is only one argument, it must be a dictionary mapping Unicode
-ordinals (integers) or characters to Unicode ordinals, strings or None.
-Character keys will be then converted to ordinals.
-If there are two arguments, they must be strings of equal length, and
-in the resulting dictionary, each character in x will be mapped to the
-character at the same position in y. If there is a third argument, it
-must be a string, whose characters will be mapped to None in the result.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.partition">
-<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.partition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.partition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string.  If the separator is found,
 returns a 3-tuple containing the part before the separator, the separator
@@ -630,7 +626,7 @@ and two empty strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.removeprefix">
-<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.removeprefix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.removeprefix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given prefix string removed if present.</p>
 <p>If the string starts with the prefix string, return string[len(prefix):].
 Otherwise, return a copy of the original string.</p>
@@ -638,7 +634,7 @@ Otherwise, return a copy of the original string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.removesuffix">
-<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.removesuffix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.removesuffix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given suffix string removed if present.</p>
 <p>If the string ends with the suffix string and that suffix is not empty,
 return string[:-len(suffix)]. Otherwise, return a copy of the original
@@ -647,7 +643,7 @@ string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.replace" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.replace" title="Link to this definition"></a></dt>
 <dd><p>Return a copy with all occurrences of substring old replaced by new.</p>
 <blockquote>
 <div><dl class="simple">
@@ -662,32 +658,30 @@ replaced.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.rfind">
-<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.rfind" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rfind" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.rindex">
-<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.rindex" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rindex" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.rjust">
-<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rjust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rjust" title="Link to this definition"></a></dt>
 <dd><p>Return a right-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.rpartition">
-<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rpartition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rpartition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string, starting at the end. If
 the separator is found, returns a 3-tuple containing the part before the
@@ -717,7 +711,7 @@ empty strings from the result.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.rstrip">
-<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.rstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -754,16 +748,21 @@ true.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.startswith">
-<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.href_token.startswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S starts with the specified prefix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-prefix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.startswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string starts with the specified prefix, False otherwise.</p>
+<dl class="simple">
+<dt>prefix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.strip">
-<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.strip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.strip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading and trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -784,7 +783,7 @@ cased characters have lower case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.translate">
-<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.translate" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.translate" title="Link to this definition"></a></dt>
 <dd><p>Replace each character in the string using the given translation table.</p>
 <blockquote>
 <div><dl class="simple">
@@ -806,7 +805,7 @@ left untouched.  Characters mapped to None are deleted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.href_token.zfill">
-<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.zfill" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.href_token.zfill" title="Link to this definition"></a></dt>
 <dd><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
 <p>The string is never truncated.</p>
 </dd></dl>
@@ -820,11 +819,24 @@ left untouched.  Characters mapped to None are deleted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">tag_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_repr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">tag_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html_repr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#lxml.html.diff.token" title="lxml.html.diff.token"><code class="xref py py-class docutils literal notranslate"><span class="pre">token</span></code></a></p>
 <p>Represents a token that is actually a tag.  Currently this is just
 the &lt;img&gt; tag, which takes up visible space just like a word but
 is only represented in a document by a tag.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lxml.html.diff.tag_token.maketrans">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.maketrans" title="Link to this definition"></a></dt>
+<dd><p>Return a translation table usable for str.translate().</p>
+<p>If there is only one argument, it must be a dictionary mapping Unicode
+ordinals (integers) or characters to Unicode ordinals, strings or None.
+Character keys will be then converted to ordinals.
+If there are two arguments, they must be strings of equal length, and
+in the resulting dictionary, each character in x will be mapped to the
+character at the same position in y. If there is a third argument, it
+must be a string, whose characters will be mapped to None in the result.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.capitalize">
 <span class="sig-name descname"><span class="pre">capitalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.capitalize" title="Link to this definition"></a></dt>
@@ -841,17 +853,16 @@ case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.center">
-<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.center" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.center" title="Link to this definition"></a></dt>
 <dd><p>Return a centered string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.count" title="Link to this definition"></a></dt>
-<dd><p>Return the number of non-overlapping occurrences of substring sub in
-string S[start:end].  Optional arguments start and end are
-interpreted as in slice notation.</p>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.count" title="Link to this definition"></a></dt>
+<dd><p>Return the number of non-overlapping occurrences of substring sub in string S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -872,11 +883,16 @@ codecs.register_error that can handle UnicodeEncodeErrors.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.endswith">
-<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.endswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S ends with the specified suffix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-suffix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.endswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string ends with the specified suffix, False otherwise.</p>
+<dl class="simple">
+<dt>suffix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -888,24 +904,23 @@ suffix can also be a tuple of strings to try.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.find">
-<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.find" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.find" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.format">
-<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.format" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from args and kwargs.
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.format" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from args and kwargs.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.format_map">
-<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.format_map" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from mapping.
+<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.format_map" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from mapping.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
@@ -916,11 +931,10 @@ The substitutions are identified by braces (‘{’ and ‘}’).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.index" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.index" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -990,9 +1004,8 @@ least one character in the string.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.isprintable">
 <span class="sig-name descname"><span class="pre">isprintable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.isprintable" title="Link to this definition"></a></dt>
-<dd><p>Return True if the string is printable, False otherwise.</p>
-<p>A string is printable if all of its characters are considered printable in
-repr() or if it is empty.</p>
+<dd><p>Return True if all characters in the string are printable, False otherwise.</p>
+<p>A character is printable if repr() may use it in its output.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1021,7 +1034,7 @@ there is at least one cased character in the string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.join" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.join" title="Link to this definition"></a></dt>
 <dd><p>Concatenate any number of strings.</p>
 <p>The string whose method is called is inserted in between each given string.
 The result is returned as a new string.</p>
@@ -1030,7 +1043,7 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.ljust">
-<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.ljust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.ljust" title="Link to this definition"></a></dt>
 <dd><p>Return a left-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
@@ -1043,27 +1056,14 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.lstrip">
-<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.lstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.lstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="lxml.html.diff.tag_token.maketrans">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.maketrans" title="Link to this definition"></a></dt>
-<dd><p>Return a translation table usable for str.translate().</p>
-<p>If there is only one argument, it must be a dictionary mapping Unicode
-ordinals (integers) or characters to Unicode ordinals, strings or None.
-Character keys will be then converted to ordinals.
-If there are two arguments, they must be strings of equal length, and
-in the resulting dictionary, each character in x will be mapped to the
-character at the same position in y. If there is a third argument, it
-must be a string, whose characters will be mapped to None in the result.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.partition">
-<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.partition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.partition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string.  If the separator is found,
 returns a 3-tuple containing the part before the separator, the separator
@@ -1074,7 +1074,7 @@ and two empty strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.removeprefix">
-<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.removeprefix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.removeprefix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given prefix string removed if present.</p>
 <p>If the string starts with the prefix string, return string[len(prefix):].
 Otherwise, return a copy of the original string.</p>
@@ -1082,7 +1082,7 @@ Otherwise, return a copy of the original string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.removesuffix">
-<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.removesuffix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.removesuffix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given suffix string removed if present.</p>
 <p>If the string ends with the suffix string and that suffix is not empty,
 return string[:-len(suffix)]. Otherwise, return a copy of the original
@@ -1091,7 +1091,7 @@ string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.replace" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.replace" title="Link to this definition"></a></dt>
 <dd><p>Return a copy with all occurrences of substring old replaced by new.</p>
 <blockquote>
 <div><dl class="simple">
@@ -1106,32 +1106,30 @@ replaced.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.rfind">
-<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.rfind" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rfind" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.rindex">
-<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.rindex" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rindex" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.rjust">
-<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rjust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rjust" title="Link to this definition"></a></dt>
 <dd><p>Return a right-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.rpartition">
-<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rpartition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rpartition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string, starting at the end. If
 the separator is found, returns a 3-tuple containing the part before the
@@ -1161,7 +1159,7 @@ empty strings from the result.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.rstrip">
-<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.rstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -1198,16 +1196,21 @@ true.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.startswith">
-<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.tag_token.startswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S starts with the specified prefix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-prefix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.startswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string starts with the specified prefix, False otherwise.</p>
+<dl class="simple">
+<dt>prefix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.strip">
-<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.strip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.strip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading and trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -1228,7 +1231,7 @@ cased characters have lower case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.translate">
-<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.translate" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.translate" title="Link to this definition"></a></dt>
 <dd><p>Replace each character in the string using the given translation table.</p>
 <blockquote>
 <div><dl class="simple">
@@ -1250,7 +1253,7 @@ left untouched.  Characters mapped to None are deleted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.tag_token.zfill">
-<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.zfill" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.tag_token.zfill" title="Link to this definition"></a></dt>
 <dd><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
 <p>The string is never truncated.</p>
 </dd></dl>
@@ -1264,7 +1267,7 @@ left untouched.  Characters mapped to None are deleted.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="lxml.html.diff.token">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lxml.html.diff.</span></span><span class="sig-name descname"><span class="pre">token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trailing_whitespace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
 <p>Represents a diffable token, generally a word that is displayed to
 the user.  Opening tags are attached to this token when they are
@@ -1276,6 +1279,19 @@ open tags in post_tags.</p>
 whitespace, even though we do not want to treat the word as
 equivalent to a similar word that does not have a trailing
 space.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lxml.html.diff.token.maketrans">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.maketrans" title="Link to this definition"></a></dt>
+<dd><p>Return a translation table usable for str.translate().</p>
+<p>If there is only one argument, it must be a dictionary mapping Unicode
+ordinals (integers) or characters to Unicode ordinals, strings or None.
+Character keys will be then converted to ordinals.
+If there are two arguments, they must be strings of equal length, and
+in the resulting dictionary, each character in x will be mapped to the
+character at the same position in y. If there is a third argument, it
+must be a string, whose characters will be mapped to None in the result.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.capitalize">
 <span class="sig-name descname"><span class="pre">capitalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.capitalize" title="Link to this definition"></a></dt>
@@ -1292,17 +1308,16 @@ case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.center">
-<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.center" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.center" title="Link to this definition"></a></dt>
 <dd><p>Return a centered string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.token.count" title="Link to this definition"></a></dt>
-<dd><p>Return the number of non-overlapping occurrences of substring sub in
-string S[start:end].  Optional arguments start and end are
-interpreted as in slice notation.</p>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.count" title="Link to this definition"></a></dt>
+<dd><p>Return the number of non-overlapping occurrences of substring sub in string S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1323,11 +1338,16 @@ codecs.register_error that can handle UnicodeEncodeErrors.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.endswith">
-<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.token.endswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S ends with the specified suffix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-suffix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">endswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.endswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string ends with the specified suffix, False otherwise.</p>
+<dl class="simple">
+<dt>suffix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1339,24 +1359,23 @@ suffix can also be a tuple of strings to try.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.find">
-<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.token.find" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.find" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.format">
-<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.token.format" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from args and kwargs.
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.format" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from args and kwargs.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.format_map">
-<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#lxml.html.diff.token.format_map" title="Link to this definition"></a></dt>
-<dd><p>Return a formatted version of S, using substitutions from mapping.
+<span class="sig-name descname"><span class="pre">format_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.format_map" title="Link to this definition"></a></dt>
+<dd><p>Return a formatted version of the string, using substitutions from mapping.
 The substitutions are identified by braces (‘{’ and ‘}’).</p>
 </dd></dl>
 
@@ -1367,11 +1386,10 @@ The substitutions are identified by braces (‘{’ and ‘}’).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.token.index" title="Link to this definition"></a></dt>
-<dd><p>Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.index" title="Link to this definition"></a></dt>
+<dd><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1441,9 +1459,8 @@ least one character in the string.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.isprintable">
 <span class="sig-name descname"><span class="pre">isprintable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.isprintable" title="Link to this definition"></a></dt>
-<dd><p>Return True if the string is printable, False otherwise.</p>
-<p>A string is printable if all of its characters are considered printable in
-repr() or if it is empty.</p>
+<dd><p>Return True if all characters in the string are printable, False otherwise.</p>
+<p>A character is printable if repr() may use it in its output.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1472,7 +1489,7 @@ there is at least one cased character in the string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.join" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.join" title="Link to this definition"></a></dt>
 <dd><p>Concatenate any number of strings.</p>
 <p>The string whose method is called is inserted in between each given string.
 The result is returned as a new string.</p>
@@ -1481,7 +1498,7 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.ljust">
-<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.ljust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ljust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.ljust" title="Link to this definition"></a></dt>
 <dd><p>Return a left-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
@@ -1494,27 +1511,14 @@ The result is returned as a new string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.lstrip">
-<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.lstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">lstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.lstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="lxml.html.diff.token.maketrans">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maketrans</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.maketrans" title="Link to this definition"></a></dt>
-<dd><p>Return a translation table usable for str.translate().</p>
-<p>If there is only one argument, it must be a dictionary mapping Unicode
-ordinals (integers) or characters to Unicode ordinals, strings or None.
-Character keys will be then converted to ordinals.
-If there are two arguments, they must be strings of equal length, and
-in the resulting dictionary, each character in x will be mapped to the
-character at the same position in y. If there is a third argument, it
-must be a string, whose characters will be mapped to None in the result.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.partition">
-<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.partition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.partition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string.  If the separator is found,
 returns a 3-tuple containing the part before the separator, the separator
@@ -1525,7 +1529,7 @@ and two empty strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.removeprefix">
-<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.removeprefix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removeprefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.removeprefix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given prefix string removed if present.</p>
 <p>If the string starts with the prefix string, return string[len(prefix):].
 Otherwise, return a copy of the original string.</p>
@@ -1533,7 +1537,7 @@ Otherwise, return a copy of the original string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.removesuffix">
-<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.removesuffix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">removesuffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.removesuffix" title="Link to this definition"></a></dt>
 <dd><p>Return a str with the given suffix string removed if present.</p>
 <p>If the string ends with the suffix string and that suffix is not empty,
 return string[:-len(suffix)]. Otherwise, return a copy of the original
@@ -1542,7 +1546,7 @@ string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.replace" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.replace" title="Link to this definition"></a></dt>
 <dd><p>Return a copy with all occurrences of substring old replaced by new.</p>
 <blockquote>
 <div><dl class="simple">
@@ -1557,32 +1561,30 @@ replaced.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.rfind">
-<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.token.rfind" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Return -1 on failure.</p>
+<span class="sig-name descname"><span class="pre">rfind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rfind" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Return -1 on failure.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.rindex">
-<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#lxml.html.diff.token.rindex" title="Link to this definition"></a></dt>
-<dd><p>Return the highest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.</p>
-<p>Raises ValueError when the substring is not found.</p>
+<span class="sig-name descname"><span class="pre">rindex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rindex" title="Link to this definition"></a></dt>
+<dd><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p>
+<p>Optional arguments start and end are interpreted as in slice notation.
+Raises ValueError when the substring is not found.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.rjust">
-<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rjust" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rjust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rjust" title="Link to this definition"></a></dt>
 <dd><p>Return a right-justified string of length width.</p>
 <p>Padding is done using the specified fill character (default is a space).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.rpartition">
-<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rpartition" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rpartition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rpartition" title="Link to this definition"></a></dt>
 <dd><p>Partition the string into three parts using the given separator.</p>
 <p>This will search for the separator in the string, starting at the end. If
 the separator is found, returns a 3-tuple containing the part before the
@@ -1612,7 +1614,7 @@ empty strings from the result.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.rstrip">
-<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rstrip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rstrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.rstrip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -1649,16 +1651,21 @@ true.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.startswith">
-<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#lxml.html.diff.token.startswith" title="Link to this definition"></a></dt>
-<dd><p>Return True if S starts with the specified prefix, False otherwise.
-With optional start, test S beginning at that position.
-With optional end, stop comparing S at that position.
-prefix can also be a tuple of strings to try.</p>
+<span class="sig-name descname"><span class="pre">startswith</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.startswith" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string starts with the specified prefix, False otherwise.</p>
+<dl class="simple">
+<dt>prefix</dt><dd><p>A string or a tuple of strings to try.</p>
+</dd>
+<dt>start</dt><dd><p>Optional start position. Default: start of the string.</p>
+</dd>
+<dt>end</dt><dd><p>Optional stop position. Default: end of the string.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.strip">
-<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.strip" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.strip" title="Link to this definition"></a></dt>
 <dd><p>Return a copy of the string with leading and trailing whitespace removed.</p>
 <p>If chars is given and not None, remove characters in chars instead.</p>
 </dd></dl>
@@ -1679,7 +1686,7 @@ cased characters have lower case.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.translate">
-<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.translate" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.translate" title="Link to this definition"></a></dt>
 <dd><p>Replace each character in the string using the given translation table.</p>
 <blockquote>
 <div><dl class="simple">
@@ -1701,7 +1708,7 @@ left untouched.  Characters mapped to None are deleted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lxml.html.diff.token.zfill">
-<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.zfill" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">zfill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lxml.html.diff.token.zfill" title="Link to this definition"></a></dt>
 <dd><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p>
 <p>The string is never truncated.</p>
 </dd></dl>

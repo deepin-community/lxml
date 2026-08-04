@@ -3,6 +3,6 @@ lxml.html.soupparser module
 
 .. automodule:: lxml.html.soupparser
    :members:
-   :undoc-members:
-   :show-inheritance:
    :private-members:
+   :show-inheritance:
+   :undoc-members:
