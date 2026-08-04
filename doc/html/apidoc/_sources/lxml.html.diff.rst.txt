@@ -3,6 +3,6 @@ lxml.html.diff module
 
 .. automodule:: lxml.html.diff
    :members:
-   :undoc-members:
-   :show-inheritance:
    :private-members:
+   :show-inheritance:
+   :undoc-members:

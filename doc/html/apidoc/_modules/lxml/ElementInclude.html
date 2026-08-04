@@ -1,22 +1,20 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lxml.ElementInclude &mdash; lxml  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -34,9 +32,6 @@
             lxml
               <img src="../../_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.2.1
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -151,14 +146,14 @@
 <span class="sd">form of custom URL resolvers.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">etree</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">urlparse</span> <span class="kn">import</span> <span class="n">urljoin</span>
-    <span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">urlparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">urllib2</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="c1"># Python 3</span>
-    <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span>
-    <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
 
 <span class="n">XINCLUDE</span> <span class="o">=</span> <span class="s2">&quot;{http://www.w3.org/2001/XInclude}&quot;</span>
 
@@ -175,14 +170,14 @@
 
 <div class="viewcode-block" id="FatalIncludeError">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude.FatalIncludeError">[docs]</a>
-<span class="k">class</span> <span class="nc">FatalIncludeError</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">LxmlSyntaxError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FatalIncludeError</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">LxmlSyntaxError</span><span class="p">):</span>
     <span class="k">pass</span></div>
 
 
 
 <div class="viewcode-block" id="LimitedRecursiveIncludeError">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude.LimitedRecursiveIncludeError">[docs]</a>
-<span class="k">class</span> <span class="nc">LimitedRecursiveIncludeError</span><span class="p">(</span><span class="n">FatalIncludeError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LimitedRecursiveIncludeError</span><span class="p">(</span><span class="n">FatalIncludeError</span><span class="p">):</span>
     <span class="k">pass</span></div>
 
 
@@ -202,7 +197,7 @@
 
 <div class="viewcode-block" id="default_loader">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude.default_loader">[docs]</a>
-<span class="k">def</span> <span class="nf">default_loader</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">default_loader</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">parse</span> <span class="o">==</span> <span class="s2">&quot;xml&quot;</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
@@ -222,7 +217,7 @@
 
 <div class="viewcode-block" id="_lxml_default_loader">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude._lxml_default_loader">[docs]</a>
-<span class="k">def</span> <span class="nf">_lxml_default_loader</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_lxml_default_loader</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">parse</span> <span class="o">==</span> <span class="s2">&quot;xml&quot;</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parser</span><span class="p">)</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -244,8 +239,8 @@
 
 <div class="viewcode-block" id="_wrap_et_loader">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude._wrap_et_loader">[docs]</a>
-<span class="k">def</span> <span class="nf">_wrap_et_loader</span><span class="p">(</span><span class="n">loader</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_wrap_et_loader</span><span class="p">(</span><span class="n">loader</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">loader</span><span class="p">(</span><span class="n">href</span><span class="p">,</span> <span class="n">parse</span><span class="p">,</span> <span class="n">encoding</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">load</span></div>
 
@@ -271,7 +266,7 @@
 
 <div class="viewcode-block" id="include">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude.include">[docs]</a>
-<span class="k">def</span> <span class="nf">include</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">include</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">max_depth</span><span class="o">=</span><span class="n">DEFAULT_MAX_INCLUSION_DEPTH</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">max_depth</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">max_depth</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -294,7 +289,7 @@
 
 <div class="viewcode-block" id="_include">
 <a class="viewcode-back" href="../../lxml.ElementInclude.html#lxml.ElementInclude._include">[docs]</a>
-<span class="k">def</span> <span class="nf">_include</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_include</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
              <span class="n">max_depth</span><span class="o">=</span><span class="n">DEFAULT_MAX_INCLUSION_DEPTH</span><span class="p">,</span> <span class="n">_parent_hrefs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">loader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">load_include</span> <span class="o">=</span> <span class="n">_wrap_et_loader</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>

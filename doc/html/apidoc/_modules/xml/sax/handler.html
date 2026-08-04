@@ -1,22 +1,20 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>xml.sax.handler &mdash; lxml  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -34,9 +32,6 @@
             lxml
               <img src="../../../_static/python-xml.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                5.2.1
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -119,7 +114,7 @@
 
 <span class="c1"># ===== ERRORHANDLER =====</span>
 
-<span class="k">class</span> <span class="nc">ErrorHandler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ErrorHandler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Basic interface for SAX error handlers.</span>
 
 <span class="sd">    If you create an object that implements this interface, then</span>
@@ -129,32 +124,32 @@
 <span class="sd">    recoverable errors, and unrecoverable errors. All methods take a</span>
 <span class="sd">    SAXParseException as the only parameter.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
         <span class="s2">&quot;Handle a recoverable error.&quot;</span>
         <span class="k">raise</span> <span class="n">exception</span>
 
-    <span class="k">def</span> <span class="nf">fatalError</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fatalError</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
         <span class="s2">&quot;Handle a non-recoverable error.&quot;</span>
         <span class="k">raise</span> <span class="n">exception</span>
 
-    <span class="k">def</span> <span class="nf">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
         <span class="s2">&quot;Handle a warning.&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
 
 
 <span class="c1"># ===== CONTENTHANDLER =====</span>
 
-<span class="k">class</span> <span class="nc">ContentHandler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ContentHandler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface for receiving logical document content events.</span>
 
 <span class="sd">    This is the main callback interface in SAX, and the one most</span>
 <span class="sd">    important to applications. The order of events in this interface</span>
 <span class="sd">    mirrors the order of the information in the document.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_locator</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">setDocumentLocator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">locator</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setDocumentLocator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">locator</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Called by the parser to give the application a locator for</span>
 <span class="sd">        locating the origin of document events.</span>
 
@@ -177,14 +172,14 @@
 <span class="sd">        application should not attempt to use it at any other time.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_locator</span> <span class="o">=</span> <span class="n">locator</span>
 
-    <span class="k">def</span> <span class="nf">startDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of the beginning of a document.</span>
 
 <span class="sd">        The SAX parser will invoke this method only once, before any</span>
 <span class="sd">        other methods in this interface or in DTDHandler (except for</span>
 <span class="sd">        setDocumentLocator).&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of the end of a document.</span>
 
 <span class="sd">        The SAX parser will invoke this method only once, and it will</span>
@@ -193,7 +188,7 @@
 <span class="sd">        (because of an unrecoverable error) or reached the end of</span>
 <span class="sd">        input.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">startPrefixMapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">uri</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startPrefixMapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">uri</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Begin the scope of a prefix-URI Namespace mapping.</span>
 
 <span class="sd">        The information from this event is not necessary for normal</span>
@@ -216,14 +211,14 @@
 <span class="sd">        after the corresponding endElement event, but their order is</span>
 <span class="sd">        not guaranteed.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endPrefixMapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endPrefixMapping</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;End the scope of a prefix-URI mapping.</span>
 
 <span class="sd">        See startPrefixMapping for details. This event will always</span>
 <span class="sd">        occur after the corresponding endElement event, but the order</span>
 <span class="sd">        of endPrefixMapping events is not otherwise guaranteed.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">startElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Signals the start of an element in non-namespace mode.</span>
 
 <span class="sd">        The name parameter contains the raw XML 1.0 name of the</span>
@@ -231,13 +226,13 @@
 <span class="sd">        instance of the Attributes class containing the attributes of</span>
 <span class="sd">        the element.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Signals the end of an element in non-namespace mode.</span>
 
 <span class="sd">        The name parameter contains the name of the element type, just</span>
 <span class="sd">        as with the startElement event.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">startElementNS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">qname</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startElementNS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">qname</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Signals the start of an element in namespace mode.</span>
 
 <span class="sd">        The name parameter contains the name of the element type as a</span>
@@ -249,13 +244,13 @@
 <span class="sd">        The uri part of the name tuple is None for elements which have</span>
 <span class="sd">        no namespace.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endElementNS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">qname</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endElementNS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">qname</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Signals the end of an element in namespace mode.</span>
 
 <span class="sd">        The name parameter contains the name of the element type, just</span>
 <span class="sd">        as with the startElementNS event.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">characters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">characters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of character data.</span>
 
 <span class="sd">        The Parser will call this method to report each chunk of</span>
@@ -265,7 +260,7 @@
 <span class="sd">        event must come from the same external entity so that the</span>
 <span class="sd">        Locator provides useful information.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">ignorableWhitespace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">whitespace</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ignorableWhitespace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">whitespace</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of ignorable whitespace in element content.</span>
 
 <span class="sd">        Validating Parsers must use this method to report each chunk</span>
@@ -279,7 +274,7 @@
 <span class="sd">        external entity, so that the Locator provides useful</span>
 <span class="sd">        information.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">processingInstruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">processingInstruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of a processing instruction.</span>
 
 <span class="sd">        The Parser will invoke this method once for each processing</span>
@@ -290,7 +285,7 @@
 <span class="sd">        section 2.8) or a text declaration (XML 1.0, section 4.3.1)</span>
 <span class="sd">        using this method.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">skippedEntity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">skippedEntity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Receive notification of a skipped entity.</span>
 
 <span class="sd">        The Parser will invoke this method once for each entity</span>
@@ -305,29 +300,29 @@
 
 <span class="c1"># ===== DTDHandler =====</span>
 
-<span class="k">class</span> <span class="nc">DTDHandler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DTDHandler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle DTD events.</span>
 
 <span class="sd">    This interface specifies only those DTD events required for basic</span>
 <span class="sd">    parsing (unparsed entities and attributes).&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">notationDecl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">notationDecl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">):</span>
         <span class="s2">&quot;Handle a notation declaration event.&quot;</span>
 
-    <span class="k">def</span> <span class="nf">unparsedEntityDecl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">,</span> <span class="n">ndata</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">unparsedEntityDecl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">,</span> <span class="n">ndata</span><span class="p">):</span>
         <span class="s2">&quot;Handle an unparsed entity declaration event.&quot;</span>
 
 
 <span class="c1"># ===== ENTITYRESOLVER =====</span>
 
-<span class="k">class</span> <span class="nc">EntityResolver</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EntityResolver</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Basic interface for resolving entities. If you create an object</span>
 <span class="sd">    implementing this interface, then register the object with your</span>
 <span class="sd">    Parser, the parser will call the method in your object to</span>
 <span class="sd">    resolve all external entities. Note that DefaultHandler implements</span>
 <span class="sd">    this interface with the default behaviour.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">resolveEntity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resolveEntity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">publicId</span><span class="p">,</span> <span class="n">systemId</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Resolve the system identifier of an entity and return either</span>
 <span class="sd">        the system identifier to read from as a string, or an InputSource</span>
 <span class="sd">        to read from.&quot;&quot;&quot;</span>
@@ -442,7 +437,7 @@
                   <span class="n">property_interning_dict</span><span class="p">]</span>
 
 
-<span class="k">class</span> <span class="nc">LexicalHandler</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LexicalHandler</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional SAX2 handler for lexical events.</span>
 
 <span class="sd">    This handler is used to obtain lexical information about an XML</span>
@@ -455,13 +450,13 @@
 <span class="sd">    method with the property identifier</span>
 <span class="sd">    &#39;http://xml.org/sax/properties/lexical-handler&#39;.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">comment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reports a comment anywhere in the document (including the</span>
 <span class="sd">        DTD and outside the document element).</span>
 
 <span class="sd">        content is a string that holds the contents of the comment.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">startDTD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">public_id</span><span class="p">,</span> <span class="n">system_id</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startDTD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">public_id</span><span class="p">,</span> <span class="n">system_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Report the start of the DTD declarations, if the document</span>
 <span class="sd">        has an associated DTD.</span>
 
@@ -474,16 +469,16 @@
 <span class="sd">        and system_id the system identfier of the external subset (or</span>
 <span class="sd">        None if none were supplied).&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endDTD</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endDTD</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Signals the end of DTD declarations.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">startCDATA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startCDATA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reports the beginning of a CDATA marked section.</span>
 
 <span class="sd">        The contents of the CDATA marked section will be reported</span>
 <span class="sd">        through the characters event.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">endCDATA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endCDATA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Reports the end of a CDATA marked section.&quot;&quot;&quot;</span>
 </pre></div>
 
